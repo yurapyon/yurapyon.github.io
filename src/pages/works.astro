@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Work from "../components/Work.astro";
+---
+<Layout title="pyon.moe" sub="works">
+<div class="flex justify-center font-mono">
+    works
+</div>
+<div class="flex justify-center font-mono">
+    <a href="/">go back</a>
+</div>
+<div class="flex justify-center font-mono">
+    <ul>
+        <!-- lemons -->
+        <Work
+            date="2023"
+            link="https://twitter.com/_bitelemons/status/1615240197137960960"
+            info="bite lemons; VRM/VSeeFace model"
+            imgs={["1"]}
+        />
+        <!-- dejiko -->
+        <Work
+            date="2023"
+            link="https://twitter.com/_bitelemons/status/1610408021527494658"
+            imgs={["1"]}
+        />
+        <!-- girutan -->
+        <Work
+            date="2022"
+            link="https://twitter.com/_bitelemons/status/1608319493553672192"
+            imgs={["1"]}
+        />
+        <!-- alice -->
+        <Work
+            date="2022"
+            link="https://twitter.com/_bitelemons/status/1601435980229390337"
+            imgs={["1","2","3"]}
+        />
+        <!-- TODO post the stills of poli too -->
+        <Work
+            date="2017"
+            link="https://www.youtube.com/watch?v=loHvrW5EKBk"
+            info="u7 dratama; music video"
+            imgs={["asdf","asdf"]}
+        />
+        <Work
+            date="2017"
+            link="https://cockrockdisco.bandcamp.com/album/angel-93"
+            info="angel93 album art; front and back cover"
+            imgs={["asdf","asdf"]}
+        />
+        <Work
+            date="2017"
+            link="https://theworstlabel.bandcamp.com/album/the-worst-compilation-fourth-wave"
+            info="worst compilation: fourth wave; front and back cover, inserts, cds"
+            imgs={["asdf","asdf"]}
+        />
+    </ul>
+</div>
+<div class="flex justify-center font-mono">
+    <a href="/">go back</a>
+</div>
+</Layout>

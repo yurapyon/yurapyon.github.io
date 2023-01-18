@@ -1,0 +1,16 @@
+---
+export interface Props {
+    date: string;
+    link: string;
+    info?: string;
+    imgs: string[];
+};
+const {date, link, info, imgs} = Astro.props;
+---
+<li>
+    {date} <a class="underline" href={link}>link</a> <br/>
+    {info ? <>{info}<br/></> : ""}
+    {imgs.map((img: string)=>{
+        return <img src={img}/>;
+    })}
+</li>
