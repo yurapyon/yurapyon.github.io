@@ -7,10 +7,11 @@ export interface Props {
 };
 const {date, link, info, imgs} = Astro.props;
 ---
-<li>
+<div class="m-10">
     {date} <a class="underline" href={link}>link</a> <br/>
     {info ? <>{info}<br/></> : ""}
     {imgs.map((img: string)=>{
-        return <img src={img}/>;
+        return <img class="m-1" src={img} width="600"/>;
     })}
-</li>
+    <slot />
+</div>

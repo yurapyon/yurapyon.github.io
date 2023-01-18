@@ -22,39 +22,55 @@ import Work from "../components/Work.astro";
         <Work
             date="2023"
             link="https://twitter.com/_bitelemons/status/1610408021527494658"
-            imgs={["1"]}
+            imgs={["/works/dejiko/1.png", "/works/dejiko/2.png"]}
         />
         <!-- girutan -->
         <Work
             date="2022"
             link="https://twitter.com/_bitelemons/status/1608319493553672192"
-            imgs={["1"]}
+            imgs={["/works/girutan/1.png"]}
         />
         <!-- alice -->
         <Work
             date="2022"
             link="https://twitter.com/_bitelemons/status/1601435980229390337"
-            imgs={["1","2","3"]}
+            imgs={[
+                "/works/alice/1.png",
+                "/works/alice/2.png",
+                "/works/alice/3.png"
+            ]}
         />
         <!-- TODO post the stills of poli too -->
         <Work
             date="2017"
             link="https://www.youtube.com/watch?v=loHvrW5EKBk"
             info="u7 dratama; music video"
-            imgs={["asdf","asdf"]}
-        />
+            imgs={[]}
+        >
+            <iframe
+                width="600"
+                height="338"
+                src="https://www.youtube.com/embed/loHvrW5EKBk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
+        </Work>
         <Work
             date="2017"
             link="https://cockrockdisco.bandcamp.com/album/angel-93"
             info="angel93 album art; front and back cover"
-            imgs={["asdf","asdf"]}
+            imgs={["/works/angel93/front.png", "/works/angel93/back.png"]}
         />
         <Work
             date="2017"
             link="https://theworstlabel.bandcamp.com/album/the-worst-compilation-fourth-wave"
             info="worst compilation: fourth wave; front and back cover, inserts, cds"
-            imgs={["asdf","asdf"]}
-        />
+            imgs={[]}
+        >
+            images added soon
+        </Work>
     </ul>
 </div>
 <div class="flex justify-center font-mono">
