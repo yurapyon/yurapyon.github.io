@@ -1,19 +1,22 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 export interface Props {
     date: string;
     link: string;
     info?: string;
     imgs: string[];
 };
+
 const {date, link, info, imgs} = Astro.props;
 ---
 
-<div class="m-10">
+<div>
     {date} <a href={link}> link </a> <br/>
     {info ? <>{info}<br/></> : ""}
     {imgs.map((img: string) => {
-        return <a href={img}>
-            <img class="m-1" src={img} width="600"/>
+        return <a href={"../works/" + img}>
+            <Image class="m-1" src={import("../works/" + img)} width="600" alt={img}/>
         </a>;
     })}
     <slot />
