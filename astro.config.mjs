@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://pyon.moe",
+  site: "https://www.pyon.moe",
   integrations: [tailwind()]
 });
