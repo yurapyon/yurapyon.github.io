@@ -2,32 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import Work from "../components/Work.astro";
 ---
+
 <Layout title="pyon.moe" sub="works">
-<div class="flex justify-center font-mono">
-    <a class="underline" href="/">go back</a>
-</div>
-<div class="flex justify-center font-mono">
-    <ul>
-        <!-- lemons -->
+    <div class="grid grid-cols-1 justify-items-center">
+        <a href="/">go back</a>
         <Work
             date="2023"
             link="https://twitter.com/_bitelemons/status/1615240197137960960"
             info="bite lemons; VRM/VSeeFace model, character design"
             imgs={["/works/lemons/1.png"]}
         />
-        <!-- dejiko -->
         <Work
             date="2023"
             link="https://twitter.com/_bitelemons/status/1610408021527494658"
             imgs={["/works/dejiko/1.png", "/works/dejiko/2.png"]}
         />
-        <!-- girutan -->
         <Work
             date="2022"
             link="https://twitter.com/_bitelemons/status/1608319493553672192"
             imgs={["/works/girutan/1.png"]}
         />
-        <!-- alice -->
         <Work
             date="2022"
             link="https://twitter.com/_bitelemons/status/1601435980229390337"
@@ -67,9 +61,6 @@ import Work from "../components/Work.astro";
             info="worst compilation: fourth wave; front and back cover, inserts, cds"
             imgs={["/works/worst/1.jpg", "/works/worst/2.jpg"]}
         />
-    </ul>
-</div>
-<div class="flex justify-center font-mono">
-    <a class="underline" href="/">go back</a>
-</div>
+        <a href="/">go back</a>
+    </div>
 </Layout>

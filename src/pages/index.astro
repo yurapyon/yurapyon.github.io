@@ -2,44 +2,38 @@
 import Banner from '../components/Banner.astro';
 import Layout from '../layouts/Layout.astro';
 ---
+
 <Layout title="pyon.moe">
-<div class="flex justify-center m-1">
-    <img src="/logo.png" height="297" alt="pyon.moe logo" />
-</div>
-<div class="font-mono">
-    <div class="flex justify-center">
-        <p>home of mel aise + bite lemons - updated 01/18/2023</p>
+    <div class="grid grid-cols-1 justify-items-center">
+        <img class="m-1" src="/logo.png" height="297" alt="pyon.moe logo" />
+        <div> home of mel aise + bite lemons - updated 01/18/2023 </div>
+        <div> <a href="/works/">works</a> <a href="/comms/">commission info</a> </div>
+        <div class="grid grid-cols-3 m-0.5 gap-0.5">
+            <a href="https://twitch.tv/bitelemons" target="_blank">
+                <img src="/socials/twitchlogobig.png"  width="48" alt="twitch"/>
+            </a>
+            <a href="https://twitter.com/_bitelemons" target="_blank">
+                <img src="/socials/twitterlogobig.png" width="48" alt="twitter"/>
+            </a>
+            <a href="https://discord.gg/X9a3z7AMGa" target="_blank">
+                <img src="/socials/discordlogobig.png" width="48" alt="discord"/>
+            </a>
+        </div>
+        <div class="grid grid-cols-4">
+            <Banner name="construction2" />
+            <Banner name="chill_pill" />
+            <Banner name="caramelldansen" />
+            <Banner name="firefox" />
+
+            <img class="m-0.5" src={"/banners/metan.png"} width="88" alt="metan" />
+            <Banner name="mind2" />
+            <img class="m-0.5" src={"/banners/cat2.png"} width="88" alt="cat" />
+            <Banner name="ostan" />
+
+            <Banner name="homicide" />
+            <Banner name="anow" />
+            <Banner name="tos" />
+            <Banner name="donate" />
+        </div>
     </div>
-    <div class="flex justify-center">
-        <p>
-            <a class="underline" href="/works/">works</a>&nbsp;
-            <a class="underline" href="/comms/">commission pricing</a>&nbsp;
-        </p>
-    </div>
-    <div class="flex justify-center m-0.5">
-        <a href="https://twitch.tv/bitelemons" target="_blank"> <img src="/socials/twitchlogobig.png"  width="48" alt="twitch"/> </a>
-        &nbsp;
-        <a href="https://twitter.com/_bitelemons" target="_blank"> <img src="/socials/twitterlogobig.png" width="48" alt="twitter"/> </a>
-        &nbsp;
-        <a href="https://discord.gg/X9a3z7AMGa" target="_blank"> <img src="/socials/discordlogobig.png" width="48" alt="discord"/> </a>
-    </div>
-    <div class="flex justify-center">
-        <Banner name="construction2" />
-        <Banner name="chill_pill" />
-        <Banner name="caramelldansen" />
-        <Banner name="firefox" />
-    </div>
-    <div class="flex justify-center">
-        <img class="m-0.5" src={"/banners/metan.png"} width="88" alt="metan" />
-        <Banner name="mind2" />
-        <img class="m-0.5" src={"/banners/cat2.png"} width="88" alt="cat" />
-        <Banner name="ostan" />
-    </div>
-    <div class="flex justify-center">
-        <Banner name="homicide" />
-        <Banner name="anow" />
-        <Banner name="tos" />
-        <Banner name="donate" />
-    </div>
-</div>
 </Layout>
