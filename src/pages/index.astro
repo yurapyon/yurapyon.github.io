@@ -1,4 +1,5 @@
 ---
+import Banner from '../components/Banner.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="pyon.moe">
@@ -10,23 +11,35 @@ import Layout from '../layouts/Layout.astro';
         <p>home of mel aise + bite lemons - updated 01/17/2023</p>
     </div>
     <div class="flex justify-center">
-        ~~ website under construction ~~
-    </div>
-    <!--
-    <div class="flex justify-center">
         <p>
             <a class="underline" href="/works/">works</a>&nbsp;
             <a class="underline" href="/comms/">commission pricing</a>&nbsp;
-            <a class="underline" href="/info/">info</a>
         </p>
     </div>
-    -->
     <div class="flex justify-center">
         <a href="https://twitch.tv/bitelemons" target="_blank"> <img src="/socials/twitchlogobig.png"  width="48" alt="twitch"/> </a>
         &nbsp;
         <a href="https://twitter.com/_bitelemons" target="_blank"> <img src="/socials/twitterlogobig.png" width="48" alt="twitter"/> </a>
         &nbsp;
-        <a href="https://discord.gg/X9a3z7AMGa"> <img src="/socials/discordlogobig.png" width="48" alt="discord"/> </a>
+        <a href="https://discord.gg/X9a3z7AMGa" target="_blank"> <img src="/socials/discordlogobig.png" width="48" alt="discord"/> </a>
+    </div>
+    <div class="flex justify-center">
+        <Banner name="construction" />
+        <Banner name="chill_pill" />
+        <Banner name="caramelldansen" />
+        <img class="p-0.5" src={"/banners/metan.png"} width="88" alt="metan" />
+    </div>
+    <div class="flex justify-center">
+        <Banner name="firefox" />
+        <Banner name="ostan" />
+        <Banner name="mind" />
+        <img class="p-0.5" src={"/banners/cat.png"} width="88" alt="cat" />
+    </div>
+    <div class="flex justify-center">
+        <Banner name="homicide" />
+        <Banner name="anow" />
+        <Banner name="tos" />
+        <Banner name="donate" />
     </div>
 </div>
 </Layout>
