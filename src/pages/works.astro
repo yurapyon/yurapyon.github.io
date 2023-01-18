@@ -4,10 +4,7 @@ import Work from "../components/Work.astro";
 ---
 <Layout title="pyon.moe" sub="works">
 <div class="flex justify-center font-mono">
-    works
-</div>
-<div class="flex justify-center font-mono">
-    <a href="/">go back</a>
+    <a class="underline" href="/">go back</a>
 </div>
 <div class="flex justify-center font-mono">
     <ul>
@@ -44,7 +41,7 @@ import Work from "../components/Work.astro";
         <Work
             date="2017"
             link="https://www.youtube.com/watch?v=loHvrW5EKBk"
-            info="u7 dratama; music video"
+            info="u7 dratama; music video, character design, Unity"
             imgs={[]}
         >
             <iframe
@@ -67,13 +64,11 @@ import Work from "../components/Work.astro";
             date="2017"
             link="https://theworstlabel.bandcamp.com/album/the-worst-compilation-fourth-wave"
             info="worst compilation: fourth wave; front and back cover, inserts, cds"
-            imgs={[]}
-        >
-            images added soon
-        </Work>
+            imgs={["/works/worst/1.jpg", "/works/worst/2.jpg"]}
+        />
     </ul>
 </div>
 <div class="flex justify-center font-mono">
-    <a href="/">go back</a>
+    <a class="underline" href="/">go back</a>
 </div>
 </Layout>
