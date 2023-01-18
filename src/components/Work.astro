@@ -16,7 +16,7 @@ const {date, link, info, imgs} = Astro.props;
     {info ? <>{info}<br/></> : ""}
     {imgs.map((img: string) => {
         return <a href={"/src/works/" + img}>
-            <Image class="m-1" src={import("../works/" + img)} width="600" alt={img}/>
+            <Image class="m-1" src={import("/src/works/" + img)} width="600" alt={img}/>
         </a>;
     })}
     <slot />
