@@ -1,13 +1,14 @@
 ---
-import { __astro_tag_component__ } from "astro/dist/runtime/server";
+import List from "../components/List.astro";
 import Layout from "../layouts/Layout.astro";
 
 // 850
+// TODO make sure this list is correct
 const includes = [
     "chibi model + rigging",
     ".vrm file (.vseeface file will be included if necessary)",
     "original .blend file",
-    "2 simple expressions of your choosing",
+    "2 toggleable simple expressions of your choosing",
     "hair physics",
     "basic texturing",
     "AEIOU mouth visemes",
@@ -19,20 +20,20 @@ const extras = {
     t1_price: 75,
     t1: [
         "simple expression",
-        "toggleable accessory/prop (without phsyics)",
+        "togglable accessory/prop (without phsyics)",
         "basic reference sheet",
     ],
     t2_price: 150,
     t2: [
         "animated expression",
-        "toggleable accessory/prop (with phsyics)",
+        "accessory/prop (with phsyics)",
         "rigged kemonomimi (just the ears)",
-        "'realistic' texturing",
     ],
     t3_price: 250,
     t3: [
-        "rigged kemonomimi (ears + animated tail)",
+        "'realistic' texturing",
         "alternate hairstyle",
+        "rigged kemonomimi (ears + animated tail)",
     ],
     t4_price: 450,
     t4: [
@@ -46,6 +47,22 @@ const extras = {
         "animated special effects",
     ],
 }
+
+const will_do = [
+    "human characters (OCs)",
+];
+
+const ask_me = [
+    "robot or furry characters",
+    "mild guro/body horror themes i.e. blood, guts, insect, other weird horror stuff",
+    "mild ecchi",
+];
+
+const will_not_do = [
+    "copyrighted characters",
+    "anything i deem too intense, gross, or graphic",
+    "explicit sexual content or fetishes",
+];
 
 ---
 
@@ -73,25 +90,43 @@ const extras = {
             </span>
 
             <div>
-                <span class="font-bold"> includes: </span>
-                <ul>
-                    {includes.map((item)=><li>{item}</li>)}
-                </ul>
+            <span class="font-bold"> includes: </span>
+            <List items={includes} />
             </div>
 
             <p>
-            complex character designs may cost more, based on my discretion
+            complex designs may cost more, based on my discretion
             </p>
 
+            <div>
+            <b> things i will do: </b>
+            <List items={will_do} />
+            </div>
+
+            <div><b>
+            ask me about it:
+            </b>
+            <List items={ask_me} />
+            </div>
+
+            <div><b>
+            i will not do:
+            </b>
+            <List items={will_not_do} />
+            </div>
+
+            <!--
             <p>
             i specialize in human characters but may be down to make robot or furry characters.
             mild guro/body horror themes are okay! mild ecchi is also okay! 
             however, i will reject anything i deem too intense and will not do any sort of explicit sexual content.
             </p>
+            -->
 
             <p>
             if youre looking for something completely inhuman or abstract, i may be down to do that too!
             pricing for that would be completely custom and wouldnt necessarily follow the prices on this page.
+            if you want to be a plate of jello online, let me enable that
             </p>
 
             <!--TODO explain simple vs complex design-->
@@ -106,20 +141,30 @@ const extras = {
             complexity in the modelling or rigging may add price
             </p>
 
-            <span class="font-bold">T1, {extras.t1_price}$</span>
-            <ul>{extras.t1.map((item)=><li>{item}</li>)} </ul>
+            <div>
+            <span class="font-bold">T1, ~{extras.t1_price}$</span>
+            <List items={extras.t1} />
+            </div>
 
-            <span class="font-bold">T2, {extras.t2_price}$</span>
-            <ul>{extras.t2.map((item)=><li>{item}</li>)} </ul>
+            <div>
+            <span class="font-bold">T2, ~{extras.t2_price}$</span>
+            <List items={extras.t2} />
+            </div>
 
-            <span class="font-bold">T3, {extras.t3_price}$</span>
-            <ul>{extras.t3.map((item)=><li>{item}</li>)} </ul>
+            <div>
+            <span class="font-bold">T3, ~{extras.t3_price}$</span>
+            <List items={extras.t3} />
+            </div>
 
-            <span class="font-bold">T4, {extras.t4_price}$</span>
-            <ul>{extras.t4.map((item)=><li>{item}</li>)} </ul>
+            <div>
+            <span class="font-bold">T4, ~{extras.t4_price}$</span>
+            <List items={extras.t4} />
+            </div>
 
+            <div>
             <span class="font-bold">T5, contact me!</span>
-            <ul>{extras.t5.map((item)=><li>{item}</li>)} </ul>
+            <List items={extras.t5} />
+            </div>
 
             <span class="font-bold"> i want to work with you to make something epic!!!  </span>
 
@@ -127,7 +172,7 @@ const extras = {
             if you want something special, dont be afraid to ask. i want to make really cool models and want to push my abilites.
             please be understanding if i reject your request, if it costs more, or if it takes an indefinite extra amount of time.
             i put alot of love and care into everything i do.
-            just because its lopoly doesn't mean it doesnt take a f**kton of work to get right :)
+            just because its lopoly doesn't mean it doesnt take a ton of work to get right :)
             </p>
 
             <p>
@@ -143,13 +188,14 @@ const extras = {
             <span class="font-bold"> gritty details </span>
 
             <p>
-            process time: 3-4wk, barring adverse life situations.
+            process time: 3 weeks - 1 month, barring adverse life situations.
             may take shorter but this is what i expect.
-            these are not hard limits but as i will refine this estimate over time :)
+            this in not a hard limit but as i will refine this estimate over time :)
             </p>
 
             <p>
-            i will give updates fairly frequently to make sure the model looks how you want it.
+            i will give updates fairly frequently.
+            you can request refinements and changes to make sure the model looks how you want it.
             i am pretty confident in my artistic sense though, so do not be too demanding or request difficult revisions.
             </p>
 
@@ -160,8 +206,8 @@ const extras = {
             </p>
 
             <p>
-            if you can, please provide concrete visual references for what youre looking for.
-            they dont have to be really well drawn or anything but im not exactly offering character design.
+            if you can, please provide concrete visual references for what youre looking for, preferably in a chibi style.
+            they dont have to be really well drawn or anything but im not offering in-depth character design.
             </p>
 
             <p>
