@@ -1,10 +1,187 @@
 ---
+import { __astro_tag_component__ } from "astro/dist/runtime/server";
 import Layout from "../layouts/Layout.astro";
+
+// 850
+const includes = [
+    "chibi model + rigging",
+    ".vrm file (.vseeface file will be included if necessary)",
+    "original .blend file",
+    "2 simple expressions of your choosing",
+    "hair physics",
+    "basic texturing",
+    "AEIOU mouth visemes",
+    "blinking + winking",
+    "epic Kero emote",
+];
+
+const extras = {
+    t1_price: 75,
+    t1: [
+        "simple expression",
+        "toggleable accessory/prop (without phsyics)",
+        "basic reference sheet",
+    ],
+    t2_price: 150,
+    t2: [
+        "animated expression",
+        "toggleable accessory/prop (with phsyics)",
+        "rigged kemonomimi (just the ears)",
+        "'realistic' texturing",
+    ],
+    t3_price: 250,
+    t3: [
+        "rigged kemonomimi (ears + animated tail)",
+        "alternate hairstyle",
+    ],
+    t4_price: 450,
+    t4: [
+        "complete outfit",
+    ],
+    t5_price: false,
+    t5: [
+        "3d animation",
+        "room/environment",
+        "extra poses besides tpose",
+        "animated special effects",
+    ],
+}
+
 ---
 
 <Layout title="pyon.moe" sub="commission info">
-    <div class="grid grid-cols-1 justify-items-center">
-        <div> commissions opening soon </div>
+    <div class="grid grid-cols-1 gap-5 justify-items-center">
+        <a href="/"> go back </a>
+
+        <span class="font-bold">
+        [ commissions are currently closed ]
+        </span>
+        <span class="font-bold">
+        [ this is a rough draft of commission pricing and subject to change ]
+        </span>
+
+        <div class="grid grid-cols-1 gap-4 w-[600px] font-serif">
+            <!-- TODO use image here -->
+
+            <p>
+            i'm new to doing commissions and im still working on my artstyle and pricing.
+            please be patient with me :)
+            </p>
+
+            <span class="font-bold">
+            base price! 850$
+            </span>
+
+            <div>
+                <span class="font-bold"> includes: </span>
+                <ul>
+                    {includes.map((item)=><li>{item}</li>)}
+                </ul>
+            </div>
+
+            <p>
+            complex character designs may cost more, based on my discretion
+            </p>
+
+            <p>
+            i specialize in human characters but may be down to make robot or furry characters.
+            mild guro/body horror themes are okay! mild ecchi is also okay! 
+            however, i will reject anything i deem too intense and will not do any sort of explicit sexual content.
+            </p>
+
+            <p>
+            if youre looking for something completely inhuman or abstract, i may be down to do that too!
+            pricing for that would be completely custom and wouldnt necessarily follow the prices on this page.
+            </p>
+
+            <!--TODO explain simple vs complex design-->
+
+            <!--TODO explain simple expression-->
+
+            <span class="font-bold">
+            extras!
+            </span>
+            <p>
+            extras are organized by tiers, with the price of each tier an estimate price.
+            complexity in the modelling or rigging may add price
+            </p>
+
+            <span class="font-bold">T1, {extras.t1_price}$</span>
+            <ul>{extras.t1.map((item)=><li>{item}</li>)} </ul>
+
+            <span class="font-bold">T2, {extras.t2_price}$</span>
+            <ul>{extras.t2.map((item)=><li>{item}</li>)} </ul>
+
+            <span class="font-bold">T3, {extras.t3_price}$</span>
+            <ul>{extras.t3.map((item)=><li>{item}</li>)} </ul>
+
+            <span class="font-bold">T4, {extras.t4_price}$</span>
+            <ul>{extras.t4.map((item)=><li>{item}</li>)} </ul>
+
+            <span class="font-bold">T5, contact me!</span>
+            <ul>{extras.t5.map((item)=><li>{item}</li>)} </ul>
+
+            <span class="font-bold"> i want to work with you to make something epic!!!  </span>
+
+            <p>
+            if you want something special, dont be afraid to ask. i want to make really cool models and want to push my abilites.
+            please be understanding if i reject your request, if it costs more, or if it takes an indefinite extra amount of time.
+            i put alot of love and care into everything i do.
+            just because its lopoly doesn't mean it doesnt take a f**kton of work to get right :)
+            </p>
+
+            <p>
+            i know how to make VRM models + VSeeFace models.
+            i may be willing to figure out how to make models for other programs it's a deal breaker! ask me about it!
+            </p>
+
+            <p>
+            i don't currently offer VRChat models but would like to in the future...
+            if this is something you //really// want i may be down to talk about it.
+            </p>
+
+            <span class="font-bold"> gritty details </span>
+
+            <p>
+            process time: 3-4wk, barring adverse life situations.
+            may take shorter but this is what i expect.
+            these are not hard limits but as i will refine this estimate over time :)
+            </p>
+
+            <p>
+            i will give updates fairly frequently to make sure the model looks how you want it.
+            i am pretty confident in my artistic sense though, so do not be too demanding or request difficult revisions.
+            </p>
+
+            <p>
+            this commission is for a rigged 3d model to be used for streaming/vtubing.
+            you can ask me if youre looking for 3d models for other uses, but there is a high chance i will reject it.
+            i will not rig models made by other people.
+            </p>
+
+            <p>
+            if you can, please provide concrete visual references for what youre looking for.
+            they dont have to be really well drawn or anything but im not exactly offering character design.
+            </p>
+
+            <p>
+            3d is hard to do from scratch so i may reuse assets i have used for other models on your model i.e. kemonomimi or props.
+            i will however modify them to fit your design if need be.
+            </p>
+
+            <p>
+            future model updates are not included, but can be asked for and may cost extra.
+            </p>
+
+            <span class="font-bold"> i have right to reject any request or the design in full! </span>
+            <!-- todo make list -->
+            <p>
+            model is too complex.
+            VSeeFace doesnt support such things or it would be too hard.
+            youre mean.
+            </p>
+        </div>
+
         <a href="/"> go back </a>
     </div>
 </Layout>
