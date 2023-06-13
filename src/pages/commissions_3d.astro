@@ -1,92 +1,125 @@
 ---
+import List from "../components/List.astro";
 import Layout from '../layouts/Layout.astro';
 ---
-
 <Layout title="pyon.moe" sub="bite lemons 3d commissions">
     <div class="grid grid-cols-1 gap-5 justify-items-center">
         <a href="/">go back</a>
 
-        <!-- todo image -->
+        <!-- todo comms image, with example of available body types -->
 
         <div class="grid grid-cols-1 gap-4 w-[600px] font-serif">
             <b>commissions are currently closed but will be opening soon</b>
 
-            <b> quick overview </b>
-            <p>
+            <b class="text-lg underline"> quick overview </b>
+
+            <div>
+                all prices listed are in USD <br/>
                 <b>125$</b> base price for just the model and basic rigging <br/>
                 <b>+75$</b> vseeface rigging <br/>
                 <b>+0-50$</b> based on complexity <br/>
                 <b>+15-50$</b> per prop or toggle <br/>
+            </div>
 
+            <div>
                 your 'average' vtuber design rigged for vseeface with 2 expressions and togglable nekomimi would come up to <b>~275$</b><br/>
-
                 delivery time should be under <b>two months</b> <br/>
-                payment method is <b>paypal upfront</b>
-            </p>
+                payment method is <b>paypal upfront</b> <br/>
+            </div>
 
-            <b> info </b>
-            <p>
+            <div>
+                contact info at the bottom of this page!
+            </div>
+
+            <b class="text-lg underline"> info </b>
+
+            <div>
                 <b> content </b> <br/>
-                i have a pretty specific art style and will slightly modify the design to fit that style. <br/>
-                there are two choices of body type, either "realistic" or chibi, they cost the same. <br/>
-                i specialize in cute girl characters. male characters are okay if you want them to be cute :) <br/>
-                i will not make furry characters, sorry. i just dont know how to make them look good. <br/>
-                i won't make licenced characters or anything too graphic or sexually explicit.  <br/>
-                i may accept humanoid robot characters, cartoon characters, mild ecchi, or mild guro/body horror. so ask me about it! <br/>
-            </p>
+                <List style="list-disc" items={[
+                    "i have a pretty specific art style and will slightly modify the design to fit that style.",
+                    "there are two choices of body type, either \"realistic\" or chibi, they cost the same.",
+                    "i specialize in cute feminine or androgynous characters. masculine characters might not get accepted",
+                    "i won't make furry characters, licensed characters, or anything sexually explicit or too graphic.",
+                    "i may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!",
+                ]}/>
+            </div>
 
-            <p>
-                i currently don't offer animations/poses but if you really wanted that i could look into it. the same goes for vrchat rigging.
-                in either of these cases it would be an extra cost and add an indefinite amount of time to the delivery time.
-            </p>
+            <div>
+                <b> meta </b> <br/>
+                <List style="list-disc" items={[
+                    "commission slots are limited. orders are accepted on a \"i think i could do good with this design\" basis, not necessarily first come first served.",
+                    "i currently don't offer animations/poses (i.e. for vseeface) but if you really wanted that i could look into it. the same goes for vrchat rigging.  in either of these cases it would be an extra cost and add an unknown amount of time to the delivery time.",
+                    "if you'd like a more general VRM rig instead of a vseeface rig, i can offer that but the features will be limited and it will cost the same. ",
+                    "i will not rig models made by someone else.",
+                    "i'm not offering full character design and will only accept orders with visual references.",
+                ]}/>
+            </div>
 
-            <p>
-                <b>pricing breakdown</b> <br/>
-                this is how i think about pricing. most of this is very fuzzy and its just to get an idea. <br/>
-                a prop is anything that requires extra bones in the rig beyond a human skeleton i.e. kemonomimi, baseball bat, simple wings.
-                i don't count things like hats or collars as props but they may increase the complexity cost. <br/>
-                a toggle is a part of the model you can turn on and off in vseeface, or an expression. <br/>
+            <div>
+                <b> pricing breakdown </b> <br/>
+                this is how i think about pricing. as every order is different, this isn't a cut and dry representation of how your order will be priced.
+                this info is just here for transparency and to give you an idea.  <br/>
+                a <i> prop </i> is anything that requires extra bones in the rig beyond a human skeleton i.e. kemonomimi, baseball bat, simple wings.
+                i wouldn't count things like hats or collars as props but they may increase the complexity cost. <br/>
+                a <i> toggle </i> is a part of the model you can turn on and off in vseeface, or an expression. <br/>
 
-                <b> base model - 125$ </b> <br/>
-                includes .blend file, humanoid rigging for unity (you can make it do fortnite dances)<br/>
-                <b> vseeface rigging - +75$ </b> <br/>
-                includes .vsfavatar file, has blendshapes for use with webcam and iphone tracking.
-                if you'd like a more general VRM rig instead of a vseeface rig, i can offer that but it won't look as nice and will cost the same. <br/>
-                <b> one prop or toggle - included</b> <br/>
-                <b> complexity - +0-50$ </b> <br/> 
-                <!-- todo image examples -->
-                +0$ example: pants and a tshirt; oozora subaru, nekomata okayu<br/>
-                +25$ example: a jacket, collars, bracelets; henya the genius, inugami korone<br/>
-                +50$ example: just alot of detail; hakos baelz, pipkin pippa<br/>
+                <List items={[
+                    "<b> base model - 125$ </b> <br/> includes .blend file, humanoid rigging for unity (you can make it do fortnite dances)",
+                    "<b> vseeface rigging - +75$ </b> <br/> includes .vsfavatar file, has blendshapes for use with webcam and iphone tracking.",
+                    "<b> one prop or toggle - included</b> ",
+                    // TODO complexity image examples
+                    "<b> complexity - +0-50$ </b> <br/> +0$ example: pants and a tshirt; oozora subaru, nekomata okayu<br/> +25$ example: a jacket, collars, bracelets; henya the genius, inugami korone<br/> +50$ example: just alot of detail; hakos baelz, pipkin pippa",
+                    "<b> prop - +15$ </b> ",
+                    "<b> toggle - +25-50$</b> ",
+                    "<b> extra outfit - +50-100$</b> ",
+                ]}/>
+            </div>
 
-                <b> prop - +15$ </b> <br/>
-                <b> toggle - +25-50$</b> <br/>
-                <b> extra outfit - +50-100$</b> <br/>
+            <div>
+                <b> after completion </b> <br/>
+                i will help with calibration and bug fixes to the best of my ability, please don't hesitate to ask if things arent working right! <br/>
+                you can ask for changes or additions to the model but i will charge for them. <br/>
+            </div>
 
-            </p>
+            <b class="text-lg underline"> terms </b>
 
-            <b> terms </b>
-            <p>
+            <div>
                 <b>process</b> <br/>
-                commission slots are limited. commissions are accepted on a "i think i could do good with this design" basis, not necessarily first come first served.
-                i'm not offering full character design and will only accept orders with visual references.
-                payment is through paypal and must be paid in full before i begin work.
-                updates will be given at important stages during the process.
-                the model should take under two months to complete, but please be nice to me if it takes longer as i am new to this.
-                you can ask for revisions and model changes within reason but i may charge extra.
-            </p>
+                <List style="list-disc" items={[
+                    "the model should take under two months to complete. i want to be good about finishing orders on time but i am new to this. please be nice to me while i figure it out",
+                    "updates will be given at important stages during the process. i expect feedback after i send an update, to make sure everything is on the right track. the process may stall until you get back to me",
+                    "you can ask for revisions and model changes within reason but i may charge extra. the later the revision is asked for, or the more work it is, the more likely i will charge extra",
+                    "i may show the creation of your model on stream or social media, and may use it later in a portfolio. if you take issue with this, be sure to let me know"
+                ]}/>
+            </div>
 
-            <p>
-                <b> refunds </b> <br/>
-                all sales are final and cancellable only by me. a full refund will be given if i can not complete your order or working with you is too difficult
-            </p>
+            <div>
+                <b> payment </b> <br/>
+                <List style="list-disc" items={[
+                    "payment is through paypal and must be paid in full before i begin work.",
+                    "all sales are final unless i refund them",
+                    "a full refund will be given if i can not complete your order or working with you is too difficult.",
+                ]}/>
+            </div>
 
-            <p>
-                <b>model usage</b> <br/>
-                models are free to use for personal use, streaming and content creation. contact me if you're interested in using it for commercial use. you can not resell the model in full or in part.
-                model calibration and bug fixes will be offered within reason, please don't hesitate to ask if things arent working right! i will charge for big additions or changes.
-                if you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that but it's not my responsiblity to fix it if things go wrong.
-            </p>
+            <div>
+                <b>usage</b> <br/>
+                <List style="list-disc" items={[
+                    // TODO credits on social media
+                    "models are free to use for personal use, streaming and content creation. by default, you can not use it for commercial uses outside of those; if you wanted to, let me know and we might be able to work something out.",
+                    "you can not resell the model in full or in part.",
+                    "if you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
+                ]}/>
+            </div>
+
+            <b class="text-lg underline"> contact </b>
+            <div>
+                <i> by contacting me for an order, you acknowledge you read everything on this page and agree to the terms listed here. </i> <br/>
+                you can contact me by email: bitelemons at gmail dot com <br/>
+                please do not DM my twitter for commission requests. <br/>
+                include visual references and as clear an idea of what youre looking for as possible! <br/>
+                looking forward to working with you!!!
+            </div>
         </div>
 
         <a href="/">go back</a>
