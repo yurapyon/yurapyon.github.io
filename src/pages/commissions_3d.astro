@@ -15,14 +15,13 @@ import Layout from '../layouts/Layout.astro';
 
             <div>
                 all prices listed are in USD <br/>
-                <b>125$</b> base price for just the model and basic rigging <br/>
-                <b>+75$</b> vseeface rigging <br/>
-                <b>+0-50$</b> based on complexity <br/>
-                <b>+15-50$</b> per prop or toggle <br/>
+                <b>150$</b> - base price for .blend model with basic rigging <br/>
+                <b>+75$</b> - base price for vseeface rigging <br/>
+                <b>+$$</b> - extra costs based on complexity of the model or vseeface rig <br/>
             </div>
 
             <div>
-                your 'average' vtuber design rigged for vseeface with 2 expressions and togglable nekomimi would come up to <b>~275$</b><br/>
+                your 'average' vtuber design rigged for vseeface would come up to <b>~275$</b><br/>
                 delivery time should be under <b>two months</b> <br/>
                 payment method is <b>paypal upfront</b> <br/>
             </div>
@@ -37,7 +36,7 @@ import Layout from '../layouts/Layout.astro';
                 <b> content </b> <br/>
                 <List style="list-disc" items={[
                     "i have a pretty specific art style and will slightly modify the design to fit that style.",
-                    "there are two choices of body type, either \"realistic\" or chibi, they cost the same.",
+                    // "there are two choices of body type, either \"realistic\" or chibi, they cost the same.",
                     "i specialize in cute feminine or androgynous characters. masculine characters might not get accepted",
                     "i won't make furry characters, licensed characters, or anything sexually explicit or too graphic.",
                     "i may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!",
@@ -48,37 +47,42 @@ import Layout from '../layouts/Layout.astro';
                 <b> meta </b> <br/>
                 <List style="list-disc" items={[
                     "commission slots are limited. orders are accepted on a \"i think i could do good with this design\" basis, not necessarily first come first served.",
-                    "i currently don't offer animations/poses (i.e. for vseeface) but if you really wanted that i could look into it. the same goes for vrchat rigging.  in either of these cases it would be an extra cost and add an unknown amount of time to the delivery time.",
-                    "if you'd like a more general VRM rig instead of a vseeface rig, i can offer that but the features will be limited and it will cost the same. ",
-                    "i will not rig models made by someone else.",
                     "i'm not offering full character design and will only accept orders with visual references.",
+                    "if you'd like a more general VRM rig instead of a vseeface rig, i can make that but the features will be limited and it will cost the same. ",
+                    "i currently don't offer animations/poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
+                    "i will not rig models made by someone else.",
                 ]}/>
             </div>
 
             <div>
-                <b> pricing breakdown </b> <br/>
-                this is how i think about pricing. as every order is different, this isn't a cut and dry representation of how your order will be priced.
-                this info is just here for transparency and to give you an idea.  <br/>
-                a <i> prop </i> is anything that requires extra bones in the rig beyond a human skeleton i.e. kemonomimi, baseball bat, simple wings.
-                i wouldn't count things like hats or collars as props but they may increase the complexity cost. <br/>
-                a <i> toggle </i> is a part of the model you can turn on and off in vseeface, or an expression. <br/>
-
-                <List items={[
-                    "<b> base model - 125$ </b> <br/> includes .blend file, humanoid rigging for unity (you can make it do fortnite dances)",
-                    "<b> vseeface rigging - +75$ </b> <br/> includes .vsfavatar file, has blendshapes for use with webcam and iphone tracking.",
-                    "<b> one prop or toggle - included</b> ",
-                    // TODO complexity image examples
-                    "<b> complexity - +0-50$ </b> <br/> +0$ example: pants and a tshirt; oozora subaru, nekomata okayu<br/> +25$ example: a jacket, collars, bracelets; henya the genius, inugami korone<br/> +50$ example: just alot of detail; hakos baelz, pipkin pippa",
-                    "<b> prop - +15$ </b> ",
-                    "<b> toggle - +25-50$</b> ",
-                    "<b> extra outfit - +50-100$</b> ",
+                <b> pricing </b> <br/>
+                <List style="list-disc" items={[
+                    "<span class=\"underline\"> base model - 150$ </span> <br/> includes .blend file, humanoid rigging for unity (you can make it do fortnite dances)",
+                    "<span class=\"underline\"> vseeface rigging - +75$ </span> <br/> includes .vsfavatar file, can be used with both webcam and iphone tracking, maybe a togglable emotion or two.",
+                    "<span class=\"underline\"> complexity - +0$ and up </span> <br/> i'd like to think of the design as a whole, rather than breaking it down into parts and charging for each aspect individually, and i think just an overall 'complexity' price suits that best.  hopefully the following examples can help give you an idea of what the price for your design will be.",
                 ]}/>
+            </div>
+
+            <div>
+                <b> 'complexity' pricing </b> <br/>
+                <List style="list-disc" items={[
+                    // TODO complexity image examples
+                    "<span class=\"underline\"> +0$ example:</span> pants and a tshirt; oozora subaru",
+                    "<span class=\"underline\"> +25$ example:</span> kemonomimi, tail; nekomata okayu",
+                    "<span class=\"underline\"> +50$ example:</span> inugami korone",
+                    "<span class=\"underline\"> +75$ example:</span> a jacket, collars, bracelets; henya the genius",
+                    "<span class=\"underline\"> +100$ example:</span> just alot of detail; hakos baelz, pipkin pippa",
+                ]}/>
+                things that add to model complexity: extra outfits, complex hair, <br/>
+                things that add to rig complexity: togglable emotions, complex hair or clothes physics <br/>
             </div>
 
             <div>
                 <b> after completion </b> <br/>
-                i will help with calibration and bug fixes to the best of my ability, please don't hesitate to ask if things arent working right! <br/>
-                you can ask for changes or additions to the model but i will charge for them. <br/>
+                <List style="list-disc" items={[
+                    "i will help with calibration and bug fixes to the best of my ability, please don't hesitate to ask if things arent working right!",
+                    "you can ask for changes or additions to the model but i will charge for them.",
+                ]}/>
             </div>
 
             <b class="text-lg underline"> terms </b>
@@ -86,10 +90,10 @@ import Layout from '../layouts/Layout.astro';
             <div>
                 <b>process</b> <br/>
                 <List style="list-disc" items={[
-                    "the model should take under two months to complete. i want to be good about finishing orders on time but i am new to this. please be nice to me while i figure it out",
+                    "the model should take under two months to complete, but it make take longer. i want to be good about finishing orders on time but i am new to this. please be nice to me while i figure it out",
                     "updates will be given at important stages during the process. i expect feedback after i send an update, to make sure everything is on the right track. the process may stall until you get back to me",
                     "you can ask for revisions and model changes within reason but i may charge extra. the later the revision is asked for, or the more work it is, the more likely i will charge extra",
-                    "i may show the creation of your model on stream or social media, and may use it later in a portfolio. if you take issue with this, be sure to let me know"
+                    "i may show the creation of your model on stream or social media, and may use it later in a portfolio or as commission samples. if you take issue with this, be sure to let me know"
                 ]}/>
             </div>
 
@@ -105,19 +109,20 @@ import Layout from '../layouts/Layout.astro';
             <div>
                 <b>usage</b> <br/>
                 <List style="list-disc" items={[
-                    // TODO credits on social media
                     "models are free to use for personal use, streaming and content creation. by default, you can not use it for commercial uses outside of those; if you wanted to, let me know and we might be able to work something out.",
                     "you can not resell the model in full or in part.",
                     "if you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
+                    // TODO put actual links
+                    "credit is mandatory on your streaming or content creation profile page (i.e. a twitch or youtube about section). credit would be appreciated on social media (i.e. in a twitter bio) but isnt necessary. acceptable credit is a link to pyon.moe, a link to my twitch account, or to my twitter profile @_bitelemons"
                 ]}/>
             </div>
 
             <b class="text-lg underline"> contact </b>
             <div>
-                <i> by contacting me for an order, you acknowledge you read everything on this page and agree to the terms listed here. </i> <br/>
+                <i> by contacting me for an order, you confirm you've read everything on this page and agree to the terms. </i> <br/>
                 you can contact me by email: bitelemons at gmail dot com <br/>
                 please do not DM my twitter for commission requests. <br/>
-                include visual references and as clear an idea of what youre looking for as possible! <br/>
+                include some visual references to give me as clear an idea of what youre looking for as possible! <br/>
                 looking forward to working with you!!!
             </div>
         </div>
