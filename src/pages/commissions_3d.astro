@@ -15,9 +15,10 @@ import Layout from '../layouts/Layout.astro';
 
             <div>
                 all prices listed are in USD <br/>
-                <b>150$</b> - base price for .blend model with basic rigging <br/>
-                <b>+75$</b> - base price for vseeface rigging <br/>
-                <b>+$$</b> - extra costs based on complexity of the model or vseeface rig <br/>
+                <b>125$</b> - base price for .blend model with basic rigging <br/>
+                <b>+75$</b> - vseeface rigging <br/>
+                <b>+$$</b> - model complexity upcharge <br/>
+                <b>+$$</b> - vseeface extras like togglable emotions <br/>
             </div>
 
             <div>
@@ -44,12 +45,13 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div>
-                <b> meta </b> <br/>
+                <b> offerings </b> <br/>
                 <List style="list-disc" items={[
                     "commission slots are limited. orders are accepted on a \"i think i could do good with this design\" basis, not necessarily first come first served.",
                     "i'm not offering full character design and will only accept orders with visual references.",
                     "if you'd like a more general VRM rig instead of a vseeface rig, i can make that but the features will be limited and it will cost the same. ",
-                    "i currently don't offer animations/poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
+                    "i currently don't offer togglable animations/poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
+                    "models for commercial usage outside of streaming and content creation aren't currently offered",
                     "i will not rig models made by someone else.",
                 ]}/>
             </div>
@@ -59,7 +61,8 @@ import Layout from '../layouts/Layout.astro';
                 <List style="list-disc" items={[
                     "<span class=\"underline\"> base model - 150$ </span> <br/> includes .blend file, humanoid rigging for unity (you can make it do fortnite dances)",
                     "<span class=\"underline\"> vseeface rigging - +75$ </span> <br/> includes .vsfavatar file, can be used with both webcam and iphone tracking.",
-                    "<span class=\"underline\"> complexity - +0$ and up </span> <br/> i'd like to think of the design as a whole, rather than breaking it down into parts and charging for each aspect individually, and i think just an overall 'complexity' price suits that best.  hopefully the following examples can help give you an idea of what the price for your design will be.",
+                    "<span class=\"underline\"> complexity - +0$ and up </span> <br/> i'd like to think of the design as a whole, rather than breaking it down into parts and charging for each aspect individually. i think just an overall 'complexity' price suits this best.  hopefully the following examples can give you an idea of what the price for your design will be.",
+                    "<span class=\"underline\"> vseeface extras - +25-50$ each </span> <br/> one togglable emotion is included, after that they would be 25$ each</span>",
                 ]}/>
             </div>
 
@@ -67,14 +70,12 @@ import Layout from '../layouts/Layout.astro';
                 <b> 'complexity' pricing </b> <br/>
                 <List style="list-disc" items={[
                     // TODO complexity image examples
-                    "<span class=\"underline\"> +0$ example:</span> pants and a tshirt; oozora subaru",
-                    "<span class=\"underline\"> +25$ example:</span> kemonomimi, tail; nekomata okayu",
-                    "<span class=\"underline\"> +50$ example:</span> inugami korone",
-                    "<span class=\"underline\"> +75$ example:</span> a jacket, collars, bracelets; henya the genius",
-                    "<span class=\"underline\"> +100$ example:</span> just alot of detail; hakos baelz, pipkin pippa",
+                    "<span class=\"underline\"> 0 - 50$:</span> just pants and a tshirt; oozora subaru, nekomata okayu",
+                    "<span class=\"underline\"> 50 - 100$:</span> your 'average' vtuber completity; a jacket, collars: inugami korone, henya the genius",
+                    "<span class=\"underline\"> 100$:</span> just alot of detail; hakos baelz, pipkin pippa",
                 ]}/>
-                things that add to model complexity: extra outfits, complex hair, <br/>
-                things that add to rig complexity: togglable emotions, complex hair or clothes physics <br/>
+                things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories<br/>
+                things that add to rig complexity: complex hair physics or clothes physics, idle animations<br/>
             </div>
 
             <div>
@@ -102,18 +103,18 @@ import Layout from '../layouts/Layout.astro';
                 <List style="list-disc" items={[
                     "payment is through paypal and must be paid in full before i begin work.",
                     "all sales are final unless i refund them",
-                    "a full refund will be given if i can not complete your order or working with you is too difficult.",
+                    "a full refund will be given if i can not complete your order due to an issue on my end, or if working with you is too difficult.",
                 ]}/>
             </div>
 
             <div>
                 <b>usage</b> <br/>
                 <List style="list-disc" items={[
-                    "models are free to use for personal use, streaming and content creation. by default, you can not use it for commercial uses outside of those; if you wanted to, let me know and we might be able to work something out.",
+                    "models are free to use for personal use, streaming and content creation. other commercial uses are prohibited. this may change in the future",
                     "you can not resell the model in full or in part.",
                     "if you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
                     // TODO put actual links
-                    "credit is mandatory on your streaming or content creation profile page (i.e. a twitch or youtube about section). credit would be appreciated on social media (i.e. in a twitter bio) but isnt necessary. acceptable credit is a link to pyon.moe, a link to my twitch account, or to my twitter profile @_bitelemons"
+                    "credit on the social media profile you use the model on most is mandatory. acceptable credit is a link to pyon.moe, a link to my twitch account, or to my twitter profile @_bitelemons"
                 ]}/>
             </div>
 
@@ -121,7 +122,7 @@ import Layout from '../layouts/Layout.astro';
             <div>
                 <i> by contacting me for an order, you confirm you've read everything on this page and agree to the terms. </i> <br/>
                 you can contact me by email: bitelemons at gmail dot com <br/>
-                please do not DM my twitter for commission requests. <br/>
+                email is preferred over DM<br/>
                 include some visual references to give me as clear an idea of what youre looking for as possible! <br/>
                 looking forward to working with you!!!
             </div>
