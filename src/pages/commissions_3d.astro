@@ -10,8 +10,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- todo comms image, with example of available body types -->
 
         <div class="grid grid-cols-1 gap-4 w-[600px] font-sans">
-            <!-- TODO better commisions status-->
-            <b>commissions are currently closed but will be opening soon</b>
+            <div class="text-lg text-center font-bold px-1.5 py-1 bg-[#ca2d23]">commissions are currently closed but will be opening soon</div>
 
             <Section title="quick overview">
                 <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
@@ -70,13 +69,13 @@ import Layout from '../layouts/Layout.astro';
 
                     <div>
                         <b> 'complexity' pricing </b> <br/>
+                        <img src="/images/design_complexity_small.png" />
                         <List style="list-disc" items={[
-                            // TODO complexity image examples
-                            "<span class=\"underline\"> 0 - 50$:</span> just pants and a tshirt; oozora subaru, nekomata okayu",
-                            "<span class=\"underline\"> 50 - 100$:</span> your 'average' vtuber complexity; a jacket, collars: inugami korone, henya the genius",
-                            "<span class=\"underline\"> 100$:</span> just alot of detail; hakos baelz, pipkin pippa",
+                            "<span class=\"underline\"> 0 - 50$:</span> just pants and a tshirt",
+                            "<span class=\"underline\"> 50 - 100$:</span> your 'average' vtuber complexity; jackets and hoodies",
+                            "<span class=\"underline\"> 100$:</span> a lot of little details",
                         ]}/>
-                        things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props<br/>
+                        things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi<br/>
                         things that add to rig complexity: complex physics for hair or clothes, idle animations, texture swap toggles, emotion toggles<br/>
                     </div>
 
@@ -118,7 +117,7 @@ import Layout from '../layouts/Layout.astro';
                             "You can not resell the model in full or in part, in its original or any modified form.",
                             "If you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
                             // TODO put actual links
-                            "Credit is mandatory on the social media profile you use the model most frequently. Acceptable credit is a link to pyon.moe, a link to my twitch account, or referencing my twitter profile @_bitelemons"
+                            "Credit is mandatory on the social media profile you use the model most frequently. Acceptable credit is a link to my website (pyon.moe), my twitch account (twitch.tv/bitelemons), or my twitter profile (twitter.com/_bitelemons)"
                         ]}/>
                     </div>
                 </div>
