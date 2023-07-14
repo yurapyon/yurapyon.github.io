@@ -1,80 +1,81 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Work from "../components/Work.astro";
+import Page from "../components/Page.astro";
 ---
 
 <Layout title="pyon.moe" sub="3d works">
-    <div class="grid grid-cols-1 gap-y-10 justify-items-center">
-        <a href="/">go back</a>
-        <Work
-            date="2023"
-            link="https://twitter.com/_bitelemons/status/1628156217519374336"
-            imgs={["shondo_alice/1.png"]}
-        />
-        <Work
-            date="2023"
-            link="https://twitter.com/_bitelemons/status/1625219919896842241"
-            imgs={["lilyhops/1.png"]}
-        />
-        <Work
-            date="2023"
-            link="https://twitter.com/_bitelemons/status/1622726866653138947"
-            imgs={["mii_bonk/1.png"]}
-        />
-        <Work
-            date="2023"
-            link="https://twitter.com/_bitelemons/status/1617646166249967620"
-            imgs={["alice_umaru/1.png"]}
-        />
-        <Work
-            date="2023"
-            link="https://twitter.com/_bitelemons/status/1615240197137960960"
-            info="bite lemons; VRM/VSeeFace model, character design"
-            imgs={["lemons/1.png"]}
-        />
-        <Work
-            date="2023"
-            link="https://twitter.com/_bitelemons/status/1610408021527494658"
-            imgs={["dejiko/1.png", "dejiko/2.png"]}
-        />
-        <Work
-            date="2022"
-            link="https://twitter.com/_bitelemons/status/1608319493553672192"
-            imgs={["girutan/1.png"]}
-        />
-        <Work
-            date="2022"
-            link="https://twitter.com/_bitelemons/status/1601435980229390337"
-            imgs={[
-                "alice/1.png",
-                "alice/2.png",
-                "alice/3.png"
-            ]}
-        />
-        <!-- TODO post the stills of poli too -->
-        <Work
-            date="2017"
-            link="https://www.youtube.com/watch?v=loHvrW5EKBk"
-            info="u7 dratama; music video, character design, Unity"
-            imgs={[]}
-        >
-            <iframe
-                width="600"
-                height="338"
-                src="https://www.youtube.com/embed/loHvrW5EKBk"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-            ></iframe>
-        </Work>
-        <!-- TODO better pics of the worst album -->
-        <Work
-            date="2017"
-            link="https://theworstlabel.bandcamp.com/album/the-worst-compilation-fourth-wave"
-            info="worst compilation: fourth wave; covers, inserts, cds"
-            imgs={["worst/1.jpg", "worst/2.jpg"]}
-        />
-        <a href="/">go back</a>
-    </div>
+    <Page>
+        <div class="grid grid-cols-1 gap-y-10 max-w-[600px] m-2">
+            <Work
+                date="2023"
+                link="https://twitter.com/_bitelemons/status/1628156217519374336"
+                imgs={["shondo_alice/1.png"]}
+            />
+            <Work
+                date="2023"
+                link="https://twitter.com/_bitelemons/status/1625219919896842241"
+                imgs={["lilyhops/1.png"]}
+            />
+            <Work
+                date="2023"
+                link="https://twitter.com/_bitelemons/status/1622726866653138947"
+                imgs={["mii_bonk/1.png"]}
+            />
+            <Work
+                date="2023"
+                link="https://twitter.com/_bitelemons/status/1617646166249967620"
+                imgs={["alice_umaru/1.png"]}
+            />
+            <Work
+                date="2023"
+                link="https://twitter.com/_bitelemons/status/1615240197137960960"
+                info="bite lemons; VRM/VSeeFace model, character design"
+                imgs={["lemons/1.png"]}
+            />
+            <Work
+                date="2023"
+                link="https://twitter.com/_bitelemons/status/1610408021527494658"
+                imgs={["dejiko/1.png", "dejiko/2.png"]}
+            />
+            <Work
+                date="2022"
+                link="https://twitter.com/_bitelemons/status/1608319493553672192"
+                imgs={["girutan/1.png"]}
+            />
+            <Work
+                date="2022"
+                link="https://twitter.com/_bitelemons/status/1601435980229390337"
+                imgs={[
+                    "alice/1.png",
+                    "alice/2.png",
+                    "alice/3.png"
+                ]}
+            />
+            <!-- TODO post the stills of poli too -->
+            <Work
+                date="2017"
+                link="https://www.youtube.com/watch?v=loHvrW5EKBk"
+                info="u7 dratama; music video, character design, Unity"
+                imgs={[]}
+            >
+                <iframe
+                    width="100%"
+                    height="338"
+                    src="https://www.youtube.com/embed/loHvrW5EKBk"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+            </Work>
+            <!-- TODO better pics of the worst album -->
+            <Work
+                date="2017"
+                link="https://theworstlabel.bandcamp.com/album/the-worst-compilation-fourth-wave"
+                info="worst compilation: fourth wave; covers, inserts, cds"
+                imgs={["worst/1.jpg", "worst/2.jpg"]}
+            />
+        </div>
+    </Page>
 </Layout>

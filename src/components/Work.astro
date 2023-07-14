@@ -9,12 +9,14 @@ export interface Props {
 const {date, link, info, imgs} = Astro.props;
 ---
 
-<div>
-    {date} <a href={link}> link </a> <br/>
-    {info ? <>{info}<br/></> : ""}
+<div class="bg-[#d0d0e0] text-[#161616]">
+    <div class="px-1.5 py-1">
+        {date} <a href={link}> link </a> <br/>
+        {info ? <>{info}<br/></> : ""}
+    </div>
     {imgs.map((img: string) => {
         return <a href={"/works/" + img}>
-            <img class="m-1" src={"/works/" + img} width="600" alt={img}/>
+            <img src={"/works/" + img} alt={img}/>
         </a>;
     })}
     <slot />

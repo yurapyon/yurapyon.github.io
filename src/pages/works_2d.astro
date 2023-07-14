@@ -1,23 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Work from "../components/Work.astro";
+import Page from "../components/Page.astro";
 ---
 
 <Layout title="pyon.moe" sub="2d works">
-    <div class="grid grid-cols-1 gap-y-10 justify-items-center">
-        <a href="/">go back</a>
-        <Work
-            date="2023"
-            link="https://twitter.com/_bitelemons/status/1630331498380288003"
-            info="bite lemons stream loading and ending screens"
-            imgs={["lemon_stream/1.gif", "lemon_stream/2.png"]}
-        />
-        <Work
-            date="2017"
-            link="https://cockrockdisco.bandcamp.com/album/angel-93"
-            info="angel93 album art; front and back cover"
-            imgs={["angel93/front.png", "angel93/back.png"]}
-        />
-        <a href="/">go back</a>
-    </div>
+    <Page>
+        <div class="grid grid-cols-1 gap-y-10 max-w-[600px] m-2">
+            <Work
+                date="2023"
+                link="https://twitter.com/_bitelemons/status/1630331498380288003"
+                info="bite lemons stream loading and ending screens"
+                imgs={["lemon_stream/1.gif", "lemon_stream/2.png"]}
+            />
+            <Work
+                date="2017"
+                link="https://cockrockdisco.bandcamp.com/album/angel-93"
+                info="angel93 album art; front and back cover"
+                imgs={["angel93/front.png", "angel93/back.png"]}
+            />
+        </div>
+    </Page>
 </Layout>

@@ -2,14 +2,13 @@
 import List from "../components/List.astro";
 import Section from "../components/Section.astro";
 import Layout from '../layouts/Layout.astro';
+import Page from "../components/Page.astro";
 ---
 <Layout title="pyon.moe" sub="bite lemons 3d commissions">
-    <div class="grid grid-cols-1 gap-5 justify-items-center">
-        <a href="/">go back</a>
+    <Page>
+        <!-- todo comms announce image, dont put open now on it -->
 
-        <!-- todo comms image, with example of available body types -->
-
-        <div class="grid grid-cols-1 gap-4 max-w-[600px] font-sans">
+        <div class="grid grid-cols-1 gap-4 m-2 max-w-[600px] font-sans">
             <div class="text-lg text-center font-bold px-1.5 py-1 bg-[#ca2d23]">commissions are currently closed but will be opening soon</div>
 
             <Section title="quick overview">
@@ -69,7 +68,9 @@ import Layout from '../layouts/Layout.astro';
 
                     <div>
                         <b> 'complexity' pricing </b> <br/>
-                        <img src="/images/design_complexity_small.png" class="border-2 border-[#d8d8e8]"/>
+                        <a href="/images/design_complexity_small.png">
+                            <img src="/images/design_complexity_small.png" class="border-2 border-[#d8d8e8]"/>
+                        </a>
                         <List style="list-disc" items={[
                             "<span class=\"underline\"> 0 - 50$:</span> just pants and a tshirt",
                             "<span class=\"underline\"> 50 - 100$:</span> your 'average' vtuber complexity; jackets and hoodies",
@@ -96,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
                         <List style="list-disc" items={[
                             "I expect the model should be finished in under two months, but it may take longer. I'm new to doing commissions so I am working on refining this estimate.",
                             "Updates will be given at important stages during the process. I expect feedback after I send an update, to make sure everything is on the right track. The process may stall until you get back to me, which will affect delivery time.",
-                            "You can ask for revisions and model changes but I may charge extra. The later the revision is asked for, or the more work it is, the more likely I will charge extra. I won't accept changes that I deem unreasonable.",
+                            "You can ask for revisions and model changes but I may charge extra. The later in the process the revision is asked for, or the more work it is, the more likely I will charge extra. I won't accept changes that I deem unreasonable.",
                             "I may show the creation of your model on stream or social media, and may use it in a portfolio or as commission samples. If you take issue with this, be sure to let me know beforehand."
                         ]}/>
                     </div>
@@ -113,10 +114,9 @@ import Layout from '../layouts/Layout.astro';
                     <div>
                         <b>usage</b> <br/>
                         <List style="list-disc" items={[
-                            "Models are free to use for personal use, streaming and video content creation. Use in video games is fine if the game is offered as a free download. Other commercial uses are handled on a case by case basis.",
+                            "Models are free to use for personal use, streaming and video content creation. Other commercial uses are handled on a case by case basis.",
                             "You can not resell the model in full or in part, in its original or any modified form.",
                             "If you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
-                            // TODO put actual links
                             "Credit is mandatory on the social media profile you use the model most frequently. Acceptable credit is a link to my website (pyon.moe), my twitch account (twitch.tv/bitelemons), or my twitter profile (twitter.com/_bitelemons)"
                         ]}/>
                     </div>
@@ -139,7 +139,5 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </Section>
         </div>
-
-        <a href="/">go back</a>
-    </div>
+    </Page>
 </Layout>
