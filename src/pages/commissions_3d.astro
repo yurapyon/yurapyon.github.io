@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- todo comms image, with example of available body types -->
 
-        <div class="grid grid-cols-1 gap-4 w-[600px] font-sans">
+        <div class="grid grid-cols-1 gap-4 max-w-[600px] font-sans">
             <div class="text-lg text-center font-bold px-1.5 py-1 bg-[#ca2d23]">commissions are currently closed but will be opening soon</div>
 
             <Section title="quick overview">
@@ -69,7 +69,7 @@ import Layout from '../layouts/Layout.astro';
 
                     <div>
                         <b> 'complexity' pricing </b> <br/>
-                        <img src="/images/design_complexity_small.png" />
+                        <img src="/images/design_complexity_small.png" class="border-2 border-[#d8d8e8]"/>
                         <List style="list-disc" items={[
                             "<span class=\"underline\"> 0 - 50$:</span> just pants and a tshirt",
                             "<span class=\"underline\"> 50 - 100$:</span> your 'average' vtuber complexity; jackets and hoodies",
