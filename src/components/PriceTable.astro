@@ -1,0 +1,14 @@
+---
+export interface Props {
+    items: {price: string, thing: string}[];
+}
+
+const {items} = Astro.props;
+---
+<table>
+    {items.map((item:{price:string, thing:string})=>{
+        return <tr>
+            <td class="pr-1 font-bold text-right">{item.price}</td> <td>{item.thing}</td>
+        </tr>;
+    })}
+</table>

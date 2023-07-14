@@ -1,13 +1,14 @@
 ---
 export interface Props {
     title: string;
+    bg_color: string;
 }
 
-const {title} = Astro.props;
+const {title, bg_color} = Astro.props;
 ---
-<div class="grid grid-cols-1">
-    <b class="text-lg bg-[#d0d0e0] text-[#161616] px-1.5 py-1 font-serif"> {title} </b>
-    <div class={"bg-[#e8e8f8] text-[#161616]"}>
+<div class="grid grid-cols-1 drop-shadow-[4px_4px_#93999d40]">
+    <b class={`text-lg ${bg_color} text-[#161616] px-1.5 py-1 font-serif`}> {title} </b>
+    <div class="bg-[#e8e8f8] text-[#161616]">
         <slot />
     </div>
 </div>
