@@ -9,124 +9,135 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- todo comms image, with example of available body types -->
 
-        <div class="grid grid-cols-1 gap-4 w-[600px] font-serif">
+        <div class="grid grid-cols-1 gap-4 w-[600px] font-sans">
             <!-- TODO better commisions status-->
             <b>commissions are currently closed but will be opening soon</b>
 
             <Section title="quick overview">
-                <div>
-                    all prices listed are in USD <br/>
-                    <b>125$</b> - base price for .blend model with basic rigging <br/>
-                    <b>+75$</b> - vseeface rigging <br/>
-                    <b>+$$</b> - model complexity upcharge <br/>
-                    <b>+$$</b> - vseeface extras like togglable emotions <br/>
-                </div>
+                <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
+                    <div>
+                        all prices listed are in USD <br/>
+                        <b>125$</b> - base price for .blend model with basic rigging <br/>
+                        <b>+75$</b> - vseeface rigging <br/>
+                        <b>+$$</b> - model complexity upcharge <br/>
+                        <b>+$$</b> - vseeface extras like togglable emotions <br/>
+                    </div>
 
-                <div>
-                    your 'average' vtuber design rigged for vseeface would come up to <b>~275$</b><br/>
-                    delivery time <i>should</i> be under <b>two months</b> <br/>
-                    payment method is <b>paypal upfront</b> <br/>
-                </div>
+                    <div>
+                        your 'average' vtuber design rigged for vseeface would come up to <b>~275$</b><br/>
+                        i will do my best to finish in under <b>two months</b> <br/>
+                        payment method is <b>paypal upfront</b> <br/>
+                    </div>
 
-                <div>
-                    contact info at the bottom of the page!
+                    <div>
+                        contact info at the bottom of the page!
+                    </div>
                 </div>
             </Section>
 
             <Section title="info">
-                <div>
-                    <b> content </b> <br/>
-                    <List style="list-disc" items={[
-                        "i have a pretty specific art style and will slightly modify the design to fit that style.",
-                        "model body type will be a 'chibi' style that looks similar to the lemons model or my 2d art",
-                        "i specialize in cute feminine or androgynous characters. masculine characters might not get accepted",
-                        "i won't make furry characters, licensed characters, or anything sexually explicit or too graphic.",
-                        "i may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!",
-                    ]}/>
-                </div>
+                <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
+                    <div>
+                        <b> content </b> <br/>
+                        <List style="list-disc" items={[
+                            "i have a pretty specific art style and will slightly modify the design to fit that style.",
+                            "model body type will be a 'chibi' style that looks similar to the lemons model or my 2d art",
+                            "i specialize in cute feminine or androgynous characters. masculine characters might not get accepted",
+                            "i won't make furry characters, licensed characters, or anything sexually explicit or too graphic.",
+                            "i may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!",
+                        ]}/>
+                    </div>
 
-                <div>
-                    <b> offerings </b> <br/>
-                    <List style="list-disc" items={[
-                        "commission slots are limited. orders are accepted on a \"i think i could do good with this design\" basis, not necessarily first come first served.",
-                        "i currently don't offer togglable animations/poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
-                        "if you'd like a more general VRM rig instead of a vseeface rig, i can make that but the features will be limited and it will cost the same. ",
-                        "i'm not offering full character design and will only accept orders with visual references.",
-                        "commercial use outside of streaming or content creation is handled on a case by case basis, so you can ask me about it. if you are a small creator it will probably be no big deal",
-                        "i will not rig models made by someone else.",
-                    ]}/>
-                </div>
+                    <div>
+                        <b> offerings </b> <br/>
+                        <List style="list-disc" items={[
+                            "commission slots are limited. orders are accepted on a \"i think i could do good with this design\" basis, not necessarily first come first served.",
+                            "i currently don't offer togglable animations/poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
+                            "if you'd like a more general VRM rig instead of a vseeface rig, i can make that but the features will be limited and it will cost the same. ",
+                            "i'm not offering full character design and will only accept orders with visual references.",
+                            "commercial use outside of streaming or content creation is handled on a case by case basis, so you can ask me about it. if you are a small creator it will probably be no big deal",
+                            "i will not rig models made by someone else.",
+                        ]}/>
+                    </div>
 
-                <div>
-                    <b> pricing </b> <br/>
-                    <List style="list-disc" items={[
-                        "<span class=\"underline\"> base model - 125$ </span> <br/> includes .blend file and a .zip file with neccessary unity assets (you can make it do fortnite dances)",
-                        "<span class=\"underline\"> vseeface rigging - +75$ </span> <br/> includes .vsfavatar file, can be used with both webcam and iphone tracking.",
-                        "<span class=\"underline\"> complexity - +0$ and up </span> <br/> i'd like to think of the design as a whole, rather than itemizing every aspect individually. hopefully the examples can give you an idea of what the price for your design will be.",
-                        "<span class=\"underline\"> vseeface extras - +25-50$ each </span> <br/> one togglable emotion is included, after that they would be 25$ each</span>",
-                    ]}/>
-                </div>
+                    <div>
+                        <b> pricing </b> <br/>
+                        <List style="list-disc" items={[
+                            "<span class=\"underline\"> base model - 125$ </span> <br/> includes .blend file and a .zip file with neccessary unity assets (you can make it do fortnite dances)",
+                            "<span class=\"underline\"> vseeface rigging - +75$ </span> <br/> includes .vsfavatar file, can be used with both webcam and iphone tracking.",
+                            "<span class=\"underline\"> complexity - +0$ and up </span> <br/> i'd like to think of the design as a whole, rather than itemizing every aspect individually. hopefully the examples can give you an idea of what the price for your design will be.",
+                            "<span class=\"underline\"> vseeface extras - +25-50$ each </span> <br/> one togglable emotion is included, after that they would be 25$ each</span>",
+                        ]}/>
+                    </div>
 
-                <div>
-                    <b> 'complexity' pricing </b> <br/>
-                    <List style="list-disc" items={[
-                        // TODO complexity image examples
-                        "<span class=\"underline\"> 0 - 50$:</span> just pants and a tshirt; oozora subaru, nekomata okayu",
-                        "<span class=\"underline\"> 50 - 100$:</span> your 'average' vtuber complexity; a jacket, collars: inugami korone, henya the genius",
-                        "<span class=\"underline\"> 100$:</span> just alot of detail; hakos baelz, pipkin pippa",
-                    ]}/>
-                    things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props<br/>
-                    things that add to rig complexity: complex physics for hair or clothes, idle animations<br/>
-                </div>
+                    <div>
+                        <b> 'complexity' pricing </b> <br/>
+                        <List style="list-disc" items={[
+                            // TODO complexity image examples
+                            "<span class=\"underline\"> 0 - 50$:</span> just pants and a tshirt; oozora subaru, nekomata okayu",
+                            "<span class=\"underline\"> 50 - 100$:</span> your 'average' vtuber complexity; a jacket, collars: inugami korone, henya the genius",
+                            "<span class=\"underline\"> 100$:</span> just alot of detail; hakos baelz, pipkin pippa",
+                        ]}/>
+                        things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props<br/>
+                        things that add to rig complexity: complex physics for hair or clothes, idle animations<br/>
+                    </div>
 
-                <div>
-                    <b> after completion </b> <br/>
-                    <List style="list-disc" items={[
-                        "i will help with calibration and bug fixes to the best of my ability, please don't hesitate to ask if things arent working right!",
-                        "you can ask for changes or additions to the model but i will charge for them.",
-                    ]}/>
+                    <div>
+                        <b> after completion </b> <br/>
+                        <List style="list-disc" items={[
+                            "i will help with calibration and bug fixes to the best of my ability, please don't hesitate to ask if things arent working right!",
+                            "you can ask for changes or additions to the model but i will charge for them.",
+                        ]}/>
+                    </div>
                 </div>
-
             </Section>
 
             <Section title="terms">
-                <div>
-                    <b>process</b> <br/>
-                    <List style="list-disc" items={[
-                        "I expect the model should be finished in under two months, but it may take longer. I'm new to doing commissions so I am working on refining this estimate.",
-                        "Updates will be given at important stages during the process. I expect feedback after I send an update, to make sure everything is on the right track. The process may stall until you get back to me, which will affect delivery time.",
-                        "You can ask for revisions and model changes but I may charge extra. The later the revision is asked for, or the more work it is, the more likely I will charge extra. I won't accept changes that I deem unreasonable.",
-                        "I may show the creation of your model on stream or social media, and may use it in a portfolio or as commission samples. If you take issue with this, be sure to let me know beforehand."
-                    ]}/>
-                </div>
+                <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
+                    <div>
+                        <b>process</b> <br/>
+                        <List style="list-disc" items={[
+                            "I expect the model should be finished in under two months, but it may take longer. I'm new to doing commissions so I am working on refining this estimate.",
+                            "Updates will be given at important stages during the process. I expect feedback after I send an update, to make sure everything is on the right track. The process may stall until you get back to me, which will affect delivery time.",
+                            "You can ask for revisions and model changes but I may charge extra. The later the revision is asked for, or the more work it is, the more likely I will charge extra. I won't accept changes that I deem unreasonable.",
+                            "I may show the creation of your model on stream or social media, and may use it in a portfolio or as commission samples. If you take issue with this, be sure to let me know beforehand."
+                        ]}/>
+                    </div>
 
-                <div>
-                    <b> payment </b> <br/>
-                    <List style="list-disc" items={[
-                        "Payment is through paypal and must be paid in full before I begin work.",
-                        "All sales are final unless I refund them.",
-                        "A full refund will be given if I can not complete your order due to an issue on my end, or if working with you is too difficult.",
-                    ]}/>
-                </div>
+                    <div>
+                        <b> payment </b> <br/>
+                        <List style="list-disc" items={[
+                            "Payment is through paypal and must be paid in full before I begin work.",
+                            "All sales are final unless I refund them.",
+                            "A full refund will be given if I can not complete your order due to an issue on my end, or if working with you is too difficult.",
+                        ]}/>
+                    </div>
 
-                <div>
-                    <b>usage</b> <br/>
-                    <List style="list-disc" items={[
-                        "Models are free to use for personal use, streaming and video content creation. Use in video games is fine if the game is offered as a free download. Other commercial uses are handled on a case by case basis.",
-                        "You can not resell the model in full or in part, in its original or any modified form.",
-                        "If you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
-                        // TODO put actual links
-                        "Credit is mandatory on the social media profile you use the model most frequently. Acceptable credit is a link to pyon.moe, a link to my twitch account, or referencing my twitter profile @_bitelemons"
-                    ]}/>
+                    <div>
+                        <b>usage</b> <br/>
+                        <List style="list-disc" items={[
+                            "Models are free to use for personal use, streaming and video content creation. Use in video games is fine if the game is offered as a free download. Other commercial uses are handled on a case by case basis.",
+                            "You can not resell the model in full or in part, in its original or any modified form.",
+                            "If you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
+                            // TODO put actual links
+                            "Credit is mandatory on the social media profile you use the model most frequently. Acceptable credit is a link to pyon.moe, a link to my twitch account, or referencing my twitter profile @_bitelemons"
+                        ]}/>
+                    </div>
                 </div>
             </Section>
 
             <Section title="contact">
-                <div>
-                    <i> By contacting me for an order, you confirm you've read everything on this page and agree to the terms. </i> <br/>
-                    you can contact me by email: bitelemons at gmail dot com <br/>
-                    email is preferred over DM<br/>
-                    include some visual references to give me as clear an idea of what youre looking for as possible! <br/>
+                <div class="bg-[#197cb3] p-1.5 text-white font-bold">
+                    By contacting me for an order, you confirm you've read everything on this page and agree to the terms.
+                </div>
+
+                <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
+                    <List style="list-disc" items={[
+                        "you can contact me by email: bitelemons at gmail dot com",
+                        "email is preferred over DM",
+                        "include some visual references to give me as clear an idea of what youre looking for as possible! ",
+                    ]}/>
+
                     looking forward to working with you!!!
                 </div>
             </Section>

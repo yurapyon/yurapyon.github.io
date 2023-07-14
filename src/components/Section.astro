@@ -6,8 +6,8 @@ export interface Props {
 const {title} = Astro.props;
 ---
 <div class="grid grid-cols-1">
-    <b class="text-lg underline bg-[#d0d0e0] text-[#161616] p-1.5"> {title} </b>
-    <div class={"grid grid-cols-1 gap-4 p-1.5 bg-[#e8e8f8] text-[#161616]"}>
+    <b class="text-lg bg-[#d0d0e0] text-[#161616] px-1.5 py-1 font-serif"> {title} </b>
+    <div class={"bg-[#e8e8f8] text-[#161616]"}>
         <slot />
     </div>
 </div>
