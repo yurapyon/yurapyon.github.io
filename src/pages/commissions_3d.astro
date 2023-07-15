@@ -17,7 +17,7 @@ import Subsection from "../components/Subsection.astro";
                 <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
                     <div>
                         all prices listed are in USD <br/>
-                        <PriceTable items={[
+                        <PriceTable do_bold items={[
                             {price: "125$", thing: "- model with basic rigging"},
                             {price: "+75$", thing: "- vseeface rigging"},
                             {price: "+50$", thing: "- complexity upcharge, starts at 50$ but could be more or less"},
@@ -79,7 +79,8 @@ import Subsection from "../components/Subsection.astro";
                         <List style="list-disc" items={[
                             "things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi",
                             "things that add to vseeface rig complexity: complex physics for hair or clothes, idle animations, texture swap toggles, emotion toggles",
-                            "model complexity probably won't go over 100$, rig complexity doesn't have a limit and is pretty much based on how many extra toggles you",
+                            "model complexity probably won't add over 100$, unless the design is really crazy",
+                            "rig complexity upcharge doesn't have a limit because it's influenced by how many extra toggles you want",
                         ]}/>
                     </Subsection>
 
@@ -87,6 +88,7 @@ import Subsection from "../components/Subsection.astro";
                         <List style="list-disc" items={[
                             "i will help with calibration and bug fixes to the best of my ability, please don't hesitate to ask if things arent working right!",
                             "you can ask for changes or additions to the model but i will charge for them.",
+                            "if you want to get additions to the model or get it rigged futher by someone else you can do that, but it's not my responsiblity to fix it if things go wrong",
                         ]}/>
                     </Subsection>
                 </div>
@@ -115,7 +117,6 @@ import Subsection from "../components/Subsection.astro";
                         <List style="list-disc" items={[
                             "Models are free to use for personal use, streaming and video content creation. Other commercial uses are handled on a case by case basis.",
                             "You can not resell the model in full or in part, in its original or any modified form.",
-                            "If you want to get additions to the model or get it rigged futher <i>by someone else</i> you can do that, but it's not my responsiblity to fix it if things go wrong.",
                             "Credit is mandatory on the social media profile you use the model most frequently. Acceptable credit is a link to my website (pyon.moe), my twitch account (twitch.tv/bitelemons), or my twitter profile (twitter.com/_bitelemons)"
                         ]}/>
                     </Subsection>
