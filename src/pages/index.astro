@@ -1,5 +1,6 @@
 ---
 import Banner from '../components/Banner.astro';
+import Copyright from '../components/Copyright.astro';
 import Link from '../components/Link.astro';
 import Layout from '../layouts/Layout.astro';
 ---
@@ -12,7 +13,7 @@ import Layout from '../layouts/Layout.astro';
             <img class="hidden sm:block" src="/images/main/hazard.png" height="140" alt="biohazard symbol" />
         </div>
         <div class="flex flex-col items-center text-center">
-            <div> home of mel aise + bite lemons (updated 07/16/2023) </div>
+            <div class="hyphens-manual"> home of mel aise + bite lemons (updated&nbsp;07/16/2023) </div>
             <Link href="/commissions_3d">3d commissions</Link>
             <Link href="/works_3d ">3d art</Link>
             <Link href="/works_2d ">2d art/drawing</Link>
@@ -41,8 +42,6 @@ import Layout from '../layouts/Layout.astro';
             <Banner name="tos" />
             <Banner name="donate" />
         </div>
-        <div class="text-center">
-            (c) mel aise 2023
-        </div>
+        <Copyright />
     </div>
 </Layout>

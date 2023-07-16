@@ -6,7 +6,7 @@ export interface Props {
 
 const {title, bg_color} = Astro.props;
 ---
-<div class="flex flex-col drop-shadow-[4px_4px_#93999d40]">
+<div class="drop-shadow-[4px_4px_#93999d40]">
     <div class:list={["text-base sm:text-lg px-1.5 py-1 font-serif font-bold", bg_color]}> {title} </div>
     <div class="bg-blue-white text-sm sm:text-base">
         <slot />

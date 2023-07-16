@@ -9,8 +9,8 @@ import CommissionStatus from "../components/CommissionStatus.astro";
 ---
 <Layout title="pyon.moe" sub="bite lemons 3d commissions">
     <Page>
-        <div class="flex flex-col items-center font-sans container m-auto">
-            <div class="max-w-[900px] relative my-2">
+        <div class="font-sans container mx-auto">
+            <div class="max-w-[900px] relative mx-auto my-2">
                 <img class="z-0" src="/images/comms_announce_web.png" alt="commission announcement message"/>
                 <a href="/commissions_3d" class="absolute top-[87%] left-[18%] bottom-[7%] right-[19%]" />
                 <div class="z-10 absolute top-[16%] inset-x-[17%] max-w-[600px] text-xs md:text-lg text-center font-bold">
@@ -18,7 +18,7 @@ import CommissionStatus from "../components/CommissionStatus.astro";
                 </div>
             </div>
 
-            <div class="max-w-[600px]">
+            <div class="max-w-[600px] mx-auto">
                 <div class="flex flex-col gap-4 mx-2">
                     <Section title="quick overview" bg_color="bg-lmn-blue">
                         <div class="flex flex-col gap-4">
@@ -57,10 +57,10 @@ import CommissionStatus from "../components/CommissionStatus.astro";
 
                             <Subsection title="offerings">
                                 <List style="list-disc" items={[
-                                    "commission slots are limited. orders are accepted on a \"i think i could do good with this design\" basis, not necessarily first come first served.",
+                                    "commission slots are limited. orders are accepted on a \"i think i could do good with this design\" basis, not necessarily first come first served. if slots are full you can still send me a request to get on the waitlist",
                                     "i currently don't offer togglable animations/poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
                                     "if you'd like a more general VRM rig instead of a vseeface rig, i can make that but the features will be limited and it will cost the same. ",
-                                    "i'm not offering full character design and will only accept orders with visual references.",
+                                    "i'm not offering full character design and will only accept orders with visual references. the more detailed the better but a sketch with some pictures found online could suffice",
                                     "commercial use outside of streaming or content creation is handled on a case by case basis, so you can ask me about it. if you are a small creator it will probably be no big deal",
                                     "i will not rig models made by someone else.",
                                 ]}/>

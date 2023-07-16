@@ -13,8 +13,8 @@ const {date, link, info, imgs} = Astro.props;
 
 <div class="bg-blue-white-shade drop-shadow-[4px_4px_#93999d40]">
     <div class="px-1.5 py-1">
-        {date} <Link href={link}> link </Link> <br/>
-        {info ? <>{info}<br/></> : ""}
+        { date } <Link href={link}> link </Link> <br/>
+        { info && <>{info}<br/></> }
     </div>
     {imgs.map((img: string) => {
         return <a href={"/works/" + img}>
