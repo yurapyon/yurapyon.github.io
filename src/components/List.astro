@@ -1,10 +1,12 @@
 ---
 export interface Props {
     items: string[];
-    style: string | null;
+    style: string;
 }
 
-const {items,style} = Astro.props;
+const { items, style = "list-none" } = Astro.props;
 ---
 
-<ul class={"list-inside " + style??"list-none"}>{items.map((item: string)=><li set:html={item}></li>)} </ul>
+<ul class:list={["list-inside", style]}>
+    {items.map((item: string) => <li set:html={item} />)}
+</ul>

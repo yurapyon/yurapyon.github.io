@@ -1,11 +1,11 @@
 ---
 export interface Props {
-    title: string;
+    title?: string;
 }
 
 const {title} = Astro.props;
 ---
 <div>
-    <div class="font-bold w-full px-1.5 py-1 bg-[#d0d0e0]"> {title} </div>
+    {title && <div class="font-bold px-1.5 py-1 bg-[#d0d0e0]"> {title} </div>}
     <div class="px-1.5 py-1"> <slot /> </div>
 </div>

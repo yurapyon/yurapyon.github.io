@@ -18,10 +18,10 @@ const { title, sub } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<div class="flex justify-center">
+			(c) mel aise 2023
+		</div>
 	</body>
-    <div class="flex justify-center">
-        (c) mel aise 2023
-    </div>
 </html>
 <style is:global>
 	html {
@@ -29,11 +29,5 @@ const { title, sub } = Astro.props;
 		background-image: url("/images/bg_img2.jpg");
 		background-size: 100%;
 		background-attachment: fixed;
-	}
-	a {
-		text-decoration: underline;
-	}
-	a:hover {
-		color: #c5180d;
 	}
 </style>

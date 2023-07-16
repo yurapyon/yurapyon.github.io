@@ -10,38 +10,38 @@ import Subsection from "../components/Subsection.astro";
     <Page>
         <!-- todo comms announce image, dont put open now on it -->
 
-        <div class="grid grid-cols-1 gap-4 m-2 max-w-[600px] font-sans">
-            <div class="text-lg text-center font-bold px-1.5 py-1 bg-[#ca2d23]">commissions are currently closed but will be opening soon</div>
+        <div class="flex flex-col gap-4 m-2 max-w-[600px] font-sans text-lmn-slate">
+            <div class="text-lg text-center font-bold px-1.5 py-1 bg-lmn-red">commissions are currently closed but will be opening soon</div>
 
-            <Section title="quick overview" bg_color="bg-[#34a3e0]">
-                <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
-                    <div>
+            <Section title="quick overview" bg_color="bg-lmn-blue">
+                <div class="flex flex-col gap-4">
+                    <Subsection>
                         all prices listed are in USD <br/>
                         <PriceTable do_bold items={[
                             {price: "125$", thing: "- model with basic rigging"},
                             {price: "+75$", thing: "- vseeface rigging"},
                             {price: "+50$", thing: "- complexity upcharge, starts at 50$ but could be more or less"},
                         ]} />
-                    </div>
+                    </Subsection>
 
-                    <div>
-                        your 'average' vtuber design rigged for vseeface would come up to <b>~250$</b><br/>
+                    <Subsection>
+                        your 'average' vtuber design rigged for vseeface would come up to <b>~250$</b> <br/>
                         i will do my best to finish in under <b>two months</b> <br/>
-                        payment method is <b>paypal upfront</b> <br/>
-                    </div>
+                        payment method is <b>Stripe invoice upfront</b> <br/>
+                    </Subsection>
 
-                    <div>
+                    <Subsection>
                         contact info at the bottom of the page!
-                    </div>
+                    </Subsection>
                 </div>
             </Section>
 
-            <Section title="info" bg_color="bg-[#f081b7]">
-                <div class="grid grid-cols-1 gap-4">
+            <Section title="info" bg_color="bg-lmn-pink">
+                <div class="flex flex-col gap-4">
                     <Subsection title="content" >
                         <List style="list-disc" items={[
                             "i have a pretty specific art style and will slightly modify the design to fit that style.",
-                            "model body type will be a 'chibi' style that looks similar to the lemons model or my 2d art",
+                            "model body type will be a 'chibi' style that looks similar to the lemons model or my 2d art. if you want a slightly less chibi-fied style i can do that too :)",
                             "i specialize in cute feminine or androgynous characters. masculine characters might not get accepted",
                             "i won't make furry characters, licensed characters, or anything sexually explicit or too graphic.",
                             "i may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!",
@@ -94,8 +94,14 @@ import Subsection from "../components/Subsection.astro";
                 </div>
             </Section>
 
-            <Section title="terms" bg_color="bg-[#fedc3e]">
-                <div class="grid grid-cols-1 gap-4">
+            <!--
+                TODO
+                terms stuff to add
+                after completion stuff like modifying by other people and helping with calibration stuff
+            -->
+
+            <Section title="terms" bg_color="bg-lmn-yellow">
+                <div class="flex flex-col gap-4">
                     <Subsection title="process">
                         <List style="list-disc" items={[
                             "I expect the model should be finished in under two months, but it may take longer. I'm new to doing commissions so I am working on refining this estimate.",
@@ -107,7 +113,7 @@ import Subsection from "../components/Subsection.astro";
 
                     <Subsection title="payment">
                         <List style="list-disc" items={[
-                            "Payment is through PayPal and must be paid in full before I begin work.",
+                            "Payment is through Stripe invoice and must be paid in full before I begin work. I'll send an invoice after I get in touch to let you know I accepted your commission.",
                             "All sales are final unless I refund them.",
                             "A full refund will be given if I can not complete your order due to an issue on my end, or if working with you is too difficult.",
                         ]}/>
@@ -123,19 +129,23 @@ import Subsection from "../components/Subsection.astro";
                 </div>
             </Section>
 
-            <Section title="contact" bg_color="bg-[#4ec67c]">
-                <div class="bg-[#197cb3] p-1.5 text-white">
+            <Section title="contact" bg_color="bg-lmn-green">
+                <div class="bg-lmn-blood p-1.5 text-white">
                     By contacting me for an order, you confirm you've read everything on this page and agree to the terms.
                 </div>
 
-                <div class="grid grid-cols-1 gap-4 px-1.5 py-1">
-                    <List style="list-disc" items={[
-                        "you can contact me by email: bitelemons at gmail dot com",
-                        "email is preferred over DM",
-                        "include some visual references to give me as clear an idea of what youre looking for as possible! ",
-                    ]}/>
+                <div class="flex flex-col gap-4">
+                    <Subsection>
+                        <List style="list-disc" items={[
+                            "you can contact me by email: bitelemons at gmail dot com",
+                            "email is preferred over DM",
+                            "include some visual references to give me as clear an idea of what youre looking for as possible! ",
+                        ]}/>
+                    </Subsection>
 
-                    looking forward to working with you!!!
+                    <Subsection>
+                        looking forward to working with you!!!
+                    </Subsection>
                 </div>
             </Section>
         </div>
