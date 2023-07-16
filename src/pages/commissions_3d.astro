@@ -5,15 +5,19 @@ import Layout from '../layouts/Layout.astro';
 import Page from "../components/Page.astro";
 import PriceTable from "../components/PriceTable.astro";
 import Subsection from "../components/Subsection.astro";
+import CommissionStatus from "../components/CommissionStatus.astro";
 ---
 <Layout title="pyon.moe" sub="bite lemons 3d commissions">
     <Page>
         <div class="flex flex-col items-center">
-            <div class="font-sans max-w-[600px] text-lg text-center font-bold px-1.5 py-1 bg-lmn-red">
-                commissions are currently closed but will be opening soon
-            </div>
 
-            <img src="/images/comms_announce_web.png" />
+            <div class="max-w-[900px] relative">
+                <img src="/images/comms_announce_web.png" alt="commission announcement message"/>
+                <a href="/commissions_3d" class="absolute top-[85%] left-[18%] bottom-[9%] right-[19%]" />
+                <div class="absolute top-[17%] inset-x-[17%] font-sans max-w-[600px] text-lg text-center font-bold px-1.5 py-1">
+                    <CommissionStatus status="soon"/>
+                </div>
+            </div>
 
             <div class="flex flex-col gap-4 m-2 max-w-[600px] font-sans text-lmn-slate">
                 <Section title="quick overview" bg_color="bg-lmn-blue">

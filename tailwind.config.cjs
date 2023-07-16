@@ -10,7 +10,7 @@ module.exports = {
 				'lmn-yellow': '#fedc3e',
 				'lmn-green': '#4ec67c',
 				'lmn-blood': '#197cb3',
-				'lmn-red': '#c5180d',
+				'lmn-red': '#f03324',
 			},
 		},
 	},

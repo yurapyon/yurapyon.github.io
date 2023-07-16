@@ -1,0 +1,26 @@
+---
+export interface Props {
+	status: "open" | "full" | "soon" | "closed";
+}
+
+const { status } = Astro.props;
+let color = "bg-lmn-red";
+let msg = "commissions and waitlist are currently closed";
+
+if (status === "open") {
+    color = "transparent"
+    msg="";
+} else if (status === "full") {
+    color = "bg-lmn-yellow"
+    msg = "commissions are full. contact me to get on the waitlist!";
+} else if (status === "soon") {
+    // same color
+    msg = "commissions are currently closed but will be opening soon";
+} else {
+    // do nothing
+}
+---
+
+<div class={color}>
+    {msg}
+</div>
