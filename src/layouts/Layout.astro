@@ -8,7 +8,7 @@ const { title, sub } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html class="font-mono" lang="en">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -16,7 +16,7 @@ const { title, sub } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{sub ? title + " - " + sub : title}</title>
 	</head>
-	<body>
+	<body class="font-mono">
 		<slot />
 		<div class="text-center">
 			(c) mel aise 2023
