@@ -1,4 +1,6 @@
 ---
+import Link from "./Link.astro";
+
 export interface Props {
     date: string;
     link: string;
@@ -9,9 +11,9 @@ export interface Props {
 const {date, link, info, imgs} = Astro.props;
 ---
 
-<div class="bg-[#d0d0e0] text-[#161616]">
+<div class="bg-blue-white-shade drop-shadow-[4px_4px_#93999d40]">
     <div class="px-1.5 py-1">
-        {date} <a href={link}> link </a> <br/>
+        {date} <Link href={link}> link </Link> <br/>
         {info ? <>{info}<br/></> : ""}
     </div>
     {imgs.map((img: string) => {
