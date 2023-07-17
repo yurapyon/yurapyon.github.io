@@ -20,6 +20,7 @@ module.exports = {
 				'lmn-white': '#f3f1f2',
 				'lmn-white-shade': '#dcdadc',
 				'blue-white': '#e8e8f8',
+				'blue-white-mid': '#d8d8e8',
 				'blue-white-shade': '#d0d0e0',
 			},
 		},
