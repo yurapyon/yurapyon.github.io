@@ -7,23 +7,23 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="pyon.moe">
     <div class="flex flex-col items-center container mx-auto h-screen justify-center gap-1">
-        <div class="flex flex-row">
-            <img src="/images/main/logo.png" height="140" alt="pyon.moe logo" />
-            <img class="hidden sm:block" src="/images/main/diamond.png" height="140" alt="301bio fire diamond" />
-            <img class="hidden sm:block" src="/images/main/hazard.png" height="140" alt="biohazard symbol" />
+        <div class="flex flex-row gap-3">
+            <img src="/images/main/logo.png" height="180" alt="pyon.moe logo" />
+            <img class="hidden sm:block" src="/images/main/diamond.png" height="180" alt="301bio fire diamond" />
+            <img class="hidden md:block" src="/images/main/hazard.png" height="180" alt="biohazard symbol" />
         </div>
         <div class="flex flex-col items-center text-center">
-            <div class="hyphens-manual"> home of mel aise + bite lemons (updated&nbsp;07/16/2023) </div>
+            <div class="hyphens-manual"> home of mel aise + bite lemons (updated&nbsp;07/19/2023) </div>
             <Link href="/commissions_3d">3d commissions</Link>
             <Link href="/works_3d ">3d art</Link>
             <Link href="/works_2d ">2d art/drawing</Link>
         </div>
         <div class="flex flex-row gap-2 mb-1">
-            <a href="https://twitch.tv/bitelemons" target="_blank">
-                <img src="/images/main/twitch.png"  width="75" alt="twitch" />
+            <a href="https://twitch.tv/bitelemons" target="_blank" class="group">
+                <img src="/images/main/twitch.png"  width="75" alt="twitch" class="group-hover:rotate-180"/>
             </a>
-            <a href="https://twitter.com/_bitelemons" target="_blank">
-                <img src="/images/main/twitter.png" width="75" alt="twitter" />
+            <a href="https://twitter.com/_bitelemons" target="_blank" class="group">
+                <img src="/images/main/twitter.png" width="75" alt="twitter" class="group-hover:rotate-180"/>
             </a>
         </div>
         <div class="grid grid-cols-4 sm:grid-cols-6 gap-0.5">
