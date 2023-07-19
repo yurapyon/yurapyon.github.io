@@ -23,6 +23,12 @@ module.exports = {
 				'blue-white-mid': '#d8d8e8',
 				'blue-white-shade': '#d0d0e0',
 			},
+			keyframes: {
+				thingy: {
+					'0%': {transform: 'rotate(0deg)'},
+					'100%': {transform: 'rotate(360deg)'},
+				}
+			}
 		},
 	},
 	plugins: [],
