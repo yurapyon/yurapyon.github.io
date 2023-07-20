@@ -1,8 +1,15 @@
 ---
 import Page from "./Page.astro";
+import type {Props as NavProps} from "./Nav.astro";
+
+export interface Props {
+    curr_page: NavProps["curr_page"];
+}
+
+const { curr_page } = Astro.props;
 ---
     
-<Page>
+<Page curr_page={curr_page}>
     <div class="mx-auto max-w-[600px]">
         <div class="flex flex-col gap-6 sm:gap-10 mx-2">
             <slot />

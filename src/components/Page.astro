@@ -1,11 +1,17 @@
 ---
 import Copyright from "./Copyright.astro";
-import Link from "./Link.astro";
+import Nav, {Props as NavProps} from "./Nav.astro";
+
+export interface Props {
+    curr_page: NavProps["curr_page"];
+}
+
+const { curr_page } = Astro.props;
 ---
 
 <div class="flex flex-col gap-4 text-lmn-slate container mx-auto">
-    <div class="text-center"> <Link href="/">go back</Link> </div>
+    <Nav curr_page={curr_page} />
     <slot />
-    <div class="text-center"> <Link href="/">go back</Link> </div>
+    <Nav curr_page={curr_page} />
     <Copyright />
 </div>

@@ -1,0 +1,28 @@
+---
+import Link from "./Link.astro";
+
+export interface Props {
+    curr_page: "home" | "2d" | "3d"| "3d comms";
+}
+
+const {curr_page} = Astro.props;
+
+const getClassList = (name: Props["curr_page"]) => {
+    return ["basis-1/4 text-center hover:font-bold hover:text-lmn-red px-1",
+        name === curr_page
+        ?
+        "font-bold bg-lmn-white text-lmn-slate pointer-events-none cursor-default"
+        :
+        "hover:font-bold hover:text-lmn-red"
+    ];
+}
+
+---
+<div class="w-full max-w-[600px] justify-center mx-auto">
+    <div class="flex flex-row bg-lmn-slate text-lmn-white justify-center mx-2 text-sm sm:text-base">
+        <Link class:list={getClassList("home")} href="/"> home </Link>
+        <Link class:list={getClassList("3d comms")} href="/commissions_3d">3d comms</Link>
+        <Link class:list={getClassList("3d")} href="/works_3d">3d works</Link>
+        <Link class:list={getClassList("2d")} href="/works_2d">2d works</Link>
+    </div>
+</div>

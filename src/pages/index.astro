@@ -12,33 +12,37 @@ import Layout from '../layouts/Layout.astro';
             <img class="hidden sm:block" src="/images/main/diamond.png" height="180" alt="301bio fire diamond" />
             <img class="hidden md:block" src="/images/main/hazard.png" height="180" alt="biohazard symbol" />
         </div>
-        <div class="flex flex-col items-center text-center text-base md:text-lg">
-            <div class="hyphens-manual"> home of mel aise + bite lemons (updated&nbsp;07/19/2023) </div>
+        <div class="text-center text-base sm:text-lg">
+            home of mel aise + bite lemons (updated&nbsp;07/19/2023)
+            <br />
             <Link href="/commissions_3d">3d commissions</Link>
+            <br />
             <Link href="/works_3d ">3d art</Link>
+            <br />
             <Link href="/works_2d ">2d art/drawing</Link>
+            <br />
         </div>
         <div class="flex flex-row gap-3 mt-0.5 mb-2">
             <a href="https://twitch.tv/bitelemons" target="_blank" class="group">
-                <img src="/images/main/twitch.png"  width="75" alt="twitch" class="mx-auto group-hover:animate-[thingy_1.75s_steps(8,_start)_infinite_reverse]"/>
+                <img src="/images/main/twitch.png"  width="75" alt="twitch" class="mx-auto group-hover:animate-[thingy_1.75s_steps(8,_start)_infinite]"/>
             </a>
             <a href="https://twitter.com/_bitelemons" target="_blank" class="group">
                 <img src="/images/main/twitter.png" width="75" alt="twitter" class="mx-auto group-hover:animate-[thingy_1.75s_steps(8,_start)_infinite]"/>
             </a>
         </div>
-        <div class="grid grid-cols-4 sm:grid-cols-6 gap-0.5">
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-1">
             <Banner name="construction2" />
             <Banner name="chill_pill" />
             <Banner name="caramelldansen" />
-            <img src={"/images/banners/pdm_2.png"} width="88" alt="pyondotmoe" />
-
-            <Banner name="firefox" />
             <Banner name="mind2" />
+
             <img src={"/images/banners/cat2.png"} width="88" alt="cat" />
+            <Banner name="firefox" />
+            <Banner name="homicide" />
             <Banner name="ostan" />
 
-            <Banner name="homicide" />
             <Banner name="anow" />
+            <img src={"/images/banners/pdm_2.png"} width="88" alt="pyondotmoe" />
             <Banner name="tos" />
             <Banner name="donate" />
         </div>
