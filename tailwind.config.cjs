@@ -15,7 +15,6 @@ module.exports = {
 				'lmn-yellow': '#fedc3e',
 				'lmn-green': '#4ec67c',
 				'lmn-blood': '#197cb3',
-				// 'lmn-red': '#f03324',
 				'lmn-red': '#f1392a',
 				'lmn-white': '#f3f1f2',
 				'lmn-white-shade': '#dcdadc',
@@ -23,12 +22,6 @@ module.exports = {
 				'blue-white-mid': '#d8d8e8',
 				'blue-white-shade': '#d0d0e0',
 			},
-			keyframes: {
-				thingy: {
-					'0%': {transform: 'rotate(0deg)'},
-					'100%': {transform: 'rotate(360deg)'},
-				}
-			}
 		},
 	},
 	plugins: [],

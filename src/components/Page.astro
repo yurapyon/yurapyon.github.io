@@ -9,7 +9,7 @@ export interface Props {
 const { curr_page } = Astro.props;
 ---
 
-<div class="flex flex-col gap-4 text-lmn-slate container mx-auto">
+<div class="flex flex-col gap-4 text-lmn-slate container mx-auto items-center">
     <Nav curr_page={curr_page} />
     <slot />
     <Nav curr_page={curr_page} />

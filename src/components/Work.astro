@@ -1,25 +1,47 @@
 ---
+import Button from "./Button.astro";
 import Link from "./Link.astro";
 
 export interface Props {
     date: string;
     link?: string;
     info?: string;
-    imgs: string[];
+    imgs: (string | { image: string, preview: string })[];
 };
 
 const {date, link, info, imgs} = Astro.props;
----
 
+---
 <div class="bg-blue-white-shade drop-shadow-[4px_4px_#93999d40]">
-    <div class="px-1.5 py-1">
-        { date } { link && <Link href={link}> link </Link> } <br/>
-        { info && <>{info}<br/></> }
+    <div class="flex flex-row">
+        <div class="px-1.5 py-1">
+            { date }
+        </div>
+        { link ?
+            <Button text="link" href={link} class_ext="ml-auto hover:bg-lmn-blue" target="_blank" />
+            :
+            <></>
+        }
     </div>
-    {imgs.map((img: string) => {
-        return <a href={"/works/" + img}>
-            <img src={"/works/" + img} alt={img}/>
-        </a>;
+    { info ?
+        <div class="px-1.5 py-1">
+            {info}
+        </div>
+        :
+        <></>
+    }
+    {imgs.map((img: string | { image: string, preview: string }) => {
+        if ((typeof img) === "string") {
+            const i = img as string;
+            return <a href={"/works/" + i}>
+                <img src={"/works/" + i} alt={i}/>
+            </a>;
+        } else {
+            const i = img as {image: string, preview: string};
+            return <a href={"/works/" + i.image}>
+                <img src={"/works/" + i.preview} alt={i.image}/>
+            </a>;
+        }
     })}
     <slot />
 </div>

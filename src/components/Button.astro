@@ -1,0 +1,25 @@
+---
+export interface Props {
+    deactivated?: boolean;
+    class_ext?: string;
+    text: string;
+    href: string;
+    target?: string;
+};
+
+const { deactivated = false, class_ext = "", text, href, target = "" } = Astro.props;
+
+const class_list = 
+    ["px-1.5 py-1", class_ext,
+        deactivated
+        ?
+        "font-bold bg-lmn-white text-lmn-slate pointer-events-none cursor-default"
+        :
+        "bg-lmn-slate text-white hover:font-bold hover:text-lmn-slate"
+    ];
+
+---
+
+<a class:list={class_list} href={href} target={target}>
+    {text}
+</a>
