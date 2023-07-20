@@ -1,44 +1,44 @@
 ---
 import Banner from '../components/Banner.astro';
-import Container from '../components/Container.astro';
 import LinkRow from '../components/LinkRow.astro';
+import Wide from '../components/Wide.astro';
 import Layout from '../layouts/Layout.astro';
+
+const social_links = [
+    {
+        text: "twitch",
+        href: "https://twitch.tv/bitelemons",
+        target: "_blank",
+        class_ext: ["hover:font-bold hover:text-white hover:bg-[#9146ff]"],
+    },
+    {
+        text: "twitter",
+        href: "https://twitter.com/_bitelemons",
+        target: "_blank",
+        class_ext: ["hover:font-bold hover:text-white hover:bg-[#1da1f2]"],
+    },
+];
 ---
 
 <Layout title="pyon.moe" curr_page="home">
-    <div class="flex flex-col gap-2 items-center -my-2 w-full">
-        <div class="flex flex-row gap-3">
-            <img src="/images/main/logo.png" height="180" alt="pyon.moe logo" />
-            <img class="hidden sm:block" src="/images/main/diamond.png" height="180" alt="301bio fire diamond" />
-            <img class="hidden md:block" src="/images/main/hazard.png" height="180" alt="biohazard symbol" />
+    <div class="flex flex-col gap-2 -my-2">
+        <Wide>
+            <div class="flex flex-row gap-3 justify-center">
+                <img src="/images/main/logo.png" height="180" alt="pyon.moe logo" />
+                <img class="hidden sm:block" src="/images/main/diamond.png" height="180" alt="301bio fire diamond" />
+                <img class="hidden md:block" src="/images/main/hazard.png" height="180" alt="biohazard symbol" />
+            </div>
+        </Wide>
+
+        <div class="text-base sm:text-lg text-center">
+            home of mel aise + bite lemons (updated&nbsp;07/20/2023)
         </div>
 
-        <Container>
-            <div class="text-base sm:text-lg text-center">
-                home of mel aise + bite lemons (updated&nbsp;07/20/2023)
-            </div>
-        </Container>
+        <div class="text-sm sm:text-base">
+            <LinkRow links={social_links} />
+        </div>
 
-        <Container>
-            <div class="text-sm sm:text-base">
-                <LinkRow links={[
-                    {
-                        text: "twitch",
-                        href: "https://twitch.tv/bitelemons",
-                        target: "_blank",
-                        class_ext: ["hover:font-bold hover:text-white hover:bg-[#9146ff]"],
-                    },
-                    {
-                        text: "twitter",
-                        href: "https://twitter.com/_bitelemons",
-                        target: "_blank",
-                        class_ext: ["hover:font-bold hover:text-white hover:bg-[#1da1f2]"],
-                    },
-                ]} />
-            </div>
-        </Container>
-
-        <div class="grid grid-cols-3 sm:grid-cols-6 gap-1 grow-0">
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-1 mx-auto">
             <Banner name="construction2" />
             <Banner name="chill_pill" />
             <Banner name="caramelldansen" />

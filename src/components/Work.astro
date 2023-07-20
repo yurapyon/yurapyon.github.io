@@ -12,15 +12,13 @@ const {date, link, info, imgs} = Astro.props;
 
 ---
 <div class="bg-blue-white-shade drop-shadow">
-    <div class="flex flex-row">
-        <div class="px-1.5 py-1"> { date } </div>
-        { link ?
-            <Button text="link" href={link} class_ext={["ml-auto hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate"]} target="_blank" />
-            :
-            <></>
-        }
-    </div>
-    { info ?  <div class="px-1.5 py-1"> {info} </div> : <></> }
+    <div class="px-1.5 py-1 inline-block"> { date } </div>
+    { link ?
+        <Button text="link" href={link} class_ext={["inline-block float-right hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate"]} target="_blank" />
+        :
+        <></>
+    }
+    { info ?  <div class="px-1.5 py-1 text-xs sm:text-base"> {info} </div> : <></> }
     {imgs.map((img: string | { image: string, preview: string }) => {
         if ((typeof img) === "string") {
             const i = img as string;
