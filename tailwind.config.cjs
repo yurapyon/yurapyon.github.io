@@ -7,6 +7,14 @@ module.exports = {
 			'sm': '600px',
 			'md': '900px',
 		},
+		maxWidth : {
+			'xs': '350px',
+			'sm': '600px',
+			'md': '900px',
+		},
+		dropShadow: {
+			DEFAULT: '4px 4px #93999d40'
+		},
 		extend: {
 			colors: {
 				'lmn-slate': '#161616',

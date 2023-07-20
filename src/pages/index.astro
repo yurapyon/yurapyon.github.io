@@ -1,35 +1,42 @@
 ---
 import Banner from '../components/Banner.astro';
-import Button from '../components/Button.astro';
-import Copyright from '../components/Copyright.astro';
-import Nav from '../components/Nav.astro';
+import Container from '../components/Container.astro';
+import LinkRow from '../components/LinkRow.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="pyon.moe">
-    <div class="flex flex-col gap-2 text-lmn-slate container mx-auto items-center">
-        <Nav curr_page={"home"} />
-
+<Layout title="pyon.moe" curr_page="home">
+    <div class="flex flex-col gap-2 items-center -my-2 w-full">
         <div class="flex flex-row gap-3">
             <img src="/images/main/logo.png" height="180" alt="pyon.moe logo" />
             <img class="hidden sm:block" src="/images/main/diamond.png" height="180" alt="301bio fire diamond" />
             <img class="hidden md:block" src="/images/main/hazard.png" height="180" alt="biohazard symbol" />
         </div>
 
-        <div class="text-center text-base sm:text-lg">
-            home of mel aise + bite lemons (updated&nbsp;07/19/2023)
-        </div>
-
-        <div class="w-full max-w-[600px]">
-            <div class="flex flex-row mx-2">
-                <Button text="twitch"  href="https://twitch.tv/bitelemons"    target="_blank"
-                    class_ext="basis-1/2 text-center hover:text-white hover:bg-[#9146ff]"
-                    />
-                <Button text="twitter" href="https://twitter.com/_bitelemons" target="_blank"
-                    class_ext="basis-1/2 text-center hover:text-white hover:bg-[#1da1f2]"
-                    />
+        <Container>
+            <div class="text-base sm:text-lg text-center">
+                home of mel aise + bite lemons (updated&nbsp;07/20/2023)
             </div>
-        </div>
+        </Container>
+
+        <Container>
+            <div class="text-sm sm:text-base">
+                <LinkRow links={[
+                    {
+                        text: "twitch",
+                        href: "https://twitch.tv/bitelemons",
+                        target: "_blank",
+                        class_ext: ["hover:font-bold hover:text-white hover:bg-[#9146ff]"],
+                    },
+                    {
+                        text: "twitter",
+                        href: "https://twitter.com/_bitelemons",
+                        target: "_blank",
+                        class_ext: ["hover:font-bold hover:text-white hover:bg-[#1da1f2]"],
+                    },
+                ]} />
+            </div>
+        </Container>
 
         <div class="grid grid-cols-3 sm:grid-cols-6 gap-1 grow-0">
             <Banner name="construction2" />
@@ -47,6 +54,5 @@ import Layout from '../layouts/Layout.astro';
             <Banner name="tos" />
             <Banner name="donate" />
         </div>
-        <Copyright />
     </div>
 </Layout>

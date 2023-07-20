@@ -9,7 +9,7 @@ const {items, do_bold} = Astro.props;
 <table>
     {items.map((item:{price:string, thing:string})=>{
         return <tr>
-            <td class:list={["pr-1 text-right align-top whitespace-nowrap", do_bold ? "font-bold" : ""]}>{item.price}</td>
+            <td class:list={["pr-1 text-right align-top whitespace-nowrap", do_bold && "font-bold"]}>{item.price}</td>
             <td>{item.thing}</td>
         </tr>;
     })}

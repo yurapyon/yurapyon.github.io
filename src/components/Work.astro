@@ -1,6 +1,5 @@
 ---
 import Button from "./Button.astro";
-import Link from "./Link.astro";
 
 export interface Props {
     date: string;
@@ -12,24 +11,16 @@ export interface Props {
 const {date, link, info, imgs} = Astro.props;
 
 ---
-<div class="bg-blue-white-shade drop-shadow-[4px_4px_#93999d40]">
+<div class="bg-blue-white-shade drop-shadow">
     <div class="flex flex-row">
-        <div class="px-1.5 py-1">
-            { date }
-        </div>
+        <div class="px-1.5 py-1"> { date } </div>
         { link ?
-            <Button text="link" href={link} class_ext="ml-auto hover:bg-lmn-blue" target="_blank" />
+            <Button text="link" href={link} class_ext={["ml-auto hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate"]} target="_blank" />
             :
             <></>
         }
     </div>
-    { info ?
-        <div class="px-1.5 py-1">
-            {info}
-        </div>
-        :
-        <></>
-    }
+    { info ?  <div class="px-1.5 py-1"> {info} </div> : <></> }
     {imgs.map((img: string | { image: string, preview: string }) => {
         if ((typeof img) === "string") {
             const i = img as string;

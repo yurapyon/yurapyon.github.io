@@ -6,9 +6,9 @@ export interface Props {
 
 const {title, bg_color} = Astro.props;
 ---
-<div class="drop-shadow-[4px_4px_#93999d40]">
+<div class="drop-shadow bg-blue-white pb-1">
     <div class:list={["text-base sm:text-lg px-1.5 py-1 font-serif font-bold", bg_color]}> {title} </div>
-    <div class= "flex flex-col gap-4 bg-blue-white text-sm sm:text-base pb-1 px-1.5">
+    <div class= "flex flex-col gap-4 text-sm sm:text-base font-sans">
         <slot />
     </div>
 </div>

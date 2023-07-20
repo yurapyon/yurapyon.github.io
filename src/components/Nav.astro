@@ -1,5 +1,5 @@
 ---
-import Button from "./Button.astro";
+import LinkRow from "./LinkRow.astro";
 
 export interface Props {
     curr_page: "home" | "2d" | "3d"| "3d comms";
@@ -7,19 +7,30 @@ export interface Props {
 
 const {curr_page} = Astro.props;
 ---
-<div class="w-full max-w-[600px] mx-auto">
-    <div class="flex flex-row mx-2 text-sm sm:text-base">
-        <Button text="home" href="/" deactivated={curr_page === "home"}
-            class_ext="basis-1/4 text-center hover:bg-lmn-blue"
-            />
-        <Button text="3d comms" href="/commissions_3d" deactivated={curr_page === "3d comms"}
-            class_ext="basis-1/4 text-center hover:bg-lmn-yellow"
-        />
-        <Button text="3d works" href="/works_3d" deactivated={curr_page === "3d"}
-            class_ext="basis-1/4 text-center hover:bg-lmn-green"
-        />
-        <Button text="2d works" href="/works_2d" deactivated={curr_page === "2d"}
-            class_ext="basis-1/4 text-center hover:bg-lmn-pink"
-        />
-    </div>
-</div>
+<LinkRow
+    links={[
+        {
+            text: "home",
+            href: "/",
+            deactivated: curr_page === "home",
+            class_ext: ["hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold"],
+        },
+        {
+            text: "3d comms",
+            href: "/commissions_3d",
+            deactivated: curr_page === "3d comms",
+            class_ext: ["hover:bg-lmn-yellow hover:text-lmn-slate hover:font-bold"],
+        },
+        {
+            text: "3d works",
+            href: "/works_3d",
+            deactivated: curr_page === "3d",
+            class_ext: ["hover:bg-lmn-green hover:text-lmn-slate hover:font-bold"],
+        },
+        {
+            text: "2d works",
+            href: "/works_2d",
+            deactivated: curr_page === "2d",
+            class_ext: ["hover:bg-lmn-pink hover:text-lmn-slate hover:font-bold"],
+        },
+    ]}/>
