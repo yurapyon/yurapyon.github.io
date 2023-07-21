@@ -1,5 +1,4 @@
 ---
-import Link from "../components/Link.astro";
 import LinkRow from "../components/LinkRow.astro";
 
 export type PageName = "home" | "2d" | "3d"| "3d comms";
@@ -60,7 +59,9 @@ const nav_links = [
 				<LinkRow links={nav_links} />
 			</div>
 		}
-		<div class="text-center opacity-50"> site made with <a class="underline hover:font-bold hover:text-lmn-red" href="https://astro.build/" target="_blank">astro.build</a> (c)&nbsp;mel&nbsp;aise&nbsp;2023 </div>
+		<div class="text-center opacity-50">
+			site made with <a class="underline hover:font-bold hover:text-lmn-red" href="https://astro.build/" target="_blank">astro.build</a> (c)&nbsp;mel&nbsp;aise&nbsp;2023
+		</div>
 	</body>
 </html>
 <style is:global>
