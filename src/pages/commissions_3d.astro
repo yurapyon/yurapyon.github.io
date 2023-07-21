@@ -59,7 +59,7 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
             </Subsection>
 
             <iframe
-                class="aspect-video"
+                class="w-full aspect-video"
                 src="https://www.youtube-nocookie.com/embed/TM-Wyif_W_0"
                 title="YouTube video player"
                 frameborder="0"
@@ -69,7 +69,8 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
 
             <Subsection title="offerings">
                 <List style="list-disc" items={[
-                    "commission slots are limited. orders are accepted based on how well i think i could do with the design, not necessarily first come first served. if slots are full you can still send me your request to get on the waitlist",
+                    "commission slots are limited. orders are accepted based on how well i think i could do with the design, not necessarily first come first served.",
+                    "if commission slots are full you can still send me your request but i will only get in touch when i intend to start working on it",
                     "i currently don't offer togglable animations/poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
                     "if you'd like a more general VRM rig instead of a vseeface rig, i can make that but the features will be limited and it will cost the same.",
                     "i'm not offering full character design and will only accept orders with visual references. the more detailed the better but a sketch with some pictures found online could suffice",
@@ -81,23 +82,30 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
             <Subsection title="pricing">
                 <List style="list-disc" items={[
                     `<span class=\"underline\"> base model - ${prices.base}$ </span> <br/> includes .blend file and a .unitypackage file to import into Unity (you can make it do fortnite dances). basic humanoid rigging and hair/prop rigging`,
-                    `<span class=\"underline\"> vseeface rigging - +${prices.vseeface}$ </span> <br/> includes .vsfavatar file. one togglable emotion is included. rigs will work with either webcam or iphone tracking, both can be supplied if you need it`,
+                    `<span class=\"underline\"> vseeface rigging - +${prices.vseeface}$ </span> <br/> includes .vsfavatar file. two togglable emotions are included. rigs will work with either webcam or iphone tracking, both can be supplied if you need it`,
                     "<span class=\"underline\"> complexity - +0$ and up </span> <br/> i'd like to think of the design as a whole, rather than itemizing every aspect individually. hopefully the examples can give you an idea of what the price for your design will be.",
                 ]}/>
             </Subsection>
 
+            <!--
+                TODO
+            // please let me know asap if i missed something or if something is wrong
+            -->
+
             <Subsection title="'complexity' pricing">
                 <a href="/images/design_complexity_small.png">
-                    <img src="/images/design_complexity_small.png" class="mt-1 border-2 border-[#d8d8e8]"/>
+                    <img src="/images/design_complexity_small.png" class="border-2 border-[#d8d8e8]"/>
                 </a>
                 <PriceTable items={[
-                    {price: "+0 - 50$", thing: "- simple; just pants and a tshirt"},
-                    {price: "+50 - 100$", thing: "- your 'average' vtuber complexity; togglable jackets or hoodies"},
-                    {price: "+100$", thing: "- over the top; a lot of little details"},
+                    {price: "0 - 50$", thing: "- simple; just pants and a tshirt"},
+                    {price: "50 - 100$", thing: "- your 'average' vtuber complexity; togglable jackets or hoodies"},
+                    {price: "100$", thing: "- over the top; a lot of little details"},
                 ]} />
                 <List style="list-disc" items={[
                     "things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi",
-                    "things that add to vseeface rig complexity: complex physics for hair or clothes, idle animations, texture swap toggles, emotion toggles",
+                    "things that add to rig complexity: complex physics for hair or clothes, idle animations, texture swap toggles, emotion toggles",
+                    "there isn't really a limit to this extra cost as it relies on how many extra toggles you want",
+                    "just let me know what you are looking for and we'll go from there."
                 ]}/>
             </Subsection>
 
@@ -119,26 +127,30 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
         <Section title="terms" bg_color="bg-lmn-yellow">
             <Subsection title="process">
                 <List style="list-disc" items={[
-                    "I expect the model should be finished in under two months, but it may take longer. I'm new to doing commissions so I am working on refining this estimate.",
-                    "Updates will be given at important stages during the process. I expect feedback after I send an update, to make sure everything is on the right track. The process may stall until you get back to me, which will affect delivery time.",
-                    "You can ask for revisions and model changes but I may charge extra. The later in the process the revision is asked for, or the more work it is, the more likely I will charge extra or reject it. I won't accept changes that I deem unreasonable.",
-                    "I may show the creation of your model on stream or social media, and may use it in a portfolio or as commission samples. If you take issue with this, be sure to let me know beforehand."
+                    "I expect the model should be finished in under two months, but it may take longer. If the model is not completed within four months of the date I recieve payment you will be refunded.",
+                    "Updates will be given at important stages during the process. I expect feedback after I send an update, to make sure everything is on the right track. If you do not reply to these messages within 3 business days I may cancel and refund the order.",
+                    "You may ask for revisions and model changes but I may charge extra and have the right to reject any request for any reason. The later in the process the revision is asked for, or the more work it is, the more likely I will charge extra or reject it.",
+                    "I may show the creation of your model on stream or social media. If you take issue with this, be sure to let me know beforehand."
                 ]}/>
             </Subsection>
 
             <Subsection title="payment">
                 <List style="list-disc" items={[
-                    "Payment is through Stripe and must be paid in full before I begin work. I'll send a payment link after accepting your commission and we talk a little about the design.",
+                    "Payment is through Stripe and must be paid in full before I begin work. I will send a payment link after accepting your commission and we talk a little about the design.",
+                    "Payment must be sent within 3 business days of me accepting your order, or the order may be cancelled and the commission slot given to someone else.",
                     "All sales are final unless I refund them.",
-                    "A full refund will be given if I can not complete your order due to an issue on my end, or if working with you is too difficult.",
+                    "I may cancel and refund your order at any point for any reason.",
                 ]}/>
             </Subsection>
 
             <Subsection title="usage">
                 <List style="list-disc" items={[
-                    "Models are free to use for personal use, streaming and content creation. Other commercial uses are handled on a case by case basis.",
-                    "You can not resell the model in full or in part, in its original or any modified form.",
-                    "Credit must be given on the social media profile you use the model most frequently. Acceptable credit is a link to my website (pyon.moe), my twitch account (twitch.tv/bitelemons), or my twitter profile (twitter.com/_bitelemons)"
+                    "I own the rights to the model and may use it for any purpose in the future.",
+                    "Models are may be used for personal use, streaming and content creation. This includes using the model or renders of the model on social media i.e. as promotional materials or for icons, thumbnails, banners, etc. Other commercial uses are handled on a case by case basis.",
+                    "The model may be used in a modified form but you may not misrepresent any modifications as part of the original work.",
+                    "You may not resell the model in full or in part, in its original or any modified form.",
+                    "Model and renders of the model may not be used for anything related to NFTs (non-fungible tokens), cryptocurrencies, or AI-generated art.",
+                    "Credit must be given on the website profile you use the model most frequently. Acceptable credit is a link to my website (pyon.moe), my twitch account (twitch.tv/bitelemons), or my twitter profile (twitter.com/_bitelemons)"
                 ]}/>
             </Subsection>
         </Section>
