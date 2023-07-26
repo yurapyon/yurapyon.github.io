@@ -18,6 +18,7 @@ module.exports = {
 		extend: {
 			colors: {
 				'lmn-slate': '#161616',
+				'lmn-slate-light': '#313131',
 				'lmn-blue': '#34a3e0',
 				'lmn-pink': '#f081b7',
 				'lmn-yellow': '#fedc3e',

@@ -38,6 +38,20 @@ const nav_links = [
 		class_ext: ["hover:bg-lmn-pink hover:text-lmn-slate hover:font-bold"],
 	},
 ];
+
+const row_two = [
+	"px-1.5 py-1 bg-lmn-slate",
+	{
+		text: "3d ToS",
+		href: "/terms_3d",
+		deactivated: curr_page === "3d terms",
+		class_ext: ["hover:bg-lmn-yellow hover:text-lmn-slate hover:font-bold"],
+	},
+	"px-1.5 py-1 bg-lmn-slate",
+	"px-1.5 py-1 bg-lmn-slate",
+];
+
+const show_second_row = (curr_page === "3d comms") || (curr_page === "3d terms");
 ---
 
 <!DOCTYPE html>
@@ -52,11 +66,13 @@ const nav_links = [
 	<body class="flex flex-col gap-4 font-mono text-lmn-slate container md:max-w-sm px-2 mx-auto">
         <div class="text-sm sm:text-base">
 			<LinkRow links={nav_links} />
+			{show_second_row && <LinkRow links={row_two} /> }
 		</div>
 		<slot />
 		{ do_bottom_nav &&
 			<div class="text-sm sm:text-base">
 				<LinkRow links={nav_links} />
+				{show_second_row && <LinkRow links={row_two} /> }
 			</div>
 		}
 		<div class="text-center opacity-50">

@@ -2,20 +2,24 @@
 import Button, {ButtonInfo} from "./Button.astro";
 
 export interface Props {
-    links: ButtonInfo[];
+    links: (ButtonInfo | string)[];
 }
 
 const {links} = Astro.props;
 ---
 
 <div class="flex flex-row font-mono">
-    {links.map((link: ButtonInfo)=>{
-        return <Button
-            deactivated={link.deactivated}
-            text={link.text}
-            href={link.href}
-            target={link.target}
-            class_ext={["flex-1"].concat(link.class_ext ?? [])}
-        />
+    {links.map((link: ButtonInfo | string)=>{
+        if (typeof link === "string") {
+            return <div class:list={["flex-1"].concat(link)}></div>
+        } else {
+            return <Button
+                deactivated={link.deactivated}
+                text={link.text}
+                href={link.href}
+                target={link.target}
+                class_ext={["flex-1"].concat(link.class_ext ?? [])}
+            />
+        }
     })}
 </div>
