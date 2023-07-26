@@ -8,7 +8,7 @@ export interface Props {
 const {links} = Astro.props;
 ---
 
-<div class="flex flex-row">
+<div class="flex flex-row font-mono">
     {links.map((link: ButtonInfo)=>{
         return <Button
             deactivated={link.deactivated}
