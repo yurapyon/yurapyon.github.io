@@ -1,7 +1,7 @@
 ---
 import LinkRow from "../components/LinkRow.astro";
 
-export type PageName = "home" | "2d" | "3d"| "3d comms" | "3d terms" ;
+export type PageName = "home" | "2d" | "3d"| "3d comms" | "3d terms" | "none";
 
 export interface Props {
 	title: string;
@@ -10,7 +10,7 @@ export interface Props {
 	do_bottom_nav?: boolean;
 }
 
-const { title, sub, curr_page, do_bottom_nav } = Astro.props;
+const { title, sub, curr_page, do_bottom_nav, no_top_nav } = Astro.props;
 
 const nav_links = [
 	{
@@ -65,10 +65,12 @@ show_second_row = false;
 		<title>{sub ? title + " - " + sub : title}</title>
 	</head>
 	<body class="flex flex-col gap-4 font-mono text-lmn-slate container md:max-w-sm px-2 mx-auto">
-        <div class="text-sm sm:text-base">
-			<LinkRow links={nav_links} />
-			{show_second_row && <LinkRow links={row_two} /> }
-		</div>
+		{ !no_top_nav &&
+			<div class="text-sm sm:text-base">
+				<LinkRow links={nav_links} />
+				{show_second_row && <LinkRow links={row_two} /> }
+			</div>
+		}
 		<slot />
 		{ do_bottom_nav &&
 			<div class="text-sm sm:text-base">
