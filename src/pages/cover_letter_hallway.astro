@@ -1,0 +1,81 @@
+---
+import LinkRow from "../components/LinkRow.astro";
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title="pyon.moe" sub="Hallway Cover Letter" curr_page="none" no_top_nav>
+    <div class="flex flex-col gap-4">
+        <LinkRow
+            links={[
+                {
+                    text: "résumé",
+                    href: "/files/resume_2023.pdf",
+                    class_ext: ["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate"],
+                    target: "_blank"
+                },
+                {
+                    text: "main site",
+                    href: "/",
+                    class_ext: ["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate"],
+                    target: "_blank"
+                },
+            ]}
+        />
+
+        <Section title="Hallway Cover Letter" bg_color="bg-lmn-blue">
+            <div class="px-1.5 mt-0.5">
+                Hey! I'm Mel.
+                <br />
+                I saw this listing on Hacker News and was immediately super interested!
+                <br />
+                <br />
+
+                <div class="indent-8">
+                    I'm a pretty experienced programmer but more importantly I am a huge fan of vtubers.
+                    I've been watching vtubers daily since Hololive's EN branch debuted in 2020, and over time I've just gotten more and more involved.
+                    Right now I mostly watch indie vtubers on Twitch but I still tune into some HoloJP streams and Chihiro Yuki from time to time.
+                </div>
+                <br />
+
+                <div class="indent-8">
+                    I'm really passionate about vtubing!!!
+                    I love watching the streams and I think the technology is really freeing for people.
+                    I know there's many people who would never have an online presence if not for vtubing.
+                    I actually recently opened commissions for VSeeFace avatars, and a commission example can be seen here:
+                    <a class="underline hover:text-lmn-red" href="https://www.youtube.com/watch?v=TM-Wyif_W_0" target="_blank">https://www.youtube.com/watch?v=TM-Wyif_W_0</a>.
+                    They're very stylized but I've been making digital art for a long time so I'd hope that's the appeal.
+                </div>
+                <br />
+
+                <div class="indent-8">
+                    I'm very familiar with low level programming and OpenGL.
+                    I haven't used much C++ but only because I was more interested in C, Zig and Rust.
+                    I'm a bit more of a generalist with programming than specializing in specific languages or frameworks.
+                    I was working a little with Mediapipe over last summer, working on making my own 3dtuber software, but I decided to go for the VSeeFace route for commissions, just for ease of adoption by commissioners.
+                </div>
+                <br />
+
+                <div class="indent-8">
+                    As far as professional experience goes, I have some pretty solid full-stack web dev experience from my last job at a startup. 
+                    I went in knowing very little, but thanks from the help of the founders I got up and running pretty quickly.
+                    The stack we used there was centered around Next.js which allowed us to iterate quickly, get new features out all the time and have bugs resolved within hours.
+                </div>
+                <br />
+
+                <div class="indent-8">
+                    I love working at small companies for the high impact one person can have and the ability to move fast and constantly be shipping.
+                    It's really exciting to me to be thrown into a situation where I don't know much and have to figure things out for myself.
+                    I love working with customers 1-on-1 and getting feedback.
+                </div>
+                <br />
+
+                I think this position is right up my alley, honestly, and I really hope to hear back!!
+                Thanks for your time!
+                <br />
+                - Mel
+            </div>
+        </Section>
+    </div>
+</Layout>
