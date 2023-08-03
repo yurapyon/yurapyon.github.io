@@ -1,5 +1,4 @@
 ---
-import List from "../components/List.astro";
 import Section from "../components/Section.astro";
 import Layout from '../layouts/Layout.astro';
 import PriceTable from "../components/PriceTable.astro";
@@ -51,15 +50,38 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
             </div>
         </Section>
 
+        <div class="drop-shadow bg-blue-white pb-1">
+            <div class="text-base sm:text-lg px-1.5 py-1 font-serif font-bold bg-lmn-pink" id="info">info</div>
+            <div class= "text-sm sm:text-base font-sans">
+                <div class="font-bold px-1.5 py-1 bg-blue-white-shade mb-0.5">content</div>
+                <ul class="list-inside list-disc px-1.5">
+                    <li>i have a pretty specific art style and will slightly modify the design to fit that style.
+                    </li>
+                    <li>specialize in cute feminine or androgynous characters. masculine characters might not get accepted
+                    </li>
+                    <li>won't make furry characters, licensed characters, or anything sexually explicit or too graphic.
+                    </li>
+                    <li>may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <Section title="info" bg_color="bg-lmn-pink">
-            <Subsection title="content">
-                <List style="list-disc" items={[
-                    "i have a pretty specific art style and will slightly modify the design to fit that style.",
-                    "i specialize in cute feminine or androgynous characters. masculine characters might not get accepted",
-                    "i won't make furry characters, licensed characters, or anything sexually explicit or too graphic.",
-                    "i may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!",
-                ]}/>
-            </Subsection>
+
+            <div class="font-bold px-1.5 py-1 bg-blue-white-shade -mb-4">content</div>
+            <div class="px-1.5 pt-0.5">
+                <ul class="list-inside list-disc">
+                    <li>i have a pretty specific art style and will slightly modify the design to fit that style.
+                    </li>
+                    <li>specialize in cute feminine or androgynous characters. masculine characters might not get accepted
+                    </li>
+                    <li>won't make furry characters, licensed characters, or anything sexually explicit or too graphic.
+                    </li>
+                    <li>may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!
+                    </li>
+                </ul>
+            </div>
 
             <iframe
                 class="w-full aspect-video"
@@ -71,31 +93,60 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
             />
 
             <Subsection title="offerings">
-                <List style="list-disc" items={[
-                    "i currently don't offer togglable poses for vseeface, 2d illustrations, or VRChat rigging. these are things i would like to offer in the future, so if it is truly a deal breaker, let me know and maybe we could work something out. it will come with an additional cost and may add considerable time to the delivery time",
-                    "if you'd like a more general VRM rig instead of a vseeface rig, i can make that but the features will be limited and it will cost the same.",
-                    "i'm not offering full character design and will only accept orders with visual references. the more detailed the better but a sketch with some pictures found online could suffice",
-                    "i will not rig models made by someone else.",
-                    "commercial use outside of streaming or content creation is handled on a case by case basis, so just ask me about it. if you're a small creator it probably won't be a big deal",
-                ]}/>
+                <ul class="list-inside list-disc">
+                    <li>i currently don't offer togglable poses for vseeface, 2d illustrations, or VRChat rigging.
+                        these are things i would like to offer in the future, so if it is truly a deal breaker,
+                        let me know and maybe we could work something out.
+                        it will come with an additional cost and may add considerable time to the delivery time
+                    </li>
+                    <li>if you'd like a more general VRM rig instead of a vseeface rig,
+                        i can make that but the features will be limited and it will cost the same.
+                    </li>
+                    <li>i'm not offering full character design and will only accept orders with visual references.
+                        the more detailed the better but a sketch with some pictures found online could suffice
+                    </li>
+                    <li>i will not rig models made by someone else.
+                    </li>
+                    <li>commercial use outside of streaming or content creation is handled on a case by case basis,
+                        so just ask me about it. if you're a small creator it probably won't be a big deal
+                    </li>
+                </ul>
             </Subsection>
 
             <Subsection title="process">
-                <List style="list-disc" items={[
-                    "commission slots are limited. orders are accepted based on how well i think i could do with the design, not necessarily first come first served.",
-                    "if commission slots are full you can still send me your request but i will only get in touch when i intend to start working on it",
-                    "if i'm interested in taking your order, i will talk with you a bit to understand what youre looking for, let you know how much it will cost and check you are ready to pay, and then send you a payment link",
-                    "poor communication may result in cancellation of the order",
-                    "the model should take under two months to complete, but there is currently no upper limit to how long it will take. im working on refining this estimate"
-                ]}/>
+                <ul class="list-inside list-disc">
+                    <li>commission slots are limited.
+                        orders are accepted based on how well i think i could do with the design, not necessarily first come first served.
+                    </li>
+                    <li>if commission slots are full you can still send me your request
+                        but i will only get in touch when i intend to start working on it
+                    </li>
+                    <li>if i'm interested in taking your order, i will talk with you a bit to understand what youre looking for,
+                        let you know how much it will cost and check you are ready to pay, and then send you a payment link
+                    </li>
+                    <li>poor communication may result in cancellation of the order
+                    </li>
+                    <li>the model should take under two months to complete, but there is currently no upper limit to how long it will take.
+                        im working on refining this estimate
+                    </li>
+                </ul>
             </Subsection>
 
             <Subsection title="pricing">
-                <List style="list-disc" items={[
-                    `<span class=\"underline\"> base model - ${prices.base}$ </span> <br/> includes .blend file and a .unitypackage file to import into Unity (you can make it do fortnite dances). basic humanoid rigging and hair/prop rigging`,
-                    `<span class=\"underline\"> vseeface rigging - +${prices.vseeface}$ </span> <br/> includes .vsfavatar file. one togglable expression is included. rigs will work with either webcam or iphone tracking`,
-                    "<span class=\"underline\"> complexity - +0$ and up </span> <br/> i'd like to think of the design as a whole, rather than itemizing every aspect individually. hopefully the examples can give you an idea of what the price for your design will be.",
-                ]}/>
+                <ul class="list-inside list-disc">
+                    <li><span class="underline">base model - {prices.base}$</span> <br/>
+                        includes .blend file and a .unitypackage file to import into Unity (you can make it do fortnite dances).
+                        basic humanoid rigging and hair/prop rigging
+                    </li>
+                    <li><span class="underline">vseeface rigging - +{prices.vseeface}$</span> <br/>
+                        includes .vsfavatar file. one togglable expression is included.
+                        rigs will work with either webcam or iphone tracking
+                    </li>
+                    <li><span class="underline">complexity - +0$ and up</span> <br/>
+                        i'd like to think of the design as a whole, rather than itemizing every aspect individually.
+                        hopefully the examples can give you an idea of what the price for your design will be.
+                    </li>
+                </ul>
             </Subsection>
 
             <Subsection title="'complexity' pricing">
@@ -107,26 +158,40 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
                     {price: "50 - 100$", thing: "- your 'average' vtuber complexity; togglable jackets or hoodies"},
                     {price: "100$", thing: "- over the top; a lot of little details"},
                 ]} />
-                <List style="list-disc" items={[
-                    "things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi",
-                    "things that add to rig complexity: complex physics for hair or clothes, idle animations, texture swap toggles, expression toggles",
-                    "there isn't really a limit to this extra cost as it relies on how many extra toggles you want",
-                    "just let me know what you are looking for and we'll go from there."
-                ]}/>
+                <ul class="list-inside list-disc">
+                    <li>things that add to model complexity:
+                        extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi
+                    </li>
+                    <li>things that add to rig complexity:
+                        complex physics for hair or clothes, idle animations, texture swap toggles, expression toggles
+                    </li>
+                    <li>there isn't really a limit to this extra cost as it relies on how many extra toggles you want
+                    </li>
+                    <li>just let me know what you are looking for and we'll go from there.
+                    </li>
+                </ul>
             </Subsection>
 
             <div class="px-1.5">
-                as an example, the lemons model in the above video - with reasonably complex hair and accessories, two expression toggles, kitsunemimi, and hat with different textures -
-                would have a complexity cost of around {prices.complexity + prices.lemons_upcharge}$ and come up to {average_price + prices.lemons_upcharge}$
+                as an example, the lemons model in the above video - with reasonably complex hair and accessories,
+                two expression toggles, kitsunemimi, and hat with different textures -
+                would have a complexity cost of around {prices.complexity + prices.lemons_upcharge}$
+                and come up to {average_price + prices.lemons_upcharge}$
                 total
             </div>
 
             <Subsection title="after completion">
-                <List style="list-disc" items={[
-                    "i will help with calibration and bug fixes to the best of my ability, please don't hesitate to ask if things arent working right!",
-                    "you can ask for changes or additions to the model but i may charge for them. upgrading from webcam to iphone tracking will be no extra charge",
-                    "if you want to modify the model or get it rigged futher by someone else you can do that, but it's not my responsiblity to fix it if things go wrong",
-                ]}/>
+                <ul class="list-inside list-disc">
+                    <li>i will help with calibration and bug fixes to the best of my ability,
+                        please don't hesitate to ask if things arent working right!
+                    </li>
+                    <li>you can ask for changes or additions to the model but i may charge for them.
+                        upgrading from webcam to iphone tracking will be no extra charge
+                    </li>
+                    <li>if you want to modify the model or get it rigged futher by someone else you can do that,
+                        but it's not my responsiblity to fix it if things go wrong
+                    </li>
+                </ul>
             </Subsection>
         </Section>
 
@@ -156,12 +221,16 @@ const average_price = prices.base + prices.vseeface + prices.complexity;
             />
 
             <div class="px-1.5">
-                <List style="list-disc" items={[
-                    "you can contact me by email: bitelemons at gmail dot com",
-                    "email is preferred over DM",
-                    "links to twitter/twitch/etc is appreciated, but not necessary",
-                    "include some visual references to give me as clear an idea of what youre looking for as possible!",
-                ]}/>
+                <ul class="list-inside list-disc">
+                    <li>you can contact me by email: bitelemons at gmail dot com
+                    </li>
+                    <li>email is preferred over DM
+                    </li>
+                    <li>links to twitter/twitch/etc is appreciated, but not necessary
+                    </li>
+                    <li>include some visual references to give me as clear an idea of what youre looking for as possible!
+                    </li>
+                </ul>
             </div>
 
             <div class="px-1.5">

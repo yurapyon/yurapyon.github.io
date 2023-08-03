@@ -1,0 +1,14 @@
+---
+import Layout from "./Layout.astro";
+
+const {frontmatter} = Astro.props;
+
+---
+<Layout
+    title="pyon.moe"
+    curr_page={frontmatter.page}
+    sub={frontmatter.sub}
+    do_bottom_nav
+    >
+    <slot />
+</Layout>
