@@ -15,6 +15,7 @@ module.exports = {
 		dropShadow: {
 			DEFAULT: '4px 4px #93999d40'
 		},
+		typography: { DEFAULT: { css: {}}},
 		extend: {
 			colors: {
 				'lmn-slate': '#161616',
@@ -33,5 +34,7 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 }

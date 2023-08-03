@@ -1,0 +1,188 @@
+---
+layout: ../layouts/CommsLayout.astro
+page: 3d comms
+sub: test comms
+---
+import Section from "../components/Section.astro";
+import Wide from "../components/Wide.astro";
+import CommissionStatus from "../components/CommissionStatus.astro";
+import PriceTable from "../components/PriceTable.astro";
+import LinkRow from "../components/LinkRow.astro";
+
+export const prices = {
+    base: 125,
+    vseeface: 75,
+    complexity: 50,
+    lemons_upcharge: 125,
+};
+
+export const average_price = prices.base + prices.vseeface + prices.complexity;
+
+<Wide>
+    <div class="relative not-prose">
+        <img class="z-0" src="/images/comms_announce_web.png" alt="commission announcement message"/>
+        <a href="/commissions_3d" class="absolute top-[87%] left-[18%] bottom-[7%] right-[19%]" />
+        <div class="z-10 absolute top-[16%] inset-x-[17%] max-w-sm text-xs md:text-lg text-center font-bold">
+            <CommissionStatus status="open"/>
+        </div>
+    </div>
+</Wide>
+
+<Section title="quick overview" bg_color="bg-lmn-blue">
+    <div class="h-1" />
+
+    all prices listed are in USD  
+
+    <PriceTable do_bold items={[
+        {price: `${prices.base}$`, thing: "- model with basic rigging"},
+        {price: `+${prices.vseeface}$`, thing: "- vseeface rigging"},
+        {price: `+${prices.complexity}$`, thing: `- complexity upcharge, starts at ${prices.complexity}$ but could be more or less`},
+    ]} />
+
+    ---
+
+    your 'average' vtuber design rigged for vseeface would be **around {average_price}$**  
+    i will do my best to finish in under **two months**  
+    payment method is **Paypal upfront**
+
+    ---
+
+    contact info at the bottom of the page!
+</Section>
+
+<Section title="info" bg_color="bg-lmn-pink" no_flex>
+    ## content
+    - i have a pretty specific art style and will slightly modify the design to fit that style.
+    - specialize in cute feminine or androgynous characters. masculine characters might not get accepted
+    - won't make furry characters, licensed characters, or anything sexually explicit or too graphic.
+    - may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!
+
+    ---
+
+    <div class="-mx-1.5">
+        <iframe
+            class="w-full aspect-video"
+            src="https://www.youtube-nocookie.com/embed/TM-Wyif_W_0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        />
+    </div>
+
+    ---
+
+    ## offerings
+    - i currently don't offer togglable poses for vseeface, 2d illustrations, or VRChat rigging.
+        these are things i would like to offer in the future, so if it is truly a deal breaker,
+        let me know and maybe we could work something out.
+        it will come with an additional cost and may add considerable time to the delivery time
+    - if you'd like a more general VRM rig instead of a vseeface rig,
+        i can make that but the features will be limited and it will cost the same.
+    - i'm not offering full character design and will only accept orders with visual references.
+        the more detailed the better but a sketch with some pictures found online could suffice
+    - i will not rig models made by someone else.
+    - commercial use outside of streaming or content creation is handled on a case by case basis,
+        so just ask me about it. if you're a small creator it probably won't be a big deal
+
+    ---
+
+    ## process
+    - commission slots are limited.
+        orders are accepted based on how well i think i could do with the design, not necessarily first come first served.
+    - if commission slots are full you can still send me your request
+        but i will only get in touch when i intend to start working on it
+    - if i'm interested in taking your order, i will talk with you a bit to understand what youre looking for,
+        let you know how much it will cost and check you are ready to pay, and then send you a payment link
+    - poor communication may result in cancellation of the order
+    - the model should take under two months to complete, but there is currently no upper limit to how long it will take.
+        im working on refining this estimate
+
+    ---
+
+    ## pricing
+    - <span class="underline">base model - {prices.base}$</span>  
+        includes .blend file and a .unitypackage file to import into Unity (you can make it do fortnite dances).
+        basic humanoid rigging and hair/prop rigging
+    - <span class="underline">vseeface rigging - +{prices.vseeface}$</span>  
+        includes .vsfavatar file. one togglable expression is included.
+        rigs will work with either webcam or iphone tracking
+    - <span class="underline">complexity - +0$ and up</span>  
+        i'd like to think of the design as a whole, rather than itemizing every aspect individually.
+        hopefully the examples can give you an idea of what the price for your design will be.
+
+    ---
+
+    ## 'complexity' pricing
+    [![design complexity](/images/design_complexity_small.png)](/images/design_complexity_small.png)
+    <PriceTable items={[
+        {price: "0 - 50$", thing: "- simple; just pants and a tshirt"},
+        {price: "50 - 100$", thing: "- your 'average' vtuber complexity; togglable jackets or hoodies"},
+        {price: "100$", thing: "- over the top; a lot of little details"},
+    ]} />
+    - things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi
+    - things that add to rig complexity:
+        complex physics for hair or clothes, idle animations, texture swap toggles, expression toggles
+    - there isn't really a limit to this extra cost as it relies on how many extra toggles you want
+    - just let me know what you are looking for and we'll go from there.
+
+    ---
+
+    as an example, the lemons model in the above video - with reasonably complex hair and accessories,
+    two expression toggles, kitsunemimi, and hat with different textures -
+    would have a complexity cost of around {prices.complexity + prices.lemons_upcharge}$
+    and come up to {average_price + prices.lemons_upcharge}$ total
+
+    ---
+
+    ## after completion
+    - i will help with calibration and bug fixes to the best of my ability,
+        please don't hesitate to ask if things arent working right!
+    - you can ask for changes or additions to the model but i may charge for them.
+        upgrading from webcam to iphone tracking will be no extra charge
+    - if you want to modify the model or get it rigged futher by someone else you can do that,
+        but it's not my responsiblity to fix it if things go wrong
+</Section>
+
+<Section title="contact" bg_color="bg-lmn-green">
+    > please read everything on this page and the terms of service before&nbsp;contacting&nbsp;me! thanks!
+
+    <div class="-mx-1.5 not-prose">
+        <LinkRow
+            links={[
+                {
+                    text: "terms of service",
+                    href: "/terms_3d",
+                    class_ext: ["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate -mb-2"],
+                    target: "_blank"
+                },
+                /*
+                {
+                    text: "privacy policy",
+                    href: "/terms_3d",
+                    class_ext: ["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate -mb-2"],
+                    target: "_blank",
+                    deactivated: true,
+                },
+                */
+            ]}
+        />
+    </div>
+
+    ---
+
+    - you can contact me by email: bitelemons at gmail dot com
+    - email is preferred over DM
+    - links to twitter/twitch/etc is appreciated, but not necessary
+    - include some visual references to give me as clear an idea of what youre looking for as possible!
+
+    ---
+
+    looking forward to working with you!!!
+</Section>
+
+<div class="not-prose">
+    <a href="/images/mugi_salute.png">
+        <img class="drop-shadow" src="/images/mugi_salute_crop.png" />
+    </a>
+</div>
