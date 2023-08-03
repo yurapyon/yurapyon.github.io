@@ -1,0 +1,28 @@
+---
+import type { ButtonInfo } from "../components/Button.astro";
+import LinkRow from "../components/LinkRow.astro";
+import Section from "../components/Section.astro";
+import Layout from "./Layout.astro";
+
+export interface Props {
+    company: string;
+    links?: ButtonInfo[];
+}
+
+const { company, links = []} = Astro.props;
+
+const title = company + " Cover Letter";
+
+---
+
+<Layout title="pyon.moe" sub={title} curr_page="none" no_top_nav>
+    <div class="flex flex-col gap-4">
+        <LinkRow links={links} />
+
+        <Section title={title} bg_color="bg-lmn-blue">
+            <div class="px-1.5 mt-0.5">
+                <slot />
+            </div>
+        </Section>
+    </div>
+</Layout>
