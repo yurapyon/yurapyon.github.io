@@ -10,10 +10,10 @@ import PriceTable from "../components/PriceTable.astro";
 import LinkRow from "../components/LinkRow.astro";
 
 export const prices = {
-    base: 125,
-    vseeface: 75,
+    base: 140,
+    vseeface: 60,
     complexity: 50,
-    lemons_upcharge: 125,
+    lemons_upcharge: 130,
 };
 
 export const average_price = prices.base + prices.vseeface + prices.complexity;
@@ -116,9 +116,9 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
     ## 'complexity' pricing
     [![design complexity](/images/design_complexity_small.png)](/images/design_complexity_small.png)
     <PriceTable items={[
-        {price: "0 - 50$", thing: "- simple; just pants and a tshirt"},
-        {price: "50 - 100$", thing: "- your 'average' vtuber complexity; togglable jackets or hoodies"},
-        {price: "100$", thing: "- over the top; a lot of little details"},
+        {price: `0 - ${prices.complexity}$`, thing: "- simple; just pants and a tshirt"},
+        {price: `${prices.complexity} - ${prices.complexity * 2}$`, thing: "- your 'average' vtuber complexity; togglable jackets or hoodies"},
+        {price: `${prices.complexity * 2}$`, thing: "- over the top; a lot of little details"},
     ]} />
     - things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi
     - things that add to rig complexity:
