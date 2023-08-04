@@ -1,0 +1,65 @@
+---
+layout: ../layouts/CommsLayout.astro
+page: none
+sub: bite lemons 2d commissions
+---
+import Section from "../components/Section.astro";
+import PriceTable from "../components/PriceTable.astro";
+import LinkRow from "../components/LinkRow.astro";
+
+export const prices = {
+    sketch: 15,
+    chibi: 30,
+    paint: 60,
+};
+
+<Section title="quick overview" bg_color="bg-lmn-blue">
+    <div class="h-1" />
+
+    all prices listed are in USD  
+
+    <PriceTable do_bold items={[
+        {price: `${prices.sketch}$`, thing: "- pencil sketch with flat color"},
+        {price: `${prices.chibi}$`, thing: "- extreme chibi mode"},
+        {price: `${prices.paint}$`, thing: "- painted pic"},
+    ]} />
+
+    ---
+
+    i will do my best to finish in under **one month**  
+    payment method is **Paypal upfront**
+
+    ---
+
+    contact info at the bottom of the page!
+</Section>
+
+<Section title="contact" bg_color="bg-lmn-green">
+    > please read everything on this page and the terms of service before&nbsp;contacting&nbsp;me! thanks!
+
+    <div class="-mx-1.5 not-prose">
+        <LinkRow
+            links={[
+                /*
+                {
+                    text: "terms of service",
+                    href: "/terms_3d",
+                    class_ext: ["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate -mb-2"],
+                    target: "_blank"
+                },
+                */
+            ]}
+        />
+    </div>
+
+    ---
+
+    - you can contact me by email: bitelemons at gmail dot com
+    - email is preferred over DM
+    - links to twitter/twitch/etc is appreciated, but not necessary
+    - include some visual references to give me as clear an idea of what youre looking for as possible!
+
+    ---
+
+    looking forward to working with you!!!
+</Section>
