@@ -20,17 +20,18 @@ const {date, link, info, imgs} = Astro.props;
     }
     { info ?  <div class="px-1.5 py-1 text-xs sm:text-base"> {info} </div> : <></> }
     {imgs.map((img: string | { image: string, preview: string }) => {
+        let link, prev;
         if ((typeof img) === "string") {
-            const i = img as string;
-            return <a href={"/works/" + i}>
-                <img src={"/works/" + i} alt={i}/>
-            </a>;
+            link = img as string;
+            prev = img as string;
         } else {
             const i = img as {image: string, preview: string};
-            return <a href={"/works/" + i.image}>
-                <img src={"/works/" + i.preview} alt={i.image}/>
-            </a>;
+            link = i.image;
+            prev = i.preview;
         }
+        return <a href={"/works/" + link}>
+            <img src={"/works/" + prev} alt={link}/>
+        </a>;
     })}
     <slot />
 </div>
