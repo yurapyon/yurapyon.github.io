@@ -1,37 +1,30 @@
 ---
 import Button from "./Button.astro";
+import Card from "./Card.astro";
 
 export interface Props {
     date: string;
     link?: string;
-    info?: string;
-    imgs: (string | { image: string, preview: string })[];
 };
 
-const {date, link, info, imgs} = Astro.props;
+const {date, link} = Astro.props;
 
 ---
-<div class="bg-blue-white-shade drop-shadow">
-    <div class="px-1.5 py-1 inline-block"> { date } </div>
-    { link ?
-        <Button text="link" href={link} class_ext={["inline-block float-right hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate"]} target="_blank" />
-        :
-        <></>
-    }
-    { info ?  <div class="px-1.5 py-1 text-xs sm:text-base"> {info} </div> : <></> }
-    {imgs.map((img: string | { image: string, preview: string }) => {
-        let link, prev;
-        if ((typeof img) === "string") {
-            link = img as string;
-            prev = img as string;
-        } else {
-            const i = img as {image: string, preview: string};
-            link = i.image;
-            prev = i.preview;
-        }
-        return <a href={"/works/" + link}>
-            <img src={"/works/" + prev} alt={link}/>
-        </a>;
-    })}
-    <slot />
-</div>
+<Card>
+    <div class="bg-blue-white-shade font-mono">
+        <div class="flex flex-row justify-between not-prose">
+            <div class="px-1.5 py-1"> { date } </div>
+            { link ?
+                <Button
+                    text="link"
+                    href={link}
+                    class_ext={["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate"]}
+                    target="_blank"
+                />
+                :
+                <></>
+            }
+        </div>
+        <slot />
+    </div>
+</Card>

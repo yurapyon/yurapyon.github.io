@@ -3,11 +3,7 @@ import MainMDXLayout from "./MainMDXLayout.astro";
 const {frontmatter} = Astro.props;
 ---
 <MainMDXLayout frontmatter={frontmatter}>
-    <div class:list={[
-        "flex flex-col gap-4",
-        "prose-p:px-1.5",
-        "prose-img:border-2 prose-img:border-[#d8d8e8]",
-    ]}>
+    <div class="flex flex-col gap-6 sm:gap-10">
         <slot />
     </div>
 </MainMDXLayout>

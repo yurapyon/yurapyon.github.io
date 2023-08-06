@@ -1,14 +1,10 @@
 ---
-export interface Props {
-    title: string;
-    bg_color: string;
-}
+import Card from "./Card.astro";
 
-const {title, bg_color} = Astro.props;
 ---
-<div class="drop-shadow bg-blue-white pb-1">
-    <div class:list={["text-base sm:text-lg px-1.5 py-1 font-serif font-bold", bg_color]} id={title}> {title} </div>
-    <div class="text-sm sm:text-base font-sans px-1.5">
+
+<Card>
+    <div class="pb-1">
         <slot />
     </div>
-</div>
+</Card>

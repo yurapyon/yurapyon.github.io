@@ -1,16 +1,9 @@
----
-export interface Props {
-    items: {price: string, thing: string}[];
-    do_bold?: boolean;
-}
-
-const {items, do_bold} = Astro.props;
----
-<table>
-    {items.map((item:{price:string, thing:string})=>{
-        return <tr>
-            <td class:list={["pr-1 text-right align-top whitespace-nowrap", do_bold && "font-bold"]}>{item.price}</td>
-            <td>{item.thing}</td>
-        </tr>;
-    })}
-</table>
+<div class="px-1.5">
+    <table class:list={[
+        "first:prose-td:pr-1",
+        "first:prose-td:text-right first:prose-td:align-top",
+        "first:prose-td:whitespace-nowrap"
+    ]}>
+        <slot />
+    </table>
+</div>

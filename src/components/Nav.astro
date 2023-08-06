@@ -1,0 +1,58 @@
+---
+import LinkRow from "../components/LinkRow.astro";
+
+export interface Props {
+    curr_page: PageName;
+}
+
+export type PageName = "home" | "2d" | "3d"| "3d comms" | "3d terms" | "none";
+
+const { curr_page } = Astro.props;
+
+const nav_links = [
+	{
+		text: "home",
+		href: "/",
+		deactivated: curr_page === "home",
+		class_ext: ["hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold"],
+	},
+	{
+		text: "3d comms",
+		href: "/commissions_3d",
+		deactivated: curr_page === "3d comms",
+		class_ext: ["hover:bg-lmn-yellow hover:text-lmn-slate hover:font-bold"],
+	},
+	{
+		text: "3d art",
+		href: "/works_3d",
+		deactivated: curr_page === "3d",
+		class_ext: ["hover:bg-lmn-green hover:text-lmn-slate hover:font-bold"],
+	},
+	{
+		text: "2d art",
+		href: "/works_2d",
+		deactivated: curr_page === "2d",
+		class_ext: ["hover:bg-lmn-pink hover:text-lmn-slate hover:font-bold"],
+	},
+];
+
+const row_two = [
+	"px-1.5 py-1 bg-lmn-slate",
+	{
+		text: "3d ToS",
+		href: "/terms_3d",
+		deactivated: curr_page === "3d terms",
+		class_ext: ["hover:bg-lmn-yellow hover:text-lmn-slate hover:font-bold"],
+	},
+	"px-1.5 py-1 bg-lmn-slate",
+	"px-1.5 py-1 bg-lmn-slate",
+];
+
+let show_second_row = (curr_page === "3d comms") || (curr_page === "3d terms");
+show_second_row = false;
+---
+
+<div class="text-sm sm:text-base">
+    <LinkRow links={nav_links} />
+    {/*show_second_row && <LinkRow links={row_two} /> */}
+</div>

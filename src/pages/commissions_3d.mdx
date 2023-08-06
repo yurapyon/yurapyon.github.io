@@ -28,16 +28,29 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
     </div>
 </Wide>
 
-<Section title="quick overview" bg_color="bg-lmn-blue">
+<Section>
+    <div class="bg-lmn-blue">
+        # quick overview
+    </div>
+
     <div class="h-1" />
 
     all prices listed are in USD  
 
-    <PriceTable do_bold items={[
-        {price: `${prices.base}$`, thing: "- model with basic rigging"},
-        {price: `+${prices.vseeface}$`, thing: "- vseeface rigging"},
-        {price: `+${prices.complexity}$`, thing: `- complexity upcharge, starts at ${prices.complexity}$ but could be more or less`},
-    ]} />
+    <PriceTable>
+        <tr>
+            <td>**{prices.base}$**</td>
+            <td>- model with basic rigging</td>
+        </tr>
+        <tr>
+            <td>**+{prices.vseeface}$**</td>
+            <td>- vseeface rigging</td>
+        </tr>
+        <tr>
+            <td>**+{prices.complexity}$**</td>
+            <td>- complexity upcharge, starts at {prices.complexity}$ but could be more or less</td>
+        </tr>
+    </PriceTable>
 
     ---
 
@@ -50,25 +63,27 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
     contact info at the bottom of the page!
 </Section>
 
-<Section title="info" bg_color="bg-lmn-pink">
+<Section>
+    <div class="bg-lmn-pink">
+        # info
+    </div>
+
     ## content
     - i have a pretty specific art style and will slightly modify the design to fit that style.
-    - specialize in cute feminine or androgynous characters. masculine characters might not get accepted
-    - won't make furry characters, licensed characters, or anything sexually explicit or too graphic.
-    - may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!
+    - i specialize in cute feminine or androgynous characters. masculine characters might not get accepted.
+    - i won't make furry characters, licensed characters, or anything sexually explicit or too graphic.
+    - i may accept humanoid cartoon/robot characters, mild ecchi, or mild guro/body horror. so ask me about it!
 
     ---
 
-    <div class="-mx-1.5">
-        <iframe
-            class="w-full aspect-video"
-            src="https://www.youtube-nocookie.com/embed/TM-Wyif_W_0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-        />
-    </div>
+    <iframe
+        class="w-full aspect-video"
+        src="https://www.youtube-nocookie.com/embed/TM-Wyif_W_0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+    />
 
     ---
 
@@ -77,41 +92,39 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
         these are things i would like to offer in the future, so if it is truly a deal breaker,
         let me know and maybe we could work something out.
         it will come with an additional cost and may add considerable time to the delivery time
-    - if you'd like a more general VRM rig instead of a vseeface rig,
-        i can make that but the features will be limited and it will cost the same.
     - i'm not offering full character design and will only accept orders with visual references.
-        the more detailed the better but a sketch with some pictures found online could suffice
+        the more detailed the better but a sketch with some pictures found online could suffice.
     - i will not rig models made by someone else.
     - commercial use outside of streaming or content creation is handled on a case by case basis,
-        so just ask me about it. if you're a small creator it probably won't be a big deal
+        so just ask me about it. if you're a small creator it probably won't be a big deal.
 
     ---
 
     ## process
     - commission slots are limited.
-        orders are accepted based on how well i think i could do with the design, not necessarily first come first served.
+        orders are accepted based on how well i can work with the design, not necessarily first come first served.
     - if commission slots are full you can still send me your request
         but i will only get in touch when i intend to start working on it
-    - if i'm interested in taking your order, i will talk with you a bit to understand what youre looking for,
-        let you know how much it will cost and check you are ready to pay, and then send you a payment link
-    - poor communication may result in cancellation of the order
     - the model should take under two months to complete, but there is currently no upper limit to how long it will take.
         im working on refining this estimate
+    - poor communication may result in cancellation of the order
 
     ---
 
     ## pricing
-    i have a high standard for quality and above all want to make something that would look good in a portfolio, not just serve your basic needs.
-        i don't skimp. do not try and talk down the price.
+    i have a high standard for quality.
+    above all want to make something that would look good in a portfolio, not just serve your basic needs.
+    i don't skimp. do not try and talk down the price.
 
     ---
 
     - <span class="underline">base model - {prices.base}$</span>  
-        includes .blend file and a .unitypackage file to import into Unity (you can make it do fortnite dances).
-        basic humanoid rigging and hair/prop rigging
+        includes .blend file and a .unitypackage file to import into Unity (you can make it do fortnite dances).  
+        model will have: basic humanoid armature, extra bones as necessary for hair/props/expressions
     - <span class="underline">vseeface rigging - +{prices.vseeface}$</span>  
-        includes .vsfavatar file. one togglable expression is included.
-        rigs will work with either webcam or iphone tracking
+        includes .vsfavatar file. rigs will work with either webcam or iphone tracking.
+        one togglable expression is included in the price.  
+        rig will have: body + head movement tracking, eye tracking, AEIOU mouth tracking, hair/prop physics, basic looping animations as necessary for props and expressions  
     - <span class="underline">complexity - +0$ and up</span>  
         i'd like to think of the design as a whole, rather than itemizing every aspect individually.
         hopefully the examples can give you an idea of what the price for your design will be.
@@ -120,11 +133,22 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
 
     ## 'complexity' pricing
     [![design complexity](/images/design_complexity_small.png)](/images/design_complexity_small.png)
-    <PriceTable items={[
-        {price: `0 - ${prices.complexity}$`, thing: "- simple; just pants and a tshirt"},
-        {price: `${prices.complexity} - ${prices.complexity * 2}$`, thing: "- your 'average' vtuber complexity; togglable jackets or hoodies"},
-        {price: `${prices.complexity * 2}$`, thing: "- over the top; a lot of little details"},
-    ]} />
+
+    <PriceTable>
+        <tr>
+            <td>0 - {prices.complexity}$</td>
+            <td>- simple; just pants and a tshirt</td>
+        </tr>
+        <tr>
+            <td>{prices.complexity} - {prices.complexity * 2}$</td>
+            <td>- your 'average' vtuber complexity; togglable jackets or hoodies</td>
+        </tr>
+        <tr>
+            <td>{prices.complexity * 2}$</td>
+            <td>- over the top; a lot of little details</td>
+        </tr>
+    </PriceTable>
+
     - things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi
     - things that add to rig complexity:
         complex physics for hair or clothes, idle animations, texture swap toggles, expression toggles
@@ -149,10 +173,14 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
         but it's not my responsiblity to fix it if things go wrong
 </Section>
 
-<Section title="contact" bg_color="bg-lmn-green">
+<Section>
+    <div class="bg-lmn-green">
+        # contact
+    </div>
+
     > please read everything on this page and the terms of service before&nbsp;contacting&nbsp;me! thanks!
 
-    <div class="-mx-1.5 not-prose">
+    <div class="not-prose">
         <LinkRow
             links={[
                 {
