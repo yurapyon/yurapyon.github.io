@@ -1,13 +1,25 @@
 ---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 import MainMDXLayout from "./MainMDXLayout.astro";
 const {frontmatter} = Astro.props;
+
+export const commsProse = [
+    "prose-p:px-1.5",
+    "first:prose-td:pr-1",
+    "first:prose-td:text-right first:prose-td:align-top",
+    "first:prose-td:whitespace-nowrap"
+];
 ---
 <MainMDXLayout frontmatter={frontmatter}>
-    <div class:list={[
-        "flex flex-col gap-4",
-        "prose-p:px-1.5",
-        "prose-img:border-2 prose-img:border-[#d8d8e8]",
-    ]}>
+    <div class:list={["flex flex-col gap-4", ...commsProse ]}>
+        <div class="not-prose">
+            <Nav curr_page={frontmatter.page} />
+        </div>
         <slot />
+        <div class="not-prose">
+            <Nav curr_page={frontmatter.page} />
+            <Footer />
+        </div>
     </div>
 </MainMDXLayout>

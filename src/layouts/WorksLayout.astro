@@ -1,9 +1,21 @@
 ---
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 import MainMDXLayout from "./MainMDXLayout.astro";
 const {frontmatter} = Astro.props;
 ---
 <MainMDXLayout frontmatter={frontmatter}>
+    <div class="not-prose">
+        <Nav curr_page={frontmatter.page} />
+        <div class="h-4"/>
+    </div>
     <div class="flex flex-col gap-6 sm:gap-10">
         <slot />
+    </div>
+    <div class="not-prose">
+        <div class="h-4"/>
+        <Nav curr_page={frontmatter.page} />
+        <div class="h-4"/>
+        <Footer />
     </div>
 </MainMDXLayout>

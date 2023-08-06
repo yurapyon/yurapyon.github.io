@@ -1,26 +1,16 @@
 ---
+import Footer from "../components/Footer.astro";
 import LinkRow from "../components/LinkRow.astro";
 import Section from "../components/Section.astro";
-import Layout from "./Layout.astro";
+import { commsProse } from "./CommsLayout.astro";
+import MainMDXLayout, { mainMdxProse } from "./MainMDXLayout.astro";
 
 const {frontmatter} = Astro.props;
 
 const title = frontmatter.company + " Cover Letter";
 ---
-<Layout title="pyon.moe" sub={frontmatter.sub} >
-    <div class:list={[
-        "flex flex-col gap-4 prose",
-        "prose-h1:font-bold prose-h1:font-serif prose-h1:px-1.5 prose-h1:py-1 prose-h1:text-base sm:prose-h1:text-lg",
-        "prose-h2:font-bold prose-h2:px-1.5 prose-h2:py-1 prose-h2:mb-0.5 prose-h2:bg-blue-white-shade",
-        "prose-h3:px-1.5",
-        "prose-p:px-1.5",
-        "prose-ul:px-1.5 prose-ul:list-inside prose-ul:list-disc",
-        "prose-img:border-2 prose-img:border-[#d8d8e8]",
-        "prose-hr:h-4",
-        "prose-strong:font-bold",
-        "prose-blockquote:p-1.5 prose-blockquote:bg-lmn-blood prose-blockquote:text-lmn-white prose-blockquote:text-center",
-        "hover:prose-a:text-lmn-red prose-a:underline",
-    ]}>
+<MainMDXLayout frontmatter={frontmatter} >
+    <div class:list={["flex flex-col gap-4", ...commsProse,]}>
         <div class="not-prose">
             <LinkRow links={frontmatter.links} />
         </div>
@@ -34,5 +24,7 @@ const title = frontmatter.company + " Cover Letter";
                 <slot />
             </div>
         </Section>
+
+        <Footer />
     </div>
-</Layout>
+</MainMDXLayout>
