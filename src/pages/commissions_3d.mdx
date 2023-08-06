@@ -143,28 +143,44 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
     ---
 
     ## 'complexity' pricing
-    <div class="px-1.5" >
-        <a href="/images/design_complexity_small.png">
-            <img class="w-full border-2 border-[#d8d8e8]" src="/images/design_complexity_small.png" alt="design complexity"/>
+    when thinking abt complexity, theres design complexity and rig complexity
+
+    <div class="px-1.5">
+        <a href="/images/design_complexity_2.png">
+            <img class="w-full border-2 border-[#d8d8e8]" src="/images/design_complexity_2.png" alt="design complexity"/>
         </a>
     </div>
 
     <PriceTable>
         <tr>
-            <td>0 - {prices.complexity}$</td>
-            <td>- simple; just pants and a tshirt</td>
+            <td>**simple**</td>
+            <td>just shorts and a tshirt, short hair w/ basic or no physics.\
+             examples: oozora subaru, pikamee</td>
         </tr>
         <tr>
-            <td>{prices.complexity} - {prices.complexity * 2}$</td>
-            <td>- your 'average' vtuber complexity; togglable jackets or hoodies</td>
+            <td>**simple 2**</td>
+            <td>nontogglable hoodies, kemonomimi.\
+             examples: nekomata okayu, lily hopkins</td>
         </tr>
         <tr>
-            <td>{prices.complexity * 2}$</td>
-            <td>- over the top; a lot of little details</td>
+            <td>**average**</td>
+            <td>togglable jackets or hoodies. believable shoulder length hair\
+             examples: inugami korone, gwar gura</td>
+        </tr>
+        <tr>
+            <td>**detailed**</td>
+            <td>complex jackets, alot of accessories, straps, or ribbons\
+             examples: fallenshadow, himemori luna</td>
+        </tr>
+        <tr>
+            <td>**over the top**</td>
+            <td>a lot of little details. tons of frills, lacey stuff, foldy fabric, crazy hair physics\
+             examples: pipkin pippa, ceres fauna</td>
         </tr>
     </PriceTable>
 
-    - things that add to model complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi
+    - simple designs will cost around 0$ for model complexity, while over-the-top designs may be 100$ or more
+    - things that add to design complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi
     - things that add to rig complexity:
         complex physics for hair or clothes, idle animations, texture swap toggles, expression toggles, complex atypical facial rigging
 
