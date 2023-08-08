@@ -47,14 +47,14 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
             <td>- model with vseeface rigging</td>
         </tr>
         <tr>
-            <td>**+{prices.complexity}$**</td>
-            <td>- complexity upcharge, starts at {prices.complexity}$ but could be more or less</td>
+            <td>**+???$**</td>
+            <td>- complexity upcharge, starts at 0$ and goes up</td>
         </tr>
     </PriceTable>
 
     ---
 
-    your average vtuber model with one expression would be **around {average_price}$**  
+    average vtuber design with one expression toggle would be **around {average_price}$**  
     i will do my best to finish in under **two months**  
     payment method is **Paypal upfront**
 
@@ -140,10 +140,11 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
     - every model is different and i don't think coming up with a standard set of addons/extras makes sense for my style.
         hopefully the examples can give you an idea of what the price for your design will be.
 
+    {/* */}
     ---
 
     ## 'complexity' pricing
-    when thinking abt complexity, theres design complexity and rig complexity
+    when thinking abt complexity, theres design complexity and rig complexity.
 
     <div class="px-1.5">
         <a href="/images/design_complexity_2.png">
@@ -179,7 +180,7 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
         </tr>
     </PriceTable>
 
-    - simple designs will cost around 0$ for design complexity, while over-the-top designs may be 100$ or more
+    - simple designs will cost around 0$ for design complexity, while over-the-top designs may be {prices.complexity * 2}$ or more
     - things that add to design complexity: extra outfits, complex hair, alot of texture detail, accessories, props, kemonomimi
 
     ---
