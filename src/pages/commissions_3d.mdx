@@ -8,15 +8,14 @@ import Wide from "../components/Wide.astro";
 import CommissionStatus from "../components/CommissionStatus.astro";
 import PriceTable from "../components/PriceTable.astro";
 import LinkRow from "../components/LinkRow.astro";
+import {genPrice} from "../components/Pricing.astro";
 
 export const prices = {
-    base: 140,
-    vseeface: 60,
-    complexity: 50,
-    lemons_upcharge: 130,
+    base: 170,
+    vseeface: 50,
+    tiers: [0, 50, 100],
+    expressions: 30,
 };
-
-export const average_price = prices.base + prices.vseeface + prices.complexity;
 
 <Wide>
     <div class="relative not-prose">
@@ -43,18 +42,22 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
             <td>- model with basic rigging</td>
         </tr>
         <tr>
-            <td>**{prices.base + prices.vseeface}$**</td>
-            <td>- model with vseeface rigging</td>
+            <td>**+{prices.vseeface}$**</td>
+            <td>- vseeface rigging</td>
         </tr>
         <tr>
             <td>**+???$**</td>
-            <td>- complexity upcharge, starts at 0$ and goes up</td>
+            <td>- complexity upcharge, starts at 0$ and goes up in tiers</td>
+        </tr>
+        <tr>
+            <td>**+{prices.expressions}$**</td>
+            <td>- extra expressions</td>
         </tr>
     </PriceTable>
 
     ---
 
-    average vtuber design with one expression toggle would be **around {average_price}$**  
+    average vtuber design with one expression toggle would be **around {genPrice(prices, true, 1, 0)}$**  
     i will do my best to finish in under **two months**  
     payment method is **Paypal upfront**
 
@@ -117,7 +120,8 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
 
     ---
 
-    that said i may adjust the price on atypical models ie cartoon styles, body horror, etc
+    - prices listed here will probably be accurate in most cases but at the end of the day are just guidelines.
+    - i may adjust the price on atypical models ie cartoon styles, body horror, etc
 
     ---
 
@@ -127,17 +131,21 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
 
     <div class="h-1" />
 
-    <span class="underline px-1.5">model with vseeface rigging - {prices.base + prices.vseeface}$</span>  
-    - includes everything from above, as well as a .vsfavatar file.
-    - one togglable expression is included.
+    <span class="underline px-1.5">vseeface rigging - +{prices.vseeface}$</span>  
+    - .vsfavatar file
     - rigs will work with either webcam or iphone tracking.
     - rig will have: body + head movement tracking, eye tracking, AEIOU mouth tracking, hair/prop physics, basic looping animations as necessary for props and expressions  
 
     <div class="h-1" />
 
-    <span class="underline px-1.5">complexity - +0$ and up</span>  
+    <span class="underline px-1.5">complexity - +0$ and up, tiers</span>  
     - every model is different and i don't think coming up with a standard set of addons/extras makes sense for my style.
         hopefully the examples can give you an idea of how much your design might cost
+
+    <div class="h-1" />
+
+    <span class="underline px-1.5">togglable expressions - +{prices.expressions}$ each</span>  
+    - expressions with simple animation will be the same price
 
     ---
 
@@ -153,43 +161,31 @@ export const average_price = prices.base + prices.vseeface + prices.complexity;
 
     <PriceTable>
         <tr>
-            <td>**super simple**</td>
-            <td>- pikamee, oozora subaru (without props)</td>
+            <td>**tier 0: simple**: {prices.tiers[0]}$</td>
+            <td>- pikamee, oozora&nbsp;subaru, nekomata&nbsp;okayu, lily&nbsp;hopkins</td>
         </tr>
         <tr>
-            <td>**simple**</td>
-            <td>- nekomata okayu, lily hopkins</td>
+            <td>**tier 1: average**: {prices.tiers[1]}$</td>
+            <td>- inugami&nbsp;korone, gwar&nbsp;gura, kson, fallenshadow, himemori&nbsp;luna</td>
         </tr>
         <tr>
-            <td>**average**</td>
-            <td>- inugami korone, gwar gura, kson</td>
-        </tr>
-        <tr>
-            <td>**detailed**</td>
-            <td>- amelia watson, fallenshadow, himemori luna</td>
-        </tr>
-        <tr>
-            <td>**over the top**</td>
-            <td>- pipkin pippa, ceres fauna</td>
+            <td>**tier 2: detailed**: {prices.tiers[2]}$</td>
+            <td>- pipkin&nbsp;pippa, amelia&nbsp;watson, ceres&nbsp;fauna, kureji&nbsp;ollie, sakamata&nbsp;chloe</td>
         </tr>
     </PriceTable>
 
-    - super simple designs will add around 0$, while over-the-top designs could add {prices.complexity * 2}$ or more
-    - its not a concrete tier system, its more just how i think about things.
-    - things that add to design complexity: extra outfits, complex hair, frills/lacey stuff, alot of texture detail, accessories, props, kemonomimi
+    ---
+
+    - things that add to design complexity: complex hair, frills/lacey stuff, high texture detail, accessories, props, kemonomimi,
+        complicated shapes that are hard to repliacte in 3d, togglable hoodies/jackets
+    - things that add to rig complexity: complex physics for hair or clothes, idle animations, complex atypical facial rigging
+    - very complex rigs or designs may go beyond the {prices.tiers[2]} price.
+    - currently extra outfits don't have a fixed price and will be dealt with on a case by case basis.
 
     ---
 
-    - rigging complexity doesnt have a limit, it relies on how many extra toggles you want. just let me know what you are looking for and we can go from there.
-    - things that add to rig complexity:
-        complex physics for hair or clothes, idle animations, texture swap toggles, expression toggles, complex atypical facial rigging
-
-    ---
-
-    as an example, the lemons model in the above video - with reasonably complex hair and accessories,
-    two expression toggles, kitsunemimi, and hat with different textures -
-    would have a complexity cost of around {prices.complexity + prices.lemons_upcharge}$
-    and come up to {average_price + prices.lemons_upcharge}$ total
+    as an example, i would consider the lemons model in the above video to be tier 2, due to the reasonably complex hair and accessories,
+    kitsunemimi, and hat with different textures. with the two expression toggles it would come up to {genPrice(prices, true, 2, 2)}$ total
 
     ---
 
