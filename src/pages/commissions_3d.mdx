@@ -8,7 +8,7 @@ import Wide from "../components/Wide.astro";
 import CommissionStatus from "../components/CommissionStatus.astro";
 import PriceTable from "../components/PriceTable.astro";
 import LinkRow from "../components/LinkRow.astro";
-import {genPrice} from "../components/Pricing.astro";
+import {genPrice, Calc} from "../components/Calc.jsx";
 
 export const prices = {
     base: 170,
@@ -16,6 +16,15 @@ export const prices = {
     tiers: [0, 50, 100],
     expressions: 30,
 };
+
+{/*
+export const prices = {
+    base: 200,
+    vseeface: 75,
+    tiers: [0, 75, 150],
+    expressions: 40,
+};
+*/}
 
 <Wide>
     <div class="relative not-prose">
@@ -57,7 +66,7 @@ export const prices = {
 
     ---
 
-    average vtuber design would be **around {genPrice(prices, true, 1, 0)}$**  
+    your average vtuber design would be **around {genPrice(prices, true, 1, 0)}$**  
     i will do my best to finish in under **two months**  
     payment method is **Paypal upfront**
 
@@ -186,6 +195,10 @@ export const prices = {
 
     as an example, i would consider the lemons model in the above video to be tier 2, due to the reasonably complex hair and accessories,
     kitsunemimi, and hat with different textures. with the two expression toggles it would come up to {genPrice(prices, true, 2, 2)}$ total
+
+    ---
+
+    <Calc client:load prices={prices}/>
 
     ---
 

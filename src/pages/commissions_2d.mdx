@@ -9,19 +9,22 @@ import LinkRow from "../components/LinkRow.astro";
 
 export const prices = {
     sketch: 15,
-    chibi: 30,
-    paint: 60,
+    thick_lines: 45,
 };
 
-<Section title="quick overview" bg_color="bg-lmn-blue">
+{/*
+<Section>
+    <div class="bg-lmn-blue">
+        # quick overview
+    </div>
+
     <div class="h-1" />
 
     all prices listed are in USD  
 
     <PriceTable do_bold items={[
-        {price: `${prices.sketch}$`, thing: "- pencil sketch with flat color"},
-        {price: `${prices.chibi}$`, thing: "- extreme chibi mode"},
-        {price: `${prices.paint}$`, thing: "- painted pic"},
+        {price: `${prices.sketch}$`, thing: "- pencil sketch with flat color or b&w"},
+        {price: `${prices.thick_lines}$`, thing: "- thick lines"},
     ]} />
 
     ---
@@ -34,20 +37,36 @@ export const prices = {
     contact info at the bottom of the page!
 </Section>
 
-<Section title="contact" bg_color="bg-lmn-green">
+<Section>
+    <div class="bg-lmn-pink">
+        # info
+    </div>
+
+    ## content
+    - cute is life!!!
+    - i also like creepy cute or weird cute type stuff. yea
+    - i like ryona/guro/body horror but may not accept everything.
+    - i'm best at feminine or androgynous characters. masculine characters probably won't get accepted
+    - i wont draw furry characters, licensed characters, or anything sexually explicit or too gross.
+    - i may accept humanoid cartoon/robot characters, mild ecchi, or guro/body horror. just ask me about it!
+
+</Section>
+
+<Section>
+    <div class="bg-lmn-green">
+        # contact
+    </div>
     > please read everything on this page and the terms of service before&nbsp;contacting&nbsp;me! thanks!
 
     <div class="-mx-1.5 not-prose">
         <LinkRow
             links={[
-                /*
                 {
                     text: "terms of service",
                     href: "/terms_3d",
                     class_ext: ["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate -mb-2"],
                     target: "_blank"
                 },
-                */
             ]}
         />
     </div>
@@ -63,3 +82,5 @@ export const prices = {
 
     looking forward to working with you!!!
 </Section>
+
+*/}
