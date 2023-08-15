@@ -198,9 +198,11 @@ export const prices = {
 
     ---
 
-    <Calc client:load prices={prices}/>
+    <div class="hidden [@media(hover:hover)]:inline">
+        <Calc client:visible prices={prices}/>
 
-    ---
+        ---
+    </div>
 
     ## after completion
     - i will help with calibration and bug fixes to the best of my ability,
