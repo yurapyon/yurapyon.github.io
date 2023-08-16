@@ -4,25 +4,11 @@ export function genPrice(prices: any, vsf: boolean, tier: number, exp_ct: number
     return prices.base + (vsf ? prices.vseeface : 0) + prices.tiers[tier] + prices.expressions * exp_ct;
 };
 
-const ChangeTextOnHover: React.FC<{
-    onNotHover: string,
-    onHover: string,
-}> = ({onNotHover, onHover}) => {
-    return (<>
-        <div className="inline group-hover:hidden">
-            {onNotHover}
-        </div>
-        <div className="hidden group-hover:inline">
-            {onHover}
-        </div>
-    </>);
-};
-
 const VsfSelector: React.FC<{
     vsf: boolean,
     setVsf: (_:boolean)=>void,
 }> = ({vsf, setVsf}) => {
-    const on = "bg-lmn-green text-lmn-slate hover:bg-lmn-white font-bold";
+    const on = "bg-lmn-pink hover:bg-lmn-white font-bold";
     const off = "bg-lmn-slate text-lmn-white hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold";
     return (<div
             className={"px-1.5 py-1 h-full cursor-pointer " + (vsf ? on : off)}
@@ -36,7 +22,7 @@ const TierSelector: React.FC<{
     tier: number,
     setTier: (_:number)=>void,
 }> = ({tier, setTier}) => {
-    const on = "bg-lmn-yellow text-lmn-slate font-bold";
+    const on = "bg-lmn-yellow font-bold";
     const off = "bg-lmn-slate text-lmn-white hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold cursor-pointer";
     return (<>
         {[0, 1, 2].map((t)=>{
@@ -54,7 +40,7 @@ const ExpressionsCount: React.FC<{
     expressions: number,
     setExpressions: (_:number)=>void,
 }> = ({expressions, setExpressions}) => {
-    const on = "bg-lmn-blue text-lmn-slate hover:bg-lmn-white hover:text-lmn-slate font-bold cursor-pointer";
+    const on = "bg-lmn-green hover:bg-lmn-white font-bold cursor-pointer";
     const off = "bg-lmn-slate text-lmn-white";
 
     const expReset = () => setExpressions(0);
@@ -65,7 +51,17 @@ const ExpressionsCount: React.FC<{
             className={"group px-1.5 py-1 h-full " + (expressions > 0 ? on : off)}
             onClick={()=>{expReset();}}
         >
-        {expressions > 0 ? <ChangeTextOnHover onNotHover={expText} onHover="clear" /> : expText }
+        {expressions > 0 ?
+        <>
+            <div className="inline group-hover:hidden">
+                {expText}
+            </div>
+            <div className="hidden group-hover:inline">
+                clear
+            </div>
+        </>
+        : expText }
+
     </div>);
 }
 
@@ -76,7 +72,7 @@ const ExpressionsSelector: React.FC<{
     const expMax = 5;
 
     const btnOk = "bg-lmn-slate text-lmn-white hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold cursor-pointer";
-    const btnBad = "bg-lmn-white text-lmn-slate";
+    const btnBad = "bg-lmn-white";
 
     const expUp = () => setExpressions(Math.min(expressions + 1, expMax));
     const expDown = () => setExpressions(Math.max(expressions - 1, 0));
@@ -100,59 +96,25 @@ export const Calc: React.FC<{
     const [tier, setTier] = React.useState(1);
     const [expressions, setExpressions] = React.useState(0);
     const [price, setPrice] = React.useState(genPrice(prices, vsf, tier, expressions));
-    const [colorCycle, setColorCycle] = React.useState(0);
-    const [canReset, setCanReset] = React.useState(false);
-
-    const availableColors = [
-        "bg-lmn-green",
-        "bg-lmn-blue",
-        "bg-lmn-yellow",
-        "bg-lmn-pink",
-    ];
 
     React.useEffect(()=>{
         setPrice(genPrice(prices, vsf, tier, expressions));
     }, [vsf, tier, expressions]);
 
-    React.useEffect(() => {
-        if (colorCycle < (availableColors.length - 1)) {
-            setColorCycle(colorCycle + 1);
-        } else {
-            setColorCycle(0);
-        }
-        setCanReset(!(vsf === true && tier === 1 && expressions === 0));
-    }, [price]);
-
-    const reset = React.useCallback(()=>{
-        setVsf(true);
-        setTier(1);
-        setExpressions(0);
-        setCanReset(false);
-    }, [setVsf, setTier, setExpressions, setCanReset]);
-
-    return (<div className="bg-blue-white-mid cursor-default select-none font-mono not-prose">
-        <div className="grid grid-cols-3 grid-rows-5 grid-flow-col">
-            <div className={"col-span-3 px-1.5 py-1 text-center text-lmn-slate font-bold " + availableColors[colorCycle]}>price calculator: actual price may be different</div>
+    return (<div className="cursor-default select-none font-mono not-prose">
+        <div className="grid grid-cols-3 grid-rows-3 grid-flow-col">
             <div className="row-span-3">
                 <VsfSelector vsf={vsf} setVsf={setVsf} />
-            </div>
-            <div className="col-span-2">
-                <div className="px-1.5 py-1 bg-lmn-pink text-lmn-slate font-bold">
-                    base price + extras = {price}$
-                </div>
             </div>
             <TierSelector tier={tier} setTier={setTier} />
             <div className="row-span-2">
                 <ExpressionsCount expressions={expressions} setExpressions={setExpressions} />
             </div>
             <ExpressionsSelector expressions={expressions} setExpressions={setExpressions} />
-            {canReset ?
-                <div className="px-1.5 py-1 text-center bg-lmn-blue text-lmn-slate hover:bg-lmn-white font-bold cursor-pointer" onClick={reset}>
-                    reset
-                </div>
-            :
-                <div className="bg-lmn-pink" />
-            }
+        </div>
+        <div className="px-1.5 py-1">
+            base price + extras = <span className="font-bold">{price}$</span>&ensp;
+            <span className="inline-block">(actual price may be different)</span>
         </div>
     </div>);
 }

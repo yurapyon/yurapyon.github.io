@@ -3,6 +3,7 @@ layout: ../layouts/CommsLayout.astro
 page: 3d comms
 sub: bite lemons 3d model commissions
 ---
+import Card from "../components/Card.astro";
 import Section from "../components/Section.astro";
 import Wide from "../components/Wide.astro";
 import CommissionStatus from "../components/CommissionStatus.astro";
@@ -198,12 +199,6 @@ export const prices = {
 
     ---
 
-    <div class="hidden [@media(hover:hover)]:inline">
-        <Calc client:visible prices={prices}/>
-
-        ---
-    </div>
-
     ## after completion
     - i will help with calibration and bug fixes to the best of my ability,
         please don't hesitate to ask if things arent working right!
@@ -212,6 +207,18 @@ export const prices = {
     - if you want to modify the model or get it rigged futher by someone else you can do that,
         but it's not my responsiblity to fix it if things go wrong
 </Section>
+
+{/*
+<div class="hidden [@media(hover:hover)]:inline">
+    <Card>
+        <div class="bg-lmn-blue">
+            # price calculator
+        </div>
+
+        <Calc client:visible prices={prices}/>
+    </Card>
+</div>
+*/}
 
 <Section>
     <div class="bg-lmn-green">

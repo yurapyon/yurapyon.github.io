@@ -73,5 +73,5 @@ const row_two = [
 
 <div class="text-sm sm:text-base">
     <LinkRow links={nav_links} />
-    {onCommsPage && <LinkRow links={row_two} />}
+    {onCommsPage ? <LinkRow links={row_two} /> : <></>}
 </div>
