@@ -18,40 +18,6 @@ const ChangeTextOnHover: React.FC<{
     </>);
 };
 
-const ExpressionsCount: React.FC<{
-    expressions: number,
-    setExpressions: (_:number)=>void,
-}> = ({expressions, setExpressions}) => {
-    const on = "bg-lmn-blue text-lmn-slate hover:bg-lmn-white hover:text-lmn-slate font-bold";
-    const off = "";
-
-    const expReset = () => setExpressions(0);
-
-    const expText = expressions + (expressions === 1 ? " expression" : " expressions");
-
-    return (<div className={"group px-1.5 py-1 h-full " + (expressions > 0 ? on : off)} onClick={expReset} >
-        {expressions > 0 ? <ChangeTextOnHover onNotHover={expText} onHover="clear" /> : expText }
-    </div>);
-}
-
-const ExpressionsSelector: React.FC<{
-    expressions: number,
-    setExpressions: (_:number)=>void,
-}> = ({expressions, setExpressions}) => {
-    const expMax = 5;
-
-    const btnOk = "bg-lmn-slate text-lmn-white hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold";
-    const btnBad = "bg-lmn-white text-lmn-slate hover:bg-lmn-red hover:text-lmn-white hover:font-bold";
-
-    const expUp = () => setExpressions(Math.min(expressions + 1, expMax));
-    const expDown = () => setExpressions(Math.max(expressions - 1, 0));
-
-    return (<div className="flex flex-row">
-        <div className={"flex-1 px-1.5 py-1 text-center " + (expressions !== expMax ? btnOk : btnBad)} onClick={expUp}>+</div>
-        <div className={"flex-1 px-1.5 py-1 text-center " + (expressions > 0 ? btnOk : btnBad)} onClick={expDown}>-</div>
-    </div>);
-}
-
 const VsfSelector: React.FC<{
     vsf: boolean,
     setVsf: (_:boolean)=>void,
@@ -80,21 +46,39 @@ const TierSelector: React.FC<{
     </>);
 }
 
-const Total: React.FC<{
-    totalPrice: number,
-    reset: () => void,
-    canReset: () => boolean,
-}> = ({totalPrice, reset, canReset}) => {
-    return (canReset() ?
-        <div className="group px-1.5 py-1 bg-lmn-pink text-lmn-slate font-bold hover:bg-lmn-blue" onClick={reset}>
-            <ChangeTextOnHover onNotHover={`base price + extras = ${totalPrice}$`} onHover="reset" />
-        </div>
-        :
-        <div className="px-1.5 py-1 bg-lmn-pink text-lmn-slate font-bold" onClick={reset}>
-            base price + extras = {totalPrice}$
-        </div>
-    );
-};
+const ExpressionsCount: React.FC<{
+    expressions: number,
+    setExpressions: (_:number)=>void,
+}> = ({expressions, setExpressions}) => {
+    const on = "bg-lmn-blue text-lmn-slate hover:bg-lmn-white hover:text-lmn-slate font-bold";
+    const off = "bg-lmn-slate text-lmn-white";
+
+    const expReset = () => setExpressions(0);
+
+    const expText = expressions + (expressions === 1 ? " expression" : " expressions");
+
+    return (<div className={"group px-1.5 py-1 h-full " + (expressions > 0 ? on : off)} onClick={expReset} >
+        {expressions > 0 ? <ChangeTextOnHover onNotHover={expText} onHover="clear" /> : expText }
+    </div>);
+}
+
+const ExpressionsSelector: React.FC<{
+    expressions: number,
+    setExpressions: (_:number)=>void,
+}> = ({expressions, setExpressions}) => {
+    const expMax = 5;
+
+    const btnOk = "bg-lmn-slate text-lmn-white hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold";
+    const btnBad = "bg-lmn-white text-lmn-slate hover:bg-lmn-red hover:text-lmn-white hover:font-bold";
+
+    const expUp = () => setExpressions(Math.min(expressions + 1, expMax));
+    const expDown = () => setExpressions(Math.max(expressions - 1, 0));
+
+    return (<div className="flex flex-row">
+        <div className={"flex-1 px-1.5 py-1 text-center " + (expressions !== expMax ? btnOk : btnBad)} onClick={expUp}>+</div>
+        <div className={"flex-1 px-1.5 py-1 text-center " + (expressions > 0 ? btnOk : btnBad)} onClick={expDown}>-</div>
+    </div>);
+}
 
 export const Calc: React.FC<{
     prices: any 
@@ -104,6 +88,7 @@ export const Calc: React.FC<{
     const [expressions, setExpressions] = React.useState(0);
     const [price, setPrice] = React.useState(genPrice(prices, vsf, tier, expressions));
     const [colorCycle, setColorCycle] = React.useState(0);
+    const [canReset, setCanReset] = React.useState(false);
 
     const availableColors = [
         "bg-lmn-green",
@@ -122,28 +107,39 @@ export const Calc: React.FC<{
         } else {
             setColorCycle(0);
         }
+        setCanReset(!(vsf === true && tier === 1 && expressions === 0));
     }, [price]);
-
-    const canReset = () => !(vsf === true && tier === 1 && expressions === 0);
 
     const reset = () => {
         setVsf(true);
         setTier(1);
         setExpressions(0);
+        setCanReset(false);
     };
 
     return (<div className="bg-blue-white-mid cursor-default select-none font-mono not-prose">
-        <div className={"px-1.5 py-1 text-center text-lmn-slate font-bold " + availableColors[colorCycle]}>price estimator: actual price may be different</div>
-        <div className="grid grid-cols-3 grid-rows-3 grid-flow-col">
+        <div className="grid grid-cols-3 grid-rows-5 grid-flow-col">
+            <div className={"col-span-3 px-1.5 py-1 text-center text-lmn-slate font-bold " + availableColors[colorCycle]}>price calculator: actual price may be different</div>
             <div className="row-span-3">
                 <VsfSelector vsf={vsf} setVsf={setVsf} />
+            </div>
+            <div className="col-span-2">
+                <div className="px-1.5 py-1 bg-lmn-pink text-lmn-slate font-bold">
+                    base price + extras = {price}$
+                </div>
             </div>
             <TierSelector tier={tier} setTier={setTier} />
             <div className="row-span-2">
                 <ExpressionsCount expressions={expressions} setExpressions={setExpressions}/>
             </div>
             <ExpressionsSelector expressions={expressions} setExpressions={setExpressions}/>
+            {canReset ?
+                <div className="px-1.5 py-1 text-center bg-lmn-blue text-lmn-slate hover:bg-lmn-white font-bold" onClick={reset}>
+                    reset
+                </div>
+            :
+                <div className="bg-lmn-pink" />
+            }
         </div>
-        <Total totalPrice={price} reset={reset} canReset={canReset}/>
     </div>);
 }
