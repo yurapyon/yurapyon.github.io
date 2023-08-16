@@ -1,18 +1,22 @@
 ---
 layout: ../layouts/CommsLayout.astro
-page: none
+page: 2d comms
 sub: bite lemons 2d commissions
 ---
 import Section from "../components/Section.astro";
 import PriceTable from "../components/PriceTable.astro";
 import LinkRow from "../components/LinkRow.astro";
+import CommissionStatus from "../components/CommissionStatus.astro";
 
 export const prices = {
-    sketch: 15,
-    thick_lines: 45,
+    t0: 15,
+    t1: 30,
 };
 
-{/*
+<div class="text-center font-bold">
+    <CommissionStatus status="closed"/>
+</div>
+
 <Section>
     <div class="bg-lmn-blue">
         # quick overview
@@ -27,8 +31,20 @@ export const prices = {
         {price: `${prices.thick_lines}$`, thing: "- thick lines"},
     ]} />
 
+    <PriceTable>
+        <tr>
+            <td>**{prices.t0}$**</td>
+            <td>- 'pencil' sketch</td>
+        </tr>
+        <tr>
+            <td>**{prices.t1}$**</td>
+            <td>- thick lines</td>
+        </tr>
+    </PriceTable>
+
     ---
 
+    commissions are offered in a **'skeb' style** for now  
     i will do my best to finish in under **one month**  
     payment method is **Paypal upfront**
 
@@ -45,11 +61,35 @@ export const prices = {
     ## content
     - cute is life!!!
     - i also like creepy cute or weird cute type stuff. yea
-    - i like ryona/guro/body horror but may not accept everything.
     - i'm best at feminine or androgynous characters. masculine characters probably won't get accepted
-    - i wont draw furry characters, licensed characters, or anything sexually explicit or too gross.
-    - i may accept humanoid cartoon/robot characters, mild ecchi, or guro/body horror. just ask me about it!
+    - i wont draw nonhuman characters, anything ecchi or sexually explicit, licensed characters, or any guro/body horror thats too gross or graphic.
+    - i may accept mild ryona/guro/body horror.
 
+    ---
+
+    ## skeb style
+
+    currently my commission process is similar to the japanese concept of a 'skeb'
+
+    ---
+
+    basically the process would be:
+    1. send me an email with all the info for what you are looking for, and what tier of drawing you want.
+    2. if i accept your order i will send you a payment link and an ETA on when you can expect me to finish the order.
+    3. when im finished with the order i'll send you the drawing.
+    4. thats it!
+
+    ---
+
+    it will be easier for now until i can figure out exactly what i want to offer.
+    because it's skeb style, prices are cheaper than if i was offering a more communicative commission process.
+
+    ---
+
+    ## if i know you personally
+
+    if i know you personally i may offer a more communicative commission process at a slightly higher cost.
+    i may also accept orders that are a little more nsfw.
 </Section>
 
 <Section>
@@ -58,12 +98,12 @@ export const prices = {
     </div>
     > please read everything on this page and the terms of service before&nbsp;contacting&nbsp;me! thanks!
 
-    <div class="-mx-1.5 not-prose">
+    <div class="not-prose">
         <LinkRow
             links={[
                 {
                     text: "terms of service",
-                    href: "/terms_3d",
+                    href: "/terms_2d",
                     class_ext: ["hover:bg-lmn-blue hover:font-bold hover:text-lmn-slate -mb-2"],
                     target: "_blank"
                 },
@@ -82,5 +122,3 @@ export const prices = {
 
     looking forward to working with you!!!
 </Section>
-
-*/}

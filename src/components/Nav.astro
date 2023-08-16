@@ -5,9 +5,14 @@ export interface Props {
     curr_page: PageName;
 }
 
-export type PageName = "home" | "2d" | "3d"| "3d comms" | "3d terms" | "none";
+export type PageName = "home" | "2d" | "3d"| "3d comms" | "3d terms" | "2d comms" | "2d terms" | "none";
 
 const { curr_page } = Astro.props;
+
+const onCommsPage = (curr_page === "3d comms")
+				 || (curr_page === "3d terms")
+                 || (curr_page === "2d comms")
+				 || (curr_page === "2d terms");
 
 const nav_links = [
 	{
@@ -17,9 +22,9 @@ const nav_links = [
 		class_ext: ["hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold"],
 	},
 	{
-		text: "3d comms",
+		text: "comms",
 		href: "/commissions_3d",
-		deactivated: curr_page === "3d comms",
+		deactivated: onCommsPage,
 		class_ext: ["hover:bg-lmn-yellow hover:text-lmn-slate hover:font-bold"],
 	},
 	{
@@ -37,22 +42,36 @@ const nav_links = [
 ];
 
 const row_two = [
-	"px-1.5 py-1 bg-lmn-slate",
+	{
+		text: "3d comms",
+		href: "/commissions_3d",
+		deactivated: curr_page === "3d comms",
+		class_ext: ["hover:bg-lmn-green hover:text-lmn-slate hover:font-bold"],
+	},
 	{
 		text: "3d ToS",
 		href: "/terms_3d",
 		deactivated: curr_page === "3d terms",
+		class_ext: ["hover:bg-lmn-pink hover:text-lmn-slate hover:font-bold"],
+	},
+	/*
+	{
+		text: "2d comms",
+		href: "/commissions_2d",
+		deactivated: curr_page === "2d comms",
+		class_ext: ["hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold"],
+	},
+	{
+		text: "2d ToS",
+		href: "/terms_2d",
+		deactivated: curr_page === "2d terms",
 		class_ext: ["hover:bg-lmn-yellow hover:text-lmn-slate hover:font-bold"],
 	},
-	"px-1.5 py-1 bg-lmn-slate",
-	"px-1.5 py-1 bg-lmn-slate",
+	*/
 ];
-
-let show_second_row = (curr_page === "3d comms") || (curr_page === "3d terms");
-show_second_row = false;
 ---
 
 <div class="text-sm sm:text-base">
     <LinkRow links={nav_links} />
-    {/*show_second_row && <LinkRow links={row_two} /> */}
+    {onCommsPage && <LinkRow links={row_two} />}
 </div>
