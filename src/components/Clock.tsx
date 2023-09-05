@@ -17,6 +17,8 @@ export const Clock: React.FC<{}> = ({}) => {
     const [date, setDate] = React.useState(new Date());
 
     React.useEffect(() => {
+        console.log("reinterval")
+
         const interval = setInterval(()=>{
             setDate(new Date());
         }, 1000)
