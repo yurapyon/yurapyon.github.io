@@ -12,19 +12,17 @@ const social_links = [
         target: "_blank",
         class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#9146ff]"],
     },
-    /*
-    {
-        text: "discord",
-        href: "https://discord.gg/bPjEGF9gHZ",
-        target: "_blank",
-        class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#5865F2]"],
-    },
-    */
     {
         text: "twitter",
         href: "https://twitter.com/_bitelemons",
         target: "_blank",
         class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#1da1f2]"],
+    },
+    {
+        text: "discord",
+        href: "https://discord.gg/mD9ZX3qWYu",
+        target: "_blank",
+        class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#5865F2]"],
     },
     {
         text: "pixiv",
@@ -45,13 +43,14 @@ const social_links = [
         </div>
 
         <div class="px-1.5 py-1 text-base sm:text-lg text-center text-lmn-white bg-lmn-slate">
-            home of mel aise + bite lemons (updated&nbsp;08/28/2023)
+            home of mel aise + bite lemons (updated&nbsp;09/12/2023)
         </div>
 
         <img class="" src="images/kmb_dance.gif"/>
 
         <div class="text-sm sm:text-base">
-            <LinkRow links={social_links} />
+            <LinkRow links={social_links.slice(0,2)} />
+            <LinkRow links={social_links.slice(2,4)} />
         </div>
 
         <div class="grid grid-cols-3 sm:grid-cols-6 gap-1 mx-auto">

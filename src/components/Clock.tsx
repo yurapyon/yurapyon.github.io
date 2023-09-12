@@ -14,17 +14,18 @@ const timeString = (hr: number, min: number, sec: number) => {
 }
 
 export const Clock: React.FC<{}> = ({}) => {
-    const [date, setDate] = React.useState(new Date());
+    const [dateString, setDateString] = React.useState("");
 
     React.useEffect(() => {
         const interval = setInterval(()=>{
-            setDate(new Date());
+            const date = new Date();
+            setDateString(timeString(date.getHours(), date.getMinutes(), date.getSeconds()));
         }, 1000)
 
         return () => clearInterval(interval);
     });
 
     return (<div>
-        {timeString(date.getHours(), date.getMinutes(), date.getSeconds())}
+        {dateString}
     </div>);
 };
