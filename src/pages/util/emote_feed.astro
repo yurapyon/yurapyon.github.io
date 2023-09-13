@@ -1,3 +1,8 @@
+---
+import { Chat } from "../../components/Chat";
+
+---
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,5 +11,6 @@
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
+		<Chat client:only/>
 	</body>
 </html>
