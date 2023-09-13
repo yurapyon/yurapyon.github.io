@@ -14,6 +14,9 @@ import Tmi from "tmi.js";
 // emote effects for subs
 // bttv
 
+// rows and columns
+// vertical horizontal
+
 type FeedItem = {
     msg_uuid: string;
     emote_url: string;
@@ -71,7 +74,7 @@ export const Chat: React.FC<{}> = ({}) => {
         sz = "2.0";
     }
 
-    return (<div className={"flex flex-row h-[" + sz + "px]"}>
+    return (<div className={"flex flex-row h-[" + height + "px]"}>
         {feed.map((item, i)=>{
             const url = "https://static-cdn.jtvnw.net/emoticons/v2/" + item.emote_url + "/default/dark/" + sz;
             return <img key={i} className="aspect-square" src={url} />
