@@ -77,7 +77,7 @@ export const Chat: React.FC<{}> = ({}) => {
     return (<div className={"flex flex-row h-[" + height + "px]"}>
         {feed.map((item, i)=>{
             const url = "https://static-cdn.jtvnw.net/emoticons/v2/" + item.emote_url + "/default/dark/" + sz;
-            return <img key={i} className="aspect-square" src={url} />
+            return <img key={i} className={"aspect-square w-[" + height + "px]"} src={url} />
         })}
     </div>);
 };
