@@ -17,10 +17,38 @@ import Tmi from "tmi.js";
 // rows and columns
 // vertical horizontal
 
+// https://cdn.betterttv.net/emote/64d5d1f47276ef62562ae710/3x.webp
+
 type FeedItem = {
-    msg_uuid: string;
     emote_url: string;
 };
+
+type EmoteGroup = {
+    msg_uuid: string;
+    count: 1 | 2 | 3;
+}
+
+//  1: 1
+//  2: 1 1
+//  3: 1 1 1
+//  4: 4
+//  5: 1 4
+//  6: 1 1 4
+//  7: 1 1 1 4
+//  8: 4 4
+//  9: 1 4 4
+// 10: 1 1 4 4
+
+//  1: 1
+//  2: 1 1
+//  3: 3
+//  4: 1 3
+//  5: 1 1 3
+//  6: 3 3
+//  7: 1 3 3
+//  8: 1 1 3 3
+//  9: 3 3 3
+// 10: 1 3 3 3
 
 const useEmoteFeed = (emote_ct: number) => {
     const [feed, setFeed] = React.useState([] as FeedItem[]);
@@ -39,33 +67,39 @@ const useEmoteFeed = (emote_ct: number) => {
             const arr: any[] = [];
             for (var key in tags.emotes) {
                 tags.emotes[key].forEach((placement)=>{
-                    const at = parseInt(placement.split('-')[0], 10);
+                    const at = parseInt(placement, 10);
                     arr.push({at, key})
                 });
             }
             arr.sort((a, b) => a.at - b.at);
             setFeed((feed) => {
-                const newFeed = [...feed,
+                const newFeed = [
+                    ...feed,
                     ...arr.map(({key}) => {
-                        return {msg_uuid:"", emote_url:key} as FeedItem;
-                    })
-                ]
-                return newFeed.slice(newFeed.length - emote_ct, newFeed.length);
+                        return {msg_uuid: "", emote_url: key} as FeedItem;
+                    }),
+                ];
+                if (newFeed.length > emote_ct) {
+                    return newFeed.slice(newFeed.length - emote_ct, newFeed.length);
+                } else {
+                    return newFeed;
+                }
             });
         })
 
         return () => {
             client.current.disconnect();
         }
-    }, [setFeed]);
+    }, [setFeed, emote_ct]);
 
     return feed;
 }
 
 export const Chat: React.FC<{}> = ({}) => {
     const urlParams = new URLSearchParams(window.location.search);
-    const feed = useEmoteFeed(Number(urlParams.get('count')) || 8);
+    const count = Number(urlParams.get('count')) || 8;
     const height = Number(urlParams.get('height')) || 112;
+    const feed = useEmoteFeed(count);
 
     let sz = "1.0";
     if (height > 56) {
@@ -74,10 +108,12 @@ export const Chat: React.FC<{}> = ({}) => {
         sz = "2.0";
     }
 
-    return (<div className={"flex flex-row h-[" + height + "px]"}>
+    return (<div className={"flex flex-row flex-nowrap h-[" + height + "px] w-[" + height * count + "px]"}>
         {feed.map((item, i)=>{
             const url = "https://static-cdn.jtvnw.net/emoticons/v2/" + item.emote_url + "/default/dark/" + sz;
-            return <img key={i} className={"aspect-square w-[" + height + "px]"} src={url} />
+            return <div key={i} className={"aspect-square w-[" + height + "px]"}>
+                <img className="" src={url} />
+            </div>
         })}
     </div>);
 };

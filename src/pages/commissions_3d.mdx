@@ -25,6 +25,11 @@ export const prices = {
     vseeface: 60,
     tiers: [0, 60, 120],
     expressions: 30,
+    illust: {
+        base: 30,
+        digital: 60,
+        painted: 60,
+    }
 };
 
 <Wide>
@@ -108,7 +113,6 @@ export const prices = {
         it will come with an additional cost and may add some time to delivery time:
         <div class="prose-ul:list-[circle] prose-ul:pl-6">
             * togglable poses
-            * 2d illustrations/refsheets
             * vrchat rigging
             * warudo rigging
         </div>
@@ -223,6 +227,46 @@ export const prices = {
     </Card>
 </div>
 */}
+
+<Section>
+    <div class="bg-lmn-red">
+        # 2d illustrations
+    </div>
+
+    <PriceTable>
+        <tr>
+            <td>**{prices.illust.base}$**</td>
+            <td>- reference sheet</td>
+        </tr>
+        <tr>
+            <td>**{prices.illust.base + prices.illust.digital}$**</td>
+            <td>- digital art </td>
+        </tr>
+        <tr>
+            <td>**{prices.illust.base + prices.illust.painted}$**</td>
+            <td>- painted </td>
+        </tr>
+    </PriceTable>
+
+    <div class="h-1" />
+
+    <span class="underline px-1.5">reference sheet - {prices.illust.base}$</span>  
+    - simple reference sheet
+
+    <div class="h-1" />
+
+    <span class="underline px-1.5">digital art background - {prices.illust.base + prices.illust.digital}$</span>  
+    - TODO: examples
+
+    <div class="h-1" />
+
+    <span class="underline px-1.5">painted background - {prices.illust.base + prices.illust.painted}$</span>  
+    - TODO: examples
+
+    <div class="h-1" />
+
+    
+</Section>
 
 <Section>
     <div class="bg-lmn-green">
