@@ -1,7 +1,7 @@
 import React from "react";
 
-export function genPrice(prices: any, vsf: boolean, tier: number, exp_ct: number) { 
-    return prices.base + (vsf ? prices.vseeface : 0) + prices.tiers[tier] + prices.expressions * exp_ct;
+export function genPrice(prices: any, vsf: boolean, tier_upcharge: number, exp_ct: number) { 
+    return prices.base + (vsf ? prices.vseeface : 0) + tier_upcharge + prices.expressions * exp_ct;
 };
 
 const VsfSelector: React.FC<{

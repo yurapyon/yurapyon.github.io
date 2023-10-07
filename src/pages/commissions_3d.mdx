@@ -11,26 +11,26 @@ import PriceTable from "../components/PriceTable.astro";
 import LinkRow from "../components/LinkRow.astro";
 import {genPrice, Calc} from "../components/Calc.jsx";
 
-{/*
-export const prices = {
-    base: 170,
-    vseeface: 50,
-    tiers: [0, 50, 100],
-    expressions: 30,
-};
-*/}
+export const prices_base_mult = 40;
 
 export const prices = {
-    base: 180,
-    vseeface: 60,
-    tiers: [0, 60, 120],
-    expressions: 30,
-    illust: {
-        base: 30,
-        digital: 60,
-        painted: 60,
-    }
+    base: 6,
+    vseeface: 2,
+    t0: 0,
+    t1: 2,
+    t2: 4,
+    expressions: 1,
+
+    illust_base: 0.5,
+    illust_ref_sheet: 0.5,
+    illust_digital: 1,
+    illust_painted: 1.5,
+    illust_prop: 1,
 };
+
+{
+Object.keys(prices).forEach(key => prices[key] = prices[key] * prices_base_mult)
+}
 
 <Wide>
     <div class="relative not-prose">
@@ -72,8 +72,8 @@ export const prices = {
 
     ---
 
-    your average vtuber design would be **around {genPrice(prices, true, 1, 0)}$**  
-    i will do my best to finish in under **two months**  
+    your average vtuber design would be **around {genPrice(prices, true, prices.t1, 0)}$**  
+    i will do my best to finish in under **three months**  
     payment method is **Paypal upfront**
 
     ---
@@ -128,7 +128,7 @@ export const prices = {
     - commission slots are limited.
         orders are accepted based on how well i think i can work with the design, not necessarily first come first served.
     - if commission slots are full you can still send me a request, but i'll only get back if i intend to work on it
-    - the model should take under two months to complete, but there is currently no upper limit to how long it will take.
+    - the model should take under three months to complete, but there is currently no upper limit to how long it will take.
         im working on refining this estimate
     - i value communication, really poor communication may result in cancellation of the order
 
@@ -179,15 +179,15 @@ export const prices = {
 
     <PriceTable>
         <tr>
-            <td>**tier 0: simple**: {prices.tiers[0]}$</td>
+            <td>**tier 0: simple**: {prices.t0}$</td>
             <td>- pikamee, oozora&nbsp;subaru, nekomata&nbsp;okayu, lily&nbsp;hopkins</td>
         </tr>
         <tr>
-            <td>**tier 1: average**: {prices.tiers[1]}$</td>
+            <td>**tier 1: average**: {prices.t1}$</td>
             <td>- inugami&nbsp;korone, gwar&nbsp;gura, kson, fallenshadow, himemori&nbsp;luna</td>
         </tr>
         <tr>
-            <td>**tier 2: detailed**: {prices.tiers[2]}$+</td>
+            <td>**tier 2: detailed**: {prices.t2}$+</td>
             <td>- pipkin&nbsp;pippa, amelia&nbsp;watson, ceres&nbsp;fauna, kureji&nbsp;ollie, sakamata&nbsp;chloe</td>
         </tr>
     </PriceTable>
@@ -197,7 +197,7 @@ export const prices = {
     - things that add to design complexity: complex hair, frills/lacey stuff, high texture detail, accessories, props, kemonomimi,
         complicated shapes that are hard to repliacte in 3d, togglable hoodies/jackets
     - things that add to rig complexity: complex physics for hair or clothes, idle animations, complex atypical facial rigging
-    - very complex rigs or designs may go beyond the {prices.tiers[2]}$ price.
+    - very complex rigs or designs may go beyond the {prices.t2}$ price.
     - currently extra outfits don't have a fixed price and will be dealt with on a case by case basis.
 
     ---
@@ -229,38 +229,42 @@ export const prices = {
 */}
 
 <Section>
-    <div class="bg-lmn-red">
+    <div class="bg-lmn-pink">
         # 2d illustrations
     </div>
 
     <PriceTable>
         <tr>
-            <td>**{prices.illust.base}$**</td>
+            <td>**{prices.illust_base + prices.illust_ref_sheet}$**</td>
             <td>- reference sheet</td>
         </tr>
         <tr>
-            <td>**{prices.illust.base + prices.illust.digital}$**</td>
+            <td>**{prices.illust_base + prices.illust_digital}$**</td>
             <td>- digital art </td>
         </tr>
         <tr>
-            <td>**{prices.illust.base + prices.illust.painted}$**</td>
+            <td>**{prices.illust_base + prices.illust_painted}$**</td>
             <td>- painted </td>
+        </tr>
+        <tr>
+            <td>**+{prices.illust_prop}$**</td>
+            <td>- per 3D prop </td>
         </tr>
     </PriceTable>
 
     <div class="h-1" />
 
-    <span class="underline px-1.5">reference sheet - {prices.illust.base}$</span>  
+    <span class="underline px-1.5">reference sheet - {prices.illust_base + prices.illust_ref_sheet}$</span>  
     - simple reference sheet
 
     <div class="h-1" />
 
-    <span class="underline px-1.5">digital art background - {prices.illust.base + prices.illust.digital}$</span>  
+    <span class="underline px-1.5">digital art background - {prices.illust_base + prices.illust_digital}$</span>  
     - TODO: examples
 
     <div class="h-1" />
 
-    <span class="underline px-1.5">painted background - {prices.illust.base + prices.illust.painted}$</span>  
+    <span class="underline px-1.5">painted background - {prices.illust_base + prices.illust_painted}$</span>  
     - TODO: examples
 
     <div class="h-1" />
