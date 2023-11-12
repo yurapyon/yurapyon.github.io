@@ -11,7 +11,7 @@ import PriceTable from "../components/PriceTable.astro";
 import LinkRow from "../components/LinkRow.astro";
 import {genPrice, Calc} from "../components/Calc.jsx";
 
-export const prices_base_mult = 50;
+export const prices_base_mult = 60;
 
 export const prices = {
     base: 6,
@@ -37,7 +37,7 @@ Object.keys(prices).forEach(key => prices[key] = prices[key] * prices_base_mult)
         <img class="z-0" src="/images/comms_announce_web.png" alt="commission announcement message"/>
         <a href="/commissions_3d" class="absolute top-[87%] left-[18%] bottom-[7%] right-[19%]" />
         <div class="z-10 absolute top-[16%] inset-x-[17%] max-w-sm text-xs md:text-lg text-center font-bold">
-            <CommissionStatus status="open"/>
+            <CommissionStatus status="full closed"/>
         </div>
     </div>
 </Wide>
