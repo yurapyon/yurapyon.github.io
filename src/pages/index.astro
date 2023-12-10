@@ -4,6 +4,7 @@ import Footer from '../components/Footer.astro';
 import LinkRow from '../components/LinkRow.astro';
 import Nav from '../components/Nav.astro';
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
 
 const social_links = [
     {
@@ -34,6 +35,93 @@ const social_links = [
 ---
 
 <Layout title="pyon.moe">
+    <div class="flex flex-col gap-3 mt-3">
+        <div class="drop-shadow bg-white font-sans text-sm sm:text-base">
+            <div class="flex flex-col m-[6px] border-[3px] border-lmn-slate">
+            {/* TODO: change how this works for small screens, just split main div in half */}
+                <div class="flex flex-row h-[150px]">
+                    <div class="grow-0 h-full aspect-square flex flex-row place-content-center">
+                        <div class="text-[10rem] leading-[9rem] text-center font-bold">
+                            P
+                        </div>
+                    </div>
+
+                    <div class="grow-0 w-[3px] border-l-[3px] border-lmn-slate" />
+
+                    <div class="grow">
+                        <div class="px-1.5 py-1 hidden sm:inline">pyon.moe</div>
+                        <!--
+                        <div class="h-[150px] text-center inline sm:hidden"
+                            style={{ writingMode: 'sideways-lr' }}
+                        >pyon.moe</div>
+                        -->
+                    </div>
+                    <a
+                        class="p-[3px] grow-0 h-full aspect-square bg-white group"
+                        href="https://www.youtube.com/watch?v=A67ZkAd1wmI"
+                        target="_blank">
+                            <div class="group-hover:invert p-[3px] bg-white">
+                                <img src="images2/QRcode.png" />
+                            </div>
+                    </a>
+                    <div class="grow inline sm:hidden" />
+                </div>
+
+                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+
+                <div class="font-mono px-1.5 py-1">
+                    home of parcel_ch
+                </div>
+
+                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+
+                {/*
+                <div class="font-mono flex flex-row justify-between">
+                    <div class="w-[150px] aspect-square px-1 text-center bg-white text-lmn-slate hover:text-white hover:bg-lmn-slate">info</div>
+                    <div class="w-[150px] aspect-square px-1 text-center bg-white text-lmn-slate hover:text-white hover:bg-lmn-slate">comms</div>
+                    <div class="w-[150px] aspect-square px-1 text-center bg-white text-lmn-slate hover:text-white hover:bg-lmn-slate">art</div>
+                </div>
+                */}
+
+                <Nav curr_page="home" />
+                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+
+                <img class="grayscale contrast-200 brightness-[0.80]" src="images/kmb_dance.gif"/>
+
+                {/*
+                <div class="font-mono flex flex-row">
+                    <div class="w-[100px] h-[100px]">l1</div>
+                    <div class="w-[100px] h-[100px]">l2</div>
+                    <div class="w-[100px] h-[100px]">l3</div>
+                    <div class="w-[100px] h-[100px]">l4</div>
+                    <div class="w-[100px] h-[100px]">logo</div>
+                </div>
+                */}
+
+                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+                <span class="hidden sm:inline">
+                    <LinkRow links={social_links} />
+                </span>
+                <span class="inline sm:hidden">
+                    <LinkRow links={social_links.slice(0,2)} />
+                    <LinkRow links={social_links.slice(2,4)} />
+                </span>
+                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+
+                {/*
+                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+                */}
+
+                <div class="font-mono px-1.5 py-1">
+                    updated 12/10/2023
+                </div>
+            </div>
+        </div>
+
+        <Footer />
+    </div>
+
+    {/*
     <div class="flex flex-col gap-3">
         <Nav curr_page="home" />
 
@@ -72,4 +160,5 @@ const social_links = [
 
         <Footer />
     </div>
+    */}
 </Layout>
