@@ -5,7 +5,7 @@ export interface Props {
     curr_page: PageName;
 }
 
-export type PageName = "home" | "lore" | "2d" | "3d"| "3d comms" | "3d terms" | "2d comms" | "2d terms" | "none";
+export type PageName = "home" | "info" | "2d" | "3d"| "3d comms" | "3d terms" | "2d comms" | "2d terms" | "none";
 
 const { curr_page } = Astro.props;
 
@@ -16,34 +16,28 @@ const onCommsPage = (curr_page === "3d comms")
 
 const nav_links = [
 	{
-		text: "home",
-		href: "/",
-		deactivated: curr_page === "home",
-		class_ext: ["hover:bg-lmn-blue hover:text-lmn-slate hover:font-bold"],
-	},
-	{
-		text: "lore",
-		href: "/lore",
-		deactivated: curr_page === "lore",
-		class_ext: ["hover:bg-lmn-red hover:text-lmn-slate hover:font-bold"],
+		text: "info",
+		href: "/info",
+		deactivated: curr_page === "info",
+		class_ext: ["hover:bg-lmn-blue hover:text-white hover:font-bold"],
 	},
 	{
 		text: "comms",
 		href: "/commissions_3d",
 		deactivated: onCommsPage,
-		class_ext: ["hover:bg-lmn-yellow hover:text-lmn-slate hover:font-bold"],
+		class_ext: ["hover:bg-lmn-yellow hover:text-white hover:font-bold"],
 	},
 	{
 		text: "3d art",
 		href: "/works_3d",
 		deactivated: curr_page === "3d",
-		class_ext: ["hover:bg-lmn-green hover:text-lmn-slate hover:font-bold"],
+		class_ext: ["hover:bg-lmn-green hover:text-white hover:font-bold"],
 	},
 	{
 		text: "2d art",
 		href: "/works_2d",
 		deactivated: curr_page === "2d",
-		class_ext: ["hover:bg-lmn-pink hover:text-lmn-slate hover:font-bold"],
+		class_ext: ["hover:bg-lmn-pink hover:text-white hover:font-bold"],
 	},
 ];
 

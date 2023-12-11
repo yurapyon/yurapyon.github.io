@@ -1,21 +1,35 @@
 ---
 import Footer from "../components/Footer.astro";
+import LinkRow from "../components/LinkRow.astro";
 import Nav from "../components/Nav.astro";
 import MainMDXLayout from "./MainMDXLayout.astro";
 const {frontmatter} = Astro.props;
 ---
 <MainMDXLayout frontmatter={frontmatter}>
-    <div class="not-prose">
-        <Nav curr_page={frontmatter.page} />
-        <div class="h-4"/>
-    </div>
-    <div class="flex flex-col gap-6 sm:gap-10">
-        <slot />
-    </div>
-    <div class="not-prose">
-        <div class="h-4"/>
-        <Nav curr_page={frontmatter.page} />
-        <div class="h-4"/>
-        <Footer />
+    <div class:list={["flex flex-col gap-4 mt-3"]}>
+        <div class="not-prose">
+            <div class="drop-shadow bg-white font-sans text-sm sm:text-base p-[6px]">
+                <div class="flex flex-col border-[3px] border-lmn-slate">
+                    <LinkRow links={[
+                        {
+                            text: "pyon.moe",
+                            href: "/",
+                            class_ext: ["hover:bg-lmn-slate hover:text-white hover:font-bold"],
+                        },
+                        "px-1.5 py-1",
+                        "px-1.5 py-1",
+                        "px-1.5 py-1"
+                    ]} />
+                    <div class="h-[2px] border-t-[2px] border-lmn-slate" />
+                    <Nav curr_page={frontmatter.page} />
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-6 sm:gap-10">
+            <slot />
+        </div>
+        <div class="not-prose">
+            <Footer />
+        </div>
     </div>
 </MainMDXLayout>

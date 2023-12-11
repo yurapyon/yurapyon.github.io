@@ -36,8 +36,8 @@ const social_links = [
 
 <Layout title="pyon.moe">
     <div class="flex flex-col gap-3 mt-3">
-        <div class="drop-shadow bg-white font-sans text-sm sm:text-base">
-            <div class="flex flex-col m-[6px] border-[3px] border-lmn-slate">
+        <div class="drop-shadow bg-white font-sans text-sm sm:text-base p-[6px]">
+            <div class="flex flex-col border-[3px] border-lmn-slate">
             {/* TODO: change how this works for small screens, just split main div in half */}
                 <div class="flex flex-row h-[150px]">
                     <div class="grow-0 h-full aspect-square flex flex-row place-content-center">
@@ -46,16 +46,24 @@ const social_links = [
                         </div>
                     </div>
 
-                    <div class="grow-0 w-[3px] border-l-[3px] border-lmn-slate" />
+                    <div class="grow-0 w-[2px] border-l-[2px] border-lmn-slate" />
 
                     <div class="grow">
-                        <div class="px-1.5 py-1 hidden sm:inline">pyon.moe</div>
+                        <div class="px-1.5 py-1 hidden sm:inline-block">
+                            pyon.moe <br/>
+                            home of parcel_ch <br/>
+                            updated 12/10/2023
+                        </div>
                         <!--
                         <div class="h-[150px] text-center inline sm:hidden"
                             style={{ writingMode: 'sideways-lr' }}
                         >pyon.moe</div>
                         -->
                     </div>
+                    {/*
+                    <div class="grow" />
+                    */}
+
                     <a
                         class="p-[3px] grow-0 h-full aspect-square bg-white group"
                         href="https://www.youtube.com/watch?v=A67ZkAd1wmI"
@@ -67,54 +75,43 @@ const social_links = [
                     <div class="grow inline sm:hidden" />
                 </div>
 
-                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
 
-                <div class="font-mono px-1.5 py-1">
-                    home of parcel_ch
+                <div class="p-2 text-center text-2xl sm:text-4xl font-semibold">
+                    PYONDOTMOE&trade; MAIL
                 </div>
 
-                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
-
-                {/*
-                <div class="font-mono flex flex-row justify-between">
-                    <div class="w-[150px] aspect-square px-1 text-center bg-white text-lmn-slate hover:text-white hover:bg-lmn-slate">info</div>
-                    <div class="w-[150px] aspect-square px-1 text-center bg-white text-lmn-slate hover:text-white hover:bg-lmn-slate">comms</div>
-                    <div class="w-[150px] aspect-square px-1 text-center bg-white text-lmn-slate hover:text-white hover:bg-lmn-slate">art</div>
-                </div>
-                */}
+                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
 
                 <Nav curr_page="home" />
-                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
+
+                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
 
                 <img class="grayscale contrast-200 brightness-[0.80]" src="images/kmb_dance.gif"/>
 
-                {/*
-                <div class="font-mono flex flex-row">
-                    <div class="w-[100px] h-[100px]">l1</div>
-                    <div class="w-[100px] h-[100px]">l2</div>
-                    <div class="w-[100px] h-[100px]">l3</div>
-                    <div class="w-[100px] h-[100px]">l4</div>
-                    <div class="w-[100px] h-[100px]">logo</div>
+                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
+
+                <LinkRow links={social_links} />
+
+                <div class="h-[5px] border-t-[5px] border-lmn-slate" />
+                <div class="p-2 flex flex-col items-center">
+                    <div class="text-center text-lg font-semibold">
+                        MOE TRACKING #
+                    </div>
+                    <a
+                        class="p-[3px] w-fit group"
+                        href="https://www.youtube.com/watch?v=lchPNCikNdk"
+                        target="_blank">
+                            <div class="group-hover:invert p-[3px] bg-white">
+                                <img class="h-[120px]" src="images2/code2.gif" />
+                            </div>
+                    </a>
+                    <div class="text-center text-lg font-semibold">
+                        400 40000 0000 0505 0000 010
+                    </div>
                 </div>
-                */}
-
-                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
-                <span class="hidden sm:inline">
-                    <LinkRow links={social_links} />
-                </span>
-                <span class="inline sm:hidden">
-                    <LinkRow links={social_links.slice(0,2)} />
-                    <LinkRow links={social_links.slice(2,4)} />
-                </span>
-                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
-
-                {/*
-                <div class="h-[3px] border-t-[3px] border-lmn-slate" />
-                */}
-
-                <div class="font-mono px-1.5 py-1">
-                    updated 12/10/2023
-                </div>
+                <div class="h-[5px] border-t-[5px] border-lmn-slate" />
+                <div class="h-8" />
             </div>
         </div>
 
