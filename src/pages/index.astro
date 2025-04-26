@@ -1,124 +1,134 @@
 ---
-import Banner from '../components/Banner.astro';
-import Footer from '../components/Footer.astro';
-import LinkRow from '../components/LinkRow.astro';
-import Nav from '../components/Nav.astro';
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
+import LinkRow from "../components/LinkRow.astro";
+import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 
 const social_links = [
-    {
-        text: "twitch",
-        href: "https://twitch.tv/parcel_ch",
-        target: "_blank",
-        class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#9146ff]"],
-    },
-    {
-        text: "twitter",
-        href: "https://twitter.com/parcel_ch",
-        target: "_blank",
-        class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#1da1f2]"],
-    },
-    {
-        text: "discord",
-        href: "https://discord.gg/mD9ZX3qWYu",
-        target: "_blank",
-        class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#5865F2]"],
-    },
-    {
-        text: "pixiv",
-        href: "https://www.pixiv.net/en/users/13254644",
-        target: "_blank",
-        class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#009CFF]"],
-    },
+  {
+    text: "bsky",
+    href: "https://bsky.app/profile/pyon.moe",
+    target: "_blank",
+    class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#1185fe]"],
+  },
+  {
+    text: "pixiv",
+    href: "https://www.pixiv.net/en/users/13254644",
+    target: "_blank",
+    class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#009CFF]"],
+  },
+  {
+    text: "twitch",
+    href: "https://twitch.tv/parcel_ch",
+    target: "_blank",
+    class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#9146ff]"],
+  },
+  {
+    text: "discord",
+    href: "https://discord.gg/mD9ZX3qWYu",
+    target: "_blank",
+    class_ext: ["hover:font-bold hover:text-lmn-white hover:bg-[#5865F2]"],
+  },
 ];
 ---
 
 <Layout title="pyon.moe">
-    <div class="flex flex-col gap-3 mt-3">
-        <div class="drop-shadow bg-white font-sans text-sm sm:text-base p-[6px]">
-            <div class="flex flex-col border-[3px] border-lmn-slate">
-            {/* TODO: change how this works for small screens, just split main div in half */}
-                <div class="flex flex-row h-[150px]">
-                    <div class="grow-0 h-full aspect-square flex flex-row place-content-center">
-                        <div class="text-[10rem] leading-[9rem] text-center font-bold">
-                            P
-                        </div>
-                    </div>
+  <div class="flex flex-col gap-3 mt-3">
+    <div class="drop-shadow bg-white font-sans text-sm sm:text-base p-[6px]">
+      <div class="flex flex-col border-[3px] border-lmn-slate">
+        {
+          /* TODO: change how this works for small screens, just split main div in half */
+        }
+        <div class="flex flex-row h-[150px]">
+          <div
+            class="grow-0 h-full aspect-square flex flex-row place-content-center"
+          >
+            <div class="text-[10rem] leading-[9rem] text-center font-bold">
+              P
+            </div>
+          </div>
 
-                    <div class="grow-0 w-[2px] border-l-[2px] border-lmn-slate" />
+          <div class="grow-0 w-[2px] border-l-[2px] border-lmn-slate"></div>
 
-                    <div class="grow">
-                        <div class="px-1.5 py-1 hidden sm:inline-block">
-                            pyon.moe <br/>
-                            home of parcel_ch <br/>
-                            updated 12/10/2023
-                        </div>
-                        <!--
+          <div class="grow">
+            <div class="px-1.5 py-1 hidden sm:inline-block">
+              pyon.moe <br />
+              home of parcel_ch <br />
+              updated 04/25/2025
+            </div>
+            <!--
                         <div class="h-[150px] text-center inline sm:hidden"
                             style={{ writingMode: 'sideways-lr' }}
                         >pyon.moe</div>
                         -->
-                    </div>
-                    {/*
+          </div>
+          {
+            /*
                     <div class="grow" />
-                    */}
+                    */
+          }
 
-                    <a
-                        class="p-[3px] grow-0 h-full aspect-square bg-white group"
-                        href="https://www.youtube.com/watch?v=A67ZkAd1wmI"
-                        target="_blank">
-                            <div class="group-hover:invert p-[3px] bg-white">
-                                <img src="images2/QRcode.png" />
-                            </div>
-                    </a>
-                    <div class="grow inline sm:hidden" />
-                </div>
-
-                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
-
-                <div class="p-2 text-center text-2xl sm:text-4xl font-semibold">
-                    PYONDOTMOE&trade; MAIL
-                </div>
-
-                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
-
-                <Nav curr_page="home" />
-
-                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
-
-                <img class="grayscale contrast-200 brightness-[0.80]" src="images/kmb_dance.gif"/>
-
-                <div class="h-[2px] border-t-[2px] border-lmn-slate" />
-
-                <LinkRow links={social_links} />
-
-                <div class="h-[5px] border-t-[5px] border-lmn-slate" />
-                <div class="p-2 flex flex-col items-center">
-                    <div class="text-center text-lg font-semibold">
-                        MOE TRACKING #
-                    </div>
-                    <a
-                        class="p-[3px] w-fit group"
-                        href="https://www.youtube.com/watch?v=lchPNCikNdk"
-                        target="_blank">
-                            <div class="group-hover:invert p-[3px] bg-white">
-                                <img class="h-[120px]" src="images2/code2.gif" />
-                            </div>
-                    </a>
-                    <div class="text-center text-lg font-semibold">
-                        400 40000 0000 0505 0000 010
-                    </div>
-                </div>
-                <div class="h-[5px] border-t-[5px] border-lmn-slate" />
-                <div class="h-8" />
+          <a
+            class="p-[3px] grow-0 h-full aspect-square bg-white group"
+            href="https://www.youtube.com/watch?v=A67ZkAd1wmI"
+            target="_blank"
+          >
+            <div class="group-hover:invert p-[3px] bg-white">
+              <img src="images2/QRcode.png" />
             </div>
+          </a>
+          <div class="grow inline sm:hidden"></div>
         </div>
 
-        <Footer />
+        <div class="h-[2px] border-t-[2px] border-lmn-slate"></div>
+
+        <div class="p-2 text-center text-2xl sm:text-4xl font-semibold">
+          PYONDOTMOE&trade; MAIL
+        </div>
+
+        <div class="h-[2px] border-t-[2px] border-lmn-slate"></div>
+
+        <Nav curr_page="home" />
+
+        <div class="h-[2px] border-t-[2px] border-lmn-slate"></div>
+
+        <img
+          class="grayscale contrast-200 brightness-[0.80]"
+          src="images/kmb_dance.gif"
+        />
+
+        <div class="h-[2px] border-t-[2px] border-lmn-slate"></div>
+
+        <LinkRow links={social_links} />
+
+        <div class="h-[5px] border-t-[5px] border-lmn-slate"></div>
+        <div class="p-2 flex flex-col items-center">
+          <div class="text-center text-lg font-semibold">MOE TRACKING #</div>
+          <a
+            class="p-[3px] w-fit group"
+            href="https://www.youtube.com/watch?v=XuefzdAPtQY"
+            target="_blank"
+          >
+            <div class="group-hover:invert p-[3px] bg-white">
+              <img class="h-[120px]" src="images2/code2.gif" />
+            </div>
+          </a>
+          <div class="text-center text-lg font-semibold">
+            500 00100 0000 1437 8805 010
+          </div>
+        </div>
+        <div class="h-[5px] border-t-[5px] border-lmn-slate"></div>
+        <div class="h-8"></div>
+      </div>
     </div>
 
-    {/*
+    <Footer />
+  </div>
+
+  {
+    /*
     <div class="flex flex-col gap-3">
         <Nav curr_page="home" />
 
@@ -157,5 +167,6 @@ const social_links = [
 
         <Footer />
     </div>
-    */}
+    */
+  }
 </Layout>
